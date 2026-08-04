@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日英文新聞 · Daily News Digest</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --card: #1a2129;
+    --card-hover: #202a35;
+    --text: #e8edf2;
+    --text-dim: #94a3b3;
+    --accent: #4fc3f7;
+    --accent-warm: #ffb74d;
+    --border: #2b3844;
+    --en-bg: #16202a;
+    --zh-bg: #1d2833;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans TC", -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  header {
+    padding: 28px 20px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #131a22 0%, var(--bg) 100%);
+  }
+  header h1 { font-size: 1.5rem; letter-spacing: 1px; }
+  header h1 .en { color: var(--accent); font-size: 0.95rem; display: block; margin-top: 4px; font-weight: 400; letter-spacing: 2px; }
+  .date-bar {
+    display: flex; justify-content: center; align-items: center; gap: 14px;
+    padding: 14px 20px; flex-wrap: wrap;
+  }
+  .date-bar .current { font-size: 1.05rem; color: var(--accent-warm); font-weight: 600; }
+  .nav-btn {
+    background: var(--card); border: 1px solid var(--border); color: var(--text);
+    padding: 6px 14px; border-radius: 8px; cursor: pointer; font-size: 0.9rem;
+    text-decoration: none; transition: background 0.15s;
+  }
+  .nav-btn:hover { background: var(--card-hover); }
+  .nav-btn.disabled { opacity: 0.3; pointer-events: none; }
+  select.nav-btn { appearance: auto; }
+  main { max-width: 780px; margin: 0 auto; padding: 10px 16px 60px; }
+  .news-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; margin: 18px 0; overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .news-card:hover { border-color: var(--accent); }
+  .card-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 18px 0;
+  }
+  .cat-badge {
+    font-size: 0.8rem; padding: 3px 10px; border-radius: 20px;
+    background: var(--zh-bg); border: 1px solid var(--border); color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .block { padding: 12px 18px; }
+  .block.en { background: var(--en-bg); }
+  .block.zh { background: var(--zh-bg); border-top: 1px dashed var(--border); }
+  .block h2 { font-size: 1.08rem; margin-bottom: 6px; line-height: 1.5; }
+  .block.en h2 { color: var(--text); }
+  .block.zh h2 { color: var(--accent-warm); }
+  .block p { font-size: 0.95rem; color: var(--text-dim); }
+  .block.zh p { color: #c3cfda; }
+  .card-foot { padding: 10px 18px 14px; background: var(--zh-bg); }
+  .card-foot a { color: var(--accent); font-size: 0.88rem; text-decoration: none; word-break: break-all; }
+  .card-foot a:hover { text-decoration: underline; }
+  .empty { text-align: center; color: var(--text-dim); padding: 60px 20px; }
+  footer { text-align: center; color: var(--text-dim); font-size: 0.8rem; padding: 20px; border-top: 1px solid var(--border); }
+  footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 480px) {
+    .block h2 { font-size: 1rem; }
+    .block p { font-size: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>📰 每日英文新聞<span class="en">DAILY NEWS DIGEST · EN / 繁中對照</span></h1>
+</header>
+<div class="date-bar">
+  <a class="nav-btn" id="prev-btn">← 前一天</a>
+  <span class="current" id="current-date">載入中…</span>
+  <a class="nav-btn" id="next-btn">後一天 →</a>
+  <select class="nav-btn" id="date-select" title="選擇日期"></select>
+</div>
+<main id="news-container">
+  <div class="empty">載入中…</div>
+</main>
+<footer>
+  來源：BBC News / Google News 等公開報導 · 每日 08:00（台北時間）更新<br>
+  <a href="https://github.com/tzchia/daily-news">GitHub repo</a>
+</footer>
+<script>
+const CAT_STYLE = {
+  "世界": "🌍", "科技": "💻", "財經": "📈", "科技/財經": "💻",
+  "羽球": "🏸", "籃球": "🏀", "棒球": "⚾", "運動": "🏅"
+};
+let dates = [];
+let currentIdx = -1;
+
+async function loadIndex() {
+  const res = await fetch("data/index.json?t=" + Date.now());
+  dates = (await res.json()).dates.sort().reverse(); // newest first
+  const params = new URLSearchParams(location.search);
+  const want = params.get("date");
+  currentIdx = want ? dates.indexOf(want) : 0;
+  if (currentIdx < 0) currentIdx = 0;
+  buildSelect();
+  await loadDay();
+}
+
+function buildSelect() {
+  const sel = document.getElementById("date-select");
+  sel.innerHTML = dates.map(d => `<option value="${d}">${d}</option>`).join("");
+  sel.value = dates[currentIdx];
+  sel.onchange = () => { currentIdx = dates.indexOf(sel.value); loadDay(); };
+}
+
+async function loadDay() {
+  const date = dates[currentIdx];
+  document.getElementById("current-date").textContent = date;
+  document.getElementById("date-select").value = date;
+  history.replaceState(null, "", "?date=" + date);
+
+  const prev = document.getElementById("prev-btn");
+  const next = document.getElementById("next-btn");
+  prev.classList.toggle("disabled", currentIdx >= dates.length - 1);
+  next.classList.toggle("disabled", currentIdx <= 0);
+  prev.onclick = () => { if (currentIdx < dates.length - 1) { currentIdx++; loadDay(); } };
+  next.onclick = () => { if (currentIdx > 0) { currentIdx--; loadDay(); } };
+
+  const container = document.getElementById("news-container");
+  try {
+    const res = await fetch(`data/${date}.json?t=` + Date.now());
+    const day = await res.json();
+    container.innerHTML = day.items.map(item => {
+      const emoji = CAT_STYLE[item.category] || "📄";
+      return `<article class="news-card">
+        <div class="card-head"><span class="cat-badge">${emoji} ${item.category}</span></div>
+        <div class="block en">
+          <h2>${item.title_en}</h2>
+          <p>${item.summary_en}</p>
+        </div>
+        <div class="block zh">
+          <h2>${item.title_zh}</h2>
+          <p>${item.summary_zh}</p>
+        </div>
+        <div class="card-foot">🔗 <a href="${item.url}" target="_blank" rel="noopener">${item.source || item.url}</a></div>
+      </article>`;
+    }).join("");
+  } catch (e) {
+    container.innerHTML = `<div class="empty">找不到 ${date} 的新聞資料</div>`;
+  }
+}
+
+loadIndex().catch(() => {
+  document.getElementById("news-container").innerHTML =
+    '<div class="empty">尚無新聞資料，明天 08:00 後會出現第一份摘要。</div>';
+  document.getElementById("current-date").textContent = "—";
+});
+</script>
+</body>
+</html>
