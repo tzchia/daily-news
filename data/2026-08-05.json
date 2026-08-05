@@ -37,5 +37,57 @@
       "url": "https://www.espn.com/mlb/story/_/id/49525563/tarik-skubal-says-dodgers-not-blame-every-team-trade-me",
       "source": "ESPN"
     }
+  ],
+  "quiz": [
+    {
+      "word": "signalled",
+      "sentence": "Oil prices dropped to a three-week low after senior US officials ____ a deal with Iran to reopen the Strait of Hormuz could come as soon as this week.",
+      "hint_zh": "動詞（過去式）：釋出訊號、表明"
+    },
+    {
+      "word": "negotiating",
+      "sentence": "Iran says it is ____ through Oman rather than directly with the US.",
+      "hint_zh": "動詞（-ing）：談判、協商"
+    },
+    {
+      "word": "unprecedented",
+      "sentence": "The EU praised Spain's handling of an ____ crisis in which about 72,000 migrants crossed into Ceuta over two days.",
+      "hint_zh": "形容詞：史無前例的"
+    },
+    {
+      "word": "enclave",
+      "sentence": "About 72,000 migrants crossed from Morocco into the Spanish ____ of Ceuta.",
+      "hint_zh": "名詞：（他國境內的）飛地"
+    },
+    {
+      "word": "suspended",
+      "sentence": "The Czech prime minister called for Spain's Schengen membership to be temporarily ____.",
+      "hint_zh": "動詞（過去分詞）：暫停、中止"
+    },
+    {
+      "word": "takeover",
+      "sentence": "A group led by Saudi Arabia's Public Investment Fund has finalised its $55bn ____ of Electronic Arts.",
+      "hint_zh": "名詞：收購、接管"
+    },
+    {
+      "word": "layoffs",
+      "sentence": "The debt loaded onto EA prompted analyst warnings of possible mass ____.",
+      "hint_zh": "名詞（複數）：裁員"
+    },
+    {
+      "word": "censorship",
+      "sentence": "Critics have raised concerns about creative ____ and accused Saudi Arabia of using the deal as a soft-power asset.",
+      "hint_zh": "名詞：審查（制度）"
+    },
+    {
+      "word": "rotation",
+      "sentence": "The left-hander joins a ____ featuring Shohei Ohtani and Yoshinobu Yamamoto.",
+      "hint_zh": "名詞：（棒球）先發輪值"
+    },
+    {
+      "word": "intensified",
+      "sentence": "The deal has ____ debate over a salary cap ahead of labour negotiations between MLB owners and the players' union.",
+      "hint_zh": "動詞（過去式）：使加劇、升溫"
+    }
   ]
 }
