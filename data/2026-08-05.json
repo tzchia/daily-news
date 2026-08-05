@@ -1,0 +1,41 @@
+{
+  "date": "2026-08-05",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Oil prices fall on hopes Strait of Hormuz could reopen",
+      "summary_en": "Oil prices dropped to a three-week low on Tuesday, with Brent crude falling almost 5% to under $80 a barrel, after senior US officials signalled a deal with Iran to reopen the Strait of Hormuz could come as soon as this week. Secretary of State Marco Rubio said talks had made progress, while Treasury Secretary Scott Bessent suggested a deal might be reached within a day or two. Iran says it is negotiating through Oman rather than directly with the US, and previous rounds of talks have repeatedly failed to de-escalate the conflict.",
+      "title_zh": "荷莫茲海峽可望重新開放 國際油價應聲下跌",
+      "summary_zh": "美國高層官員釋出與伊朗達成協議、最快本週重新開放荷莫茲海峽的訊號後，國際油價週二跌至三週低點，布蘭特原油大跌近 5%、跌破每桶 80 美元。美國國務卿盧比歐表示談判已有進展，財政部長貝森特更暗示一兩天內可能達成協議。伊朗則表示是透過阿曼斡旋、並非與美國直接談判；先前多輪談判屢次未能讓衝突降溫，協議能否落實仍有變數。",
+      "url": "https://www.bbc.co.uk/news/articles/cpw9v0gnzxwo",
+      "source": "BBC News"
+    },
+    {
+      "category": "世界",
+      "title_en": "EU commends Spain's 'swift response' to Ceuta migrant crisis",
+      "summary_en": "The EU praised Spain's handling of an unprecedented crisis in which about 72,000 migrants crossed from Morocco into the Spanish enclave of Ceuta over two days in late July; Spain says roughly 70,000 have since been returned to Morocco. At least 75 people died on the Spanish side of the border, and about 800 unaccompanied minors are reportedly being held in facilities across the city. The crisis has strained relations within the bloc, with Italy suspending its Schengen arrangements with Spain and the Czech prime minister calling for Spain's Schengen membership to be temporarily suspended.",
+      "title_zh": "休達移民危機 歐盟讚揚西班牙「迅速應對」",
+      "summary_zh": "7 月底兩天內約 7 萬 2 千名移民自摩洛哥湧入西班牙北非飛地休達，西班牙表示已將其中約 7 萬人遣返摩洛哥，歐盟內政部長會議對此讚揚西班牙「迅速應對」。這場危機在西班牙一側已造成至少 75 人死亡，據報另有約 800 名無人陪伴的未成年人被安置在當地設施。危機同時加劇歐盟內部緊張：義大利暫停與西班牙間的申根安排，捷克總理更呼籲暫時中止西班牙的申根資格。",
+      "url": "https://www.bbc.co.uk/news/articles/c80n3j55g0do",
+      "source": "BBC News"
+    },
+    {
+      "category": "科技/財經",
+      "title_en": "Saudi-led group completes $55bn purchase of gaming giant EA",
+      "summary_en": "A group led by Saudi Arabia's Public Investment Fund has finalised its $55bn takeover of Electronic Arts, taking the maker of EA FC, The Sims and Battlefield private in what is believed to be the largest leveraged buyout in history. The PIF invested $36bn directly, with a further $20bn borrowed from JPMorgan and loaded onto EA as debt, prompting analyst warnings of possible mass layoffs and more aggressive monetisation. Critics have raised concerns about creative censorship and accused Saudi Arabia of using the deal as a soft-power and sportswashing asset.",
+      "title_zh": "沙烏地主導財團完成 550 億美元收購遊戲巨頭 EA",
+      "summary_zh": "由沙烏地阿拉伯公共投資基金（PIF）主導的財團完成對美商藝電（EA）550 億美元的收購案，這家擁有 EA FC、模擬市民與戰地風雲等大作的遊戲巨頭將下市私有化，此案據信是史上規模最大的槓桿收購。PIF 直接出資 360 億美元，另向摩根大通借貸 200 億美元並由 EA 承擔債務，分析師警告恐引發大規模裁員與更激進的收費模式。批評者則憂心創作內容遭審查，並指控沙國藉此收購經營軟實力、進行「體育洗白」。",
+      "url": "https://www.bbc.co.uk/news/articles/cjejyl34345o",
+      "source": "BBC News"
+    },
+    {
+      "category": "棒球",
+      "title_en": "Skubal joins Dodgers after blockbuster deadline trade: 'Every team could trade for me'",
+      "summary_en": "Two-time Cy Young winner Tarik Skubal, the biggest name moved at the 2026 MLB trade deadline, said he doesn't \"sympathize\" with critics upset that the two-time defending World Series champion Dodgers acquired him from the Detroit Tigers as they chase a three-peat. The left-hander joins a rotation featuring Shohei Ohtani and Yoshinobu Yamamoto, and was set to make his Dodgers debut at Wrigley Field against the Cubs. The deal has intensified debate over a salary cap ahead of looming labour negotiations between MLB owners and the players' union.",
+      "title_zh": "交易大限重磅成交 賽揚強投史庫波加盟道奇：「每支球隊都能交易我」",
+      "summary_zh": "兩屆賽揚獎得主史庫波（Tarik Skubal）是 2026 年 MLB 交易大限最重磅的異動，他表示不「同情」那些批評衛冕兩屆世界大賽冠軍道奇隊補強的人——道奇自老虎隊換來這位左投，力拚三連霸。史庫波將加入擁有大谷翔平與山本由伸的豪華輪值，並預定在瑞格利球場對小熊完成道奇初登板。這筆交易也讓薪資上限議題再度升溫，成為 MLB 資方與球員工會勞資談判前的焦點。",
+      "url": "https://www.espn.com/mlb/story/_/id/49525563/tarik-skubal-says-dodgers-not-blame-every-team-trade-me",
+      "source": "ESPN"
+    }
+  ]
+}
