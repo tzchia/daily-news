@@ -98,6 +98,7 @@
     box-shadow: 0 6px 24px rgba(0,0,0,0.55);
   }
   #tip .tw { color: var(--accent); font-weight: 700; font-size: 1rem; margin-bottom: 2px; }
+  #tip .spk { cursor: pointer; user-select: none; font-size: 0.9rem; }
   #tip .tm { color: var(--accent-warm); font-size: 1rem; }
   #tip .td { color: var(--text-dim); font-size: 0.84rem; margin-top: 4px; line-height: 1.55; }
   #tip .td b { color: #c3cfda; font-weight: 600; }
@@ -336,24 +337,40 @@ function positionTip(el) {
   tip.style.top = (above > 8 ? above : rect.bottom + 8) + "px";
 }
 
+function speak(word) {
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(word);
+    u.lang = "en-US";
+    u.rate = 0.85;
+    const v = speechSynthesis.getVoices().find(v => v.lang === "en-US") ||
+              speechSynthesis.getVoices().find(v => v.lang.startsWith("en"));
+    if (v) u.voice = v;
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices(); // 預先載入語音清單
+
 async function showTip(el) {
   hideTip();
   activeW = el;
   el.classList.add("active");
   const word = el.textContent.replace(/[^A-Za-z'’\-]/g, "");
   if (!word) { hideTip(); return; }
-  tip.innerHTML = `<div class="tw">${esc(word)}</div><div class="td">查詢中…</div>`;
+  speak(word);
+  const spk = `<span class="spk" data-w="${esc(word)}" title="發音">🔊</span>`;
+  tip.innerHTML = `<div class="tw">${esc(word)} ${spk}</div><div class="td">查詢中…</div>`;
   positionTip(el);
   const t = await fetchTrans(word);
   if (activeW !== el) return; // 已被關掉或換字
   if (!t) {
-    tip.innerHTML = `<div class="tw">${esc(word)}</div><div class="td">查詢失敗，請檢查網路</div>`;
+    tip.innerHTML = `<div class="tw">${esc(word)} ${spk}</div><div class="td">查詢失敗，請檢查網路</div>`;
   } else {
     const dictHtml = t.dict.map(d => {
       const pos = POS_ZH[d.pos] || d.pos || "";
       return `<b>${esc(pos)}</b> ${esc(d.terms.join("、"))}`;
     }).join("<br>");
-    tip.innerHTML = `<div class="tw">${esc(word)}</div><div class="tm">${esc(t.main)}</div>` +
+    tip.innerHTML = `<div class="tw">${esc(word)} ${spk}</div><div class="tm">${esc(t.main)}</div>` +
       (dictHtml ? `<div class="td">${dictHtml}</div>` : "");
   }
   positionTip(el);
@@ -369,6 +386,10 @@ document.addEventListener("click", e => {
   if (!w) { if (!tip.contains(e.target)) hideTip(); return; }
   if (w === activeW) { hideTip(); return; }
   showTip(w);
+});
+tip.addEventListener("click", e => {
+  const s = e.target.closest(".spk");
+  if (s) speak(s.dataset.w);
 });
 window.addEventListener("scroll", hideTip, { passive: true });
 
