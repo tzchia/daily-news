@@ -148,7 +148,7 @@
   <a class="nav-btn" id="next-btn">後一天 →</a>
   <select class="nav-btn" id="date-select" title="選擇日期"></select>
 </div>
-<div class="tip-note">💡 長按英文單字可查中文翻譯</div>
+<div class="tip-note">💡 點一下英文單字可查中文翻譯</div>
 <main id="news-container">
   <div class="empty">載入中…</div>
 </main>
@@ -253,7 +253,7 @@ function renderQuiz() {
   }).join("");
   return `<section class="quiz-section">
     <h2>📝 今日重點單字填空</h2>
-    <p class="q-note">從今日新聞挑出 ${QUIZ.length} 個重點單字，把句子補完整（不分大小寫）。長按句中其他單字一樣可以查翻譯。</p>
+    <p class="q-note">從今日新聞挑出 ${QUIZ.length} 個重點單字，把句子補完整（不分大小寫）。點一下句中其他單字一樣可以查翻譯。</p>
     ${items}
     <div class="q-foot"><button id="q-check">全部對答案</button><span id="q-score"></span></div>
   </section>`;
@@ -364,23 +364,11 @@ function hideTip() {
   if (activeW) { activeW.classList.remove("active"); activeW = null; }
 }
 
-let lpTimer = null, lpStart = null;
-document.addEventListener("pointerdown", e => {
+document.addEventListener("click", e => {
   const w = e.target.closest ? e.target.closest(".w") : null;
   if (!w) { if (!tip.contains(e.target)) hideTip(); return; }
-  lpStart = [e.clientX, e.clientY];
-  lpTimer = setTimeout(() => { lpTimer = null; showTip(w); }, 450);
-});
-document.addEventListener("pointermove", e => {
-  if (lpTimer && lpStart &&
-      (Math.abs(e.clientX - lpStart[0]) > 10 || Math.abs(e.clientY - lpStart[1]) > 10)) {
-    clearTimeout(lpTimer); lpTimer = null;
-  }
-});
-["pointerup", "pointercancel"].forEach(ev =>
-  document.addEventListener(ev, () => { if (lpTimer) { clearTimeout(lpTimer); lpTimer = null; } }));
-document.addEventListener("contextmenu", e => {
-  if (e.target.closest && e.target.closest(".w")) e.preventDefault();
+  if (w === activeW) { hideTip(); return; }
+  showTip(w);
 });
 window.addEventListener("scroll", hideTip, { passive: true });
 

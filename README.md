@@ -38,5 +38,5 @@
 
 ## 互動功能
 
-- 長按（或滑鼠長壓）英文單字 → 彈出繁中翻譯（Google Translate 免費端點，MyMemory 備援，localStorage 快取）
+- 點一下（單擊）英文單字 → 彈出繁中翻譯（Google Translate 免費端點，MyMemory 備援，localStorage 快取）；再點同一字或空白處關閉
 - 頁面底部「今日重點單字填空」10 題，取自當日新聞原句，可逐題對答案或一鍵全對
