@@ -133,6 +133,29 @@
   .q-mark { font-size: 0.9rem; }
   .q-foot { display: flex; align-items: center; gap: 14px; margin-top: 14px; }
   #q-score { color: var(--accent-warm); font-size: 0.95rem; }
+  /* ── 答對彈出帕恰狗 ── */
+  #dog {
+    position: fixed; left: 50%; bottom: 14vh; z-index: 200;
+    transform: translateX(-50%);
+    display: none; pointer-events: none; text-align: center;
+  }
+  #dog.show { display: block; animation: dog-pop 3s ease forwards; }
+  #dog svg { animation: dog-bounce 0.5s ease-in-out infinite alternate; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5)); }
+  #dog .ear { transform-box: fill-box; transform-origin: top center; animation: ear-flap 0.5s ease-in-out infinite alternate; }
+  #dog .dog-txt {
+    color: var(--accent-warm); font-weight: 700; font-size: 1.05rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8); margin-top: 2px;
+  }
+  @keyframes dog-pop {
+    0%   { opacity: 0; transform: translateX(-50%) scale(0.3); }
+    10%  { opacity: 1; transform: translateX(-50%) scale(1.12); }
+    16%  { transform: translateX(-50%) scale(1); }
+    85%  { opacity: 1; }
+    100% { opacity: 0; transform: translateX(-50%) scale(1); }
+  }
+  @keyframes dog-bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+  @keyframes ear-flap { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
+
   @media (max-width: 480px) {
     .block h2 { font-size: 1rem; }
     .block p { font-size: 0.9rem; }
@@ -154,6 +177,29 @@
   <div class="empty">載入中…</div>
 </main>
 <div id="tip"></div>
+<div id="dog" aria-hidden="true">
+  <svg width="140" height="150" viewBox="0 0 200 214">
+    <!-- 垂耳（帕恰狗風格） -->
+    <path class="ear" d="M56 44 Q30 36 24 76 Q20 110 42 120 Q56 125 62 108 L64 66 Z" fill="#3d434b"/>
+    <path class="ear" d="M144 44 Q170 36 176 76 Q180 110 158 120 Q144 125 138 108 L136 66 Z" fill="#3d434b"/>
+    <!-- 身體與腳 -->
+    <ellipse cx="100" cy="170" rx="36" ry="27" fill="#fff" stroke="#2b3844" stroke-width="3"/>
+    <ellipse cx="80" cy="196" rx="11" ry="7" fill="#fff" stroke="#2b3844" stroke-width="3"/>
+    <ellipse cx="120" cy="196" rx="11" ry="7" fill="#fff" stroke="#2b3844" stroke-width="3"/>
+    <!-- 頭 -->
+    <ellipse cx="100" cy="88" rx="58" ry="52" fill="#fff" stroke="#2b3844" stroke-width="3"/>
+    <!-- 眼睛 -->
+    <ellipse cx="80" cy="82" rx="5" ry="7" fill="#1c1c1c"/>
+    <ellipse cx="120" cy="82" rx="5" ry="7" fill="#1c1c1c"/>
+    <!-- 鼻子與嘴 -->
+    <ellipse cx="100" cy="99" rx="7" ry="5.5" fill="#1c1c1c"/>
+    <path d="M91 111 Q100 119 109 111" stroke="#1c1c1c" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- 腮紅 -->
+    <ellipse cx="64" cy="101" rx="8" ry="5" fill="#ffb3c1" opacity="0.85"/>
+    <ellipse cx="136" cy="101" rx="8" ry="5" fill="#ffb3c1" opacity="0.85"/>
+  </svg>
+  <div class="dog-txt">答對了！🎉</div>
+</div>
 <footer>
   來源：BBC News / Google News 等公開報導 · 每日 08:00（台北時間）更新<br>
   <a href="https://github.com/tzchia/daily-news">GitHub repo</a>
@@ -260,7 +306,7 @@ function renderQuiz() {
   </section>`;
 }
 
-function checkOne(i) {
+function checkOne(i, quiet) {
   const inp = document.querySelector(`input.blank[data-i="${i}"]`);
   const mark = document.getElementById("qmark-" + i);
   const v = inp.value.trim().toLowerCase();
@@ -269,14 +315,27 @@ function checkOne(i) {
   const ok = v === QUIZ[i].word.toLowerCase();
   inp.classList.add(ok ? "ok" : "bad");
   mark.textContent = ok ? "✅" : "❌";
+  if (ok && !quiet) { speak(QUIZ[i].word); showDog(); }
   return ok;
 }
 
 function checkAll() {
   let good = 0;
-  QUIZ.forEach((q, i) => { if (checkOne(i)) good++; });
+  QUIZ.forEach((q, i) => { if (checkOne(i, true)) good++; });
   document.getElementById("q-score").textContent = `答對 ${good}/${QUIZ.length}`;
+  if (good === QUIZ.length && QUIZ.length) showDog(); // 全對才出現，避免連跳十次
 }
+
+/* ── 帕恰狗動畫（約 3 秒） ── */
+const dog = document.getElementById("dog");
+function showDog() {
+  dog.classList.remove("show");
+  void dog.offsetWidth; // 重置動畫
+  dog.classList.add("show");
+}
+dog.addEventListener("animationend", e => {
+  if (e.animationName === "dog-pop") dog.classList.remove("show");
+});
 
 const container = document.getElementById("news-container");
 container.addEventListener("click", e => {
@@ -287,6 +346,7 @@ container.addEventListener("click", e => {
     inp.classList.remove("ok", "bad");
     inp.classList.add("revealed");
     document.getElementById("qmark-" + i).textContent = "👁";
+    speak(QUIZ[i].word); // 顯示答案同時念出來
   }
   if (e.target.id === "q-check") checkAll();
 });
