@@ -140,8 +140,7 @@
     display: none; pointer-events: none; text-align: center;
   }
   #dog.show { display: block; animation: dog-pop 3s ease forwards; }
-  #dog svg { animation: dog-bounce 0.5s ease-in-out infinite alternate; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5)); }
-  #dog .ear { transform-box: fill-box; transform-origin: top center; animation: ear-flap 0.5s ease-in-out infinite alternate; }
+  #dog img { display: block; margin: 0 auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5)); }
   #dog .dog-txt {
     color: var(--accent-warm); font-weight: 700; font-size: 1.05rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.8); margin-top: 2px;
@@ -153,8 +152,6 @@
     85%  { opacity: 1; }
     100% { opacity: 0; transform: translateX(-50%) scale(1); }
   }
-  @keyframes dog-bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
-  @keyframes ear-flap { from { transform: rotate(-6deg); } to { transform: rotate(6deg); } }
 
   @media (max-width: 480px) {
     .block h2 { font-size: 1rem; }
@@ -178,26 +175,7 @@
 </main>
 <div id="tip"></div>
 <div id="dog" aria-hidden="true">
-  <svg width="140" height="150" viewBox="0 0 200 214">
-    <!-- 垂耳（帕恰狗風格） -->
-    <path class="ear" d="M56 44 Q30 36 24 76 Q20 110 42 120 Q56 125 62 108 L64 66 Z" fill="#3d434b"/>
-    <path class="ear" d="M144 44 Q170 36 176 76 Q180 110 158 120 Q144 125 138 108 L136 66 Z" fill="#3d434b"/>
-    <!-- 身體與腳 -->
-    <ellipse cx="100" cy="170" rx="36" ry="27" fill="#fff" stroke="#2b3844" stroke-width="3"/>
-    <ellipse cx="80" cy="196" rx="11" ry="7" fill="#fff" stroke="#2b3844" stroke-width="3"/>
-    <ellipse cx="120" cy="196" rx="11" ry="7" fill="#fff" stroke="#2b3844" stroke-width="3"/>
-    <!-- 頭 -->
-    <ellipse cx="100" cy="88" rx="58" ry="52" fill="#fff" stroke="#2b3844" stroke-width="3"/>
-    <!-- 眼睛 -->
-    <ellipse cx="80" cy="82" rx="5" ry="7" fill="#1c1c1c"/>
-    <ellipse cx="120" cy="82" rx="5" ry="7" fill="#1c1c1c"/>
-    <!-- 鼻子與嘴 -->
-    <ellipse cx="100" cy="99" rx="7" ry="5.5" fill="#1c1c1c"/>
-    <path d="M91 111 Q100 119 109 111" stroke="#1c1c1c" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <!-- 腮紅 -->
-    <ellipse cx="64" cy="101" rx="8" ry="5" fill="#ffb3c1" opacity="0.85"/>
-    <ellipse cx="136" cy="101" rx="8" ry="5" fill="#ffb3c1" opacity="0.85"/>
-  </svg>
+  <img src="assets/pochacco.gif" alt="帕恰狗" width="150" height="150">
   <div class="dog-txt">答對了！🎉</div>
 </div>
 <footer>
