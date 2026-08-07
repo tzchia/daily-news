@@ -23,11 +23,17 @@
             1
           ],
           [
-            1
+            2
           ],
           [
-            2
+            3
           ]
+        ],
+        "summary_segs": [
+          "Ukraine struck two oil refineries deep inside Russian territory,",
+          "with President Zelensky saying",
+          "the strikes aim to limit the revenues Russia uses to finance its war.",
+          "The long-range attacks underline Kyiv's strategy of degrading Russia's energy income as fighting continues."
         ]
       }
     },
@@ -51,14 +57,23 @@
           ],
           [
             1,
-            2
+            2,
+            4
           ],
           [
             3
           ],
           [
-            4
+            5
           ]
+        ],
+        "summary_segs": [
+          "A New Mexico judge ordered Meta,",
+          "the parent company of Instagram,",
+          "Facebook and WhatsApp,",
+          "to pay another $567 million",
+          "over the way its platforms have harmed children.",
+          "It is the largest child-safety ruling ever imposed on a social media company."
         ]
       }
     },
@@ -124,8 +139,16 @@
             4
           ],
           [
-            4
+            5
           ]
+        ],
+        "summary_segs": [
+          "Seedings for the BWF World Championships in New Delhi were confirmed,",
+          "with defending champion Shi Yu Qi leading the men's singles draw.",
+          "India's PV Sindhu is seeded 9th,",
+          "while doubles pair Satwiksairaj Rankireddy and Chirag Shetty received the 5th seeding.",
+          "Organisers say",
+          "the fully renovated IGI Stadium is ready to host the event."
         ]
       }
     }

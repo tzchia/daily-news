@@ -235,14 +235,24 @@ function mapIdx(i, zhN, enN) {
   if (zhN <= 1) return 0;
   return Math.min(enN - 1, Math.round(i * (enN - 1) / (zhN - 1)));
 }
-function alignedEn(text) {
-  return splitEn(text).map((s, i) =>
+// en_segs：JSON 可自帶英文自訂切分（處理無標點可切的長子句，例如
+// "to pay another $567 million | over the way its platforms have harmed children."）。
+// 驗證：所有片段去空白後串起來須等於原文，否則退回標點切分。
+function enSegs(text, segs) {
+  if (Array.isArray(segs) && segs.length &&
+      segs.join("").replace(/\s+/g, "") === String(text).replace(/\s+/g, "")) {
+    return segs;
+  }
+  return splitEn(text);
+}
+function alignedEn(text, segs) {
+  return enSegs(text, segs).map((s, i) =>
     `<span class="esen" data-s="${i}">${wrapWords(s)}</span>`).join(" ");
 }
 // align：JSON 內的人工/LLM 語意配對表（每個中文子句 → 英文子句索引陣列）。
 // 長度不符或索引越界時自動退回規則對齊，避免資料 drift 弄壞頁面。
-function alignedZh(text, enText, align) {
-  const enN = splitEn(enText).length;
+function alignedZh(text, enText, align, segs) {
+  const enN = enSegs(enText, segs).length;
   const zh = splitZh(text);
   const hasAlign = Array.isArray(align) && align.length === zh.length;
   return zh.map((s, i) => {
@@ -298,12 +308,12 @@ async function loadDay() {
       return `<article class="news-card">
         <div class="card-head"><span class="cat-badge">${emoji} ${esc(item.category)}</span></div>
         <div class="block en">
-          <h2 data-f="t">${alignedEn(item.title_en)}</h2>
-          <p data-f="s">${alignedEn(item.summary_en)}</p>
+          <h2 data-f="t">${alignedEn(item.title_en, item.align && item.align.title_segs)}</h2>
+          <p data-f="s">${alignedEn(item.summary_en, item.align && item.align.summary_segs)}</p>
         </div>
         <div class="block zh">
-          <h2 data-f="t">${alignedZh(item.title_zh, item.title_en, item.align && item.align.title)}</h2>
-          <p data-f="s">${alignedZh(item.summary_zh, item.summary_en, item.align && item.align.summary)}</p>
+          <h2 data-f="t">${alignedZh(item.title_zh, item.title_en, item.align && item.align.title, item.align && item.align.title_segs)}</h2>
+          <p data-f="s">${alignedZh(item.summary_zh, item.summary_en, item.align && item.align.summary, item.align && item.align.summary_segs)}</p>
         </div>
         <div class="card-foot">🔗 <a href="${item.url}" target="_blank" rel="noopener">${esc(item.source || item.url)}</a></div>
       </article>`;
