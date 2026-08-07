@@ -239,11 +239,21 @@ function alignedEn(text) {
   return splitEn(text).map((s, i) =>
     `<span class="esen" data-s="${i}">${wrapWords(s)}</span>`).join(" ");
 }
-function alignedZh(text, enText) {
+// align：JSON 內的人工/LLM 語意配對表（每個中文子句 → 英文子句索引陣列）。
+// 長度不符或索引越界時自動退回規則對齊，避免資料 drift 弄壞頁面。
+function alignedZh(text, enText, align) {
   const enN = splitEn(enText).length;
   const zh = splitZh(text);
-  return zh.map((s, i) =>
-    `<span class="zsen" data-s="${mapIdx(i, zh.length, enN)}" title="點我看對應英文">${esc(s)}</span>`).join("");
+  const hasAlign = Array.isArray(align) && align.length === zh.length;
+  return zh.map((s, i) => {
+    let idx = null;
+    if (hasAlign) {
+      const a = Array.isArray(align[i]) ? align[i] : [align[i]];
+      idx = a.filter(n => Number.isInteger(n) && n >= 0 && n < enN);
+    }
+    if (!idx || !idx.length) idx = [mapIdx(i, zh.length, enN)];
+    return `<span class="zsen" data-s="${idx.join(",")}" title="點我看對應英文">${esc(s)}</span>`;
+  }).join("");
 }
 
 async function loadIndex() {
@@ -292,8 +302,8 @@ async function loadDay() {
           <p data-f="s">${alignedEn(item.summary_en)}</p>
         </div>
         <div class="block zh">
-          <h2 data-f="t">${alignedZh(item.title_zh, item.title_en)}</h2>
-          <p data-f="s">${alignedZh(item.summary_zh, item.summary_en)}</p>
+          <h2 data-f="t">${alignedZh(item.title_zh, item.title_en, item.align && item.align.title)}</h2>
+          <p data-f="s">${alignedZh(item.summary_zh, item.summary_en, item.align && item.align.summary)}</p>
         </div>
         <div class="card-foot">🔗 <a href="${item.url}" target="_blank" rel="noopener">${esc(item.source || item.url)}</a></div>
       </article>`;
@@ -399,13 +409,15 @@ container.addEventListener("click", e => {
   if (wasSel) return; // 再點一次同句 = 取消
   const card = z.closest(".news-card");
   const f = z.closest("[data-f]").dataset.f;
-  const en = card.querySelector(`.block.en [data-f="${f}"] .esen[data-s="${z.dataset.s}"]`);
-  if (!en) return;
+  const targets = z.dataset.s.split(",")
+    .map(s => card.querySelector(`.block.en [data-f="${f}"] .esen[data-s="${s.trim()}"]`))
+    .filter(Boolean);
+  if (!targets.length) return;
   z.classList.add("sel");
-  en.classList.add("hl");
-  const r = en.getBoundingClientRect();
+  targets.forEach(t => t.classList.add("hl"));
+  const r = targets[0].getBoundingClientRect();
   if (r.top < 0 || r.bottom > window.innerHeight) {
-    en.scrollIntoView({ behavior: "smooth", block: "center" });
+    targets[0].scrollIntoView({ behavior: "smooth", block: "center" });
   }
   hlTimer = setTimeout(clearSenHl, 8000);
 });

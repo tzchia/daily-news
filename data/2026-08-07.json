@@ -8,7 +8,28 @@
       "title_zh": "烏克蘭深入俄境打擊兩座煉油廠",
       "summary_zh": "烏克蘭對俄羅斯境內縱深地帶的兩座煉油廠發動攻擊。總統澤倫斯基表示，此類打擊旨在限制俄羅斯用於支應戰爭的收入。這波遠程攻擊突顯基輔持續削弱俄羅斯能源財源的戰略。",
       "url": "https://www.bbc.co.uk/news/articles/cwymv212xrxo",
-      "source": "BBC News"
+      "source": "BBC News",
+      "align": {
+        "title": [
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      }
     },
     {
       "category": "世界",
@@ -17,7 +38,29 @@
       "title_zh": "Meta 遭罰 5.67 億美元 創社群平台兒少安全裁罰最高紀錄",
       "summary_zh": "美國新墨西哥州法官裁定，Instagram、Facebook 與 WhatsApp 母公司 Meta 因平台危害兒童，須再支付 5.67 億美元罰款，成為社群媒體公司有史以來金額最高的兒少安全裁罰。",
       "url": "https://www.bbc.co.uk/news/articles/cd7lz3wr2rlo",
-      "source": "BBC News"
+      "source": "BBC News",
+      "align": {
+        "title": [
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      }
     },
     {
       "category": "科技/財經",
@@ -26,7 +69,28 @@
       "title_zh": "川普對關鍵晶片原料課徵 15% 關稅 劍指中國",
       "summary_zh": "美國總統川普宣布對多晶矽課徵 15% 關稅。多晶矽是半導體與太陽能板的關鍵原料，而中國生產商在全球多晶矽供應中近乎壟斷。此舉為美中科技供應鏈再添新的摩擦。",
       "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo",
-      "source": "BBC News"
+      "source": "BBC News",
+      "align": {
+        "title": [
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
     },
     {
       "category": "羽球",
@@ -35,7 +99,35 @@
       "title_zh": "世錦賽種子名單出爐 石宇奇領銜男單 辛度列第 9 種子",
       "summary_zh": "新德里 BWF 世界羽球錦標賽種子名單確認，衛冕冠軍石宇奇位居男單頭號種子；印度名將辛度列第 9 種子，男雙組合蘭基雷迪／謝提獲第 5 種子。主辦單位表示，全面整修後的 IGI 體育館已準備就緒。",
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNTGh0dE9RNDRGbGtzRmc2ekFGZDk1U3lfTFk4Z3h2SXFmQUZnc3NEX3g2T",
-      "source": "News On AIR"
+      "source": "News On AIR",
+      "align": {
+        "title": [
+          [
+            0,
+            1
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ]
+        ]
+      }
     }
   ],
   "quiz": [
