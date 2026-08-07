@@ -310,7 +310,7 @@ function checkAll() {
   QUIZ.forEach((q, i) => { const r = checkOne(i, true); if (r !== null) answered++; if (r) good++; });
   document.getElementById("q-score").textContent = `答對 ${good}/${QUIZ.length}`;
   if (!answered) return; // 全部空白就不彈
-  if (good === QUIZ.length) showDog(); else showPop(chi); // 全對帕恰狗（依題數升級），否則吉娃娃
+  if (good > 0) showDog(); else showPop(chi); // 有答對就出帕恰狗（依累積答對數換裝），全錯才出吉娃娃
 }
 
 /* ── 答題彈出動畫（約 3 秒）：答對帕恰狗（依累積答對數升級）、答錯變種吉娃娃 ── */
@@ -318,11 +318,12 @@ const dog = document.getElementById("dog");
 const chi = document.getElementById("chi");
 const dogImg = document.getElementById("dog-img");
 const dogTxt = document.getElementById("dog-txt");
-/* 累積答對 1–3 題：經典帕恰狗；4–6 題：跳舞帕恰狗；7 題以上：歡樂搖擺 */
+/* 累積答對 1–3 題：紅衣帕恰狗；4–6：綠衣；7–9：黃衣開心；10 全對：騎耀西 */
 const DOG_TIERS = [
-  { min: 7, src: "assets/pochacco-party.webp", txt: "太強了！🎊🎉" },
-  { min: 4, src: "assets/pochacco-dance.webp", txt: "答對了！🕺🎉" },
-  { min: 1, src: "assets/pochacco.gif",        txt: "答對了！🎉" }
+  { min: 10, src: "assets/pochacco-yoshi.webp",  txt: "全對！帕恰狗騎耀西出動！🏆" },
+  { min: 7,  src: "assets/pochacco-yellow.webp", txt: "太強了！🎊🎉" },
+  { min: 4,  src: "assets/pochacco-green.webp",  txt: "答對了！讚讚 👍" },
+  { min: 1,  src: "assets/pochacco.gif",         txt: "答對了！🎉" }
 ];
 function countGood() { return document.querySelectorAll("input.blank.ok").length; }
 function showDog() {
