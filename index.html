@@ -224,15 +224,16 @@ function wrapWords(s) {
     m => m[0] === "&" ? m : `<span class="w">${m}</span>`);
 }
 
-/* ── 中英句子切分與對齊（點中文句子高亮對應英文） ── */
+/* ── 中英句子切分與對齊（點中文句子高亮對應英文；逗點也算一個斷句） ── */
 let EN_SPLIT = null;
-try { EN_SPLIT = new RegExp("(?<=[^A-Z][.!?])\\s+(?=[A-Z\"\u201C\u2018('])"); } catch (e) {} // 舊瀏覽器不支援 lookbehind 就整段當一句
+try { EN_SPLIT = new RegExp("(?<=[^A-Z][.!?])\\s+(?=[A-Z\"\u201C\u2018('])|(?<=[,;])\\s+"); } catch (e) {} // 舊瀏覽器不支援 lookbehind 就整段當一句
 function splitEn(s) { return EN_SPLIT ? String(s).split(EN_SPLIT) : [String(s)]; }
-function splitZh(s) { return String(s).match(/[^。！？]+[。！？]*/g) || [String(s)]; }
-// 中文第 i 句對應英文第幾句：句數相同 1:1，否則按比例對應
+function splitZh(s) { return String(s).match(/[^。！？，；]+[。！？，；]*/g) || [String(s)]; }
+// 中文第 i 句對應英文第幾句：句數相同 1:1，否則頭尾錨定線性插值
 function mapIdx(i, zhN, enN) {
   if (zhN === enN) return i;
-  return Math.min(enN - 1, Math.floor(i * enN / zhN));
+  if (zhN <= 1) return 0;
+  return Math.min(enN - 1, Math.round(i * (enN - 1) / (zhN - 1)));
 }
 function alignedEn(text) {
   return splitEn(text).map((s, i) =>
