@@ -409,11 +409,17 @@ container.addEventListener("click", e => {
   if (wasSel) return; // 再點一次同句 = 取消
   const card = z.closest(".news-card");
   const f = z.closest("[data-f]").dataset.f;
-  const targets = z.dataset.s.split(",")
-    .map(s => card.querySelector(`.block.en [data-f="${f}"] .esen[data-s="${s.trim()}"]`))
+  const ids = z.dataset.s.split(",").map(s => s.trim());
+  const targets = ids
+    .map(s => card.querySelector(`.block.en [data-f="${f}"] .esen[data-s="${s}"]`))
     .filter(Boolean);
   if (!targets.length) return;
-  z.classList.add("sel");
+  // 中文側：凡與點擊句共享任一英文句的半句一起選取，
+  // 讓兩側高亮範圍對稱（中文常把一句英文拆成多個半句）
+  card.querySelectorAll(`.block.zh [data-f="${f}"] .zsen`).forEach(x => {
+    const xs = x.dataset.s.split(",").map(s => s.trim());
+    if (xs.some(s => ids.includes(s))) x.classList.add("sel");
+  });
   targets.forEach(t => t.classList.add("hl"));
   const r = targets[0].getBoundingClientRect();
   if (r.top < 0 || r.bottom > window.innerHeight) {
