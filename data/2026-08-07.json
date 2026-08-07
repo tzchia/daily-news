@@ -1,0 +1,93 @@
+{
+  "date": "2026-08-07",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Ukraine hits two oil refineries deep in Russian territory",
+      "summary_en": "Ukraine struck two oil refineries deep inside Russian territory, with President Zelensky saying the strikes aim to limit the revenues Russia uses to finance its war. The long-range attacks underline Kyiv's strategy of degrading Russia's energy income as fighting continues.",
+      "title_zh": "烏克蘭深入俄境打擊兩座煉油廠",
+      "summary_zh": "烏克蘭對俄羅斯境內縱深地帶的兩座煉油廠發動攻擊。總統澤倫斯基表示，此類打擊旨在限制俄羅斯用於支應戰爭的收入。這波遠程攻擊突顯基輔持續削弱俄羅斯能源財源的戰略。",
+      "url": "https://www.bbc.co.uk/news/articles/cwymv212xrxo",
+      "source": "BBC News"
+    },
+    {
+      "category": "世界",
+      "title_en": "Meta fined $567m in largest child safety ruling against social media giant",
+      "summary_en": "A New Mexico judge ordered Meta, the parent company of Instagram, Facebook and WhatsApp, to pay another $567 million over the way its platforms have harmed children. It is the largest child-safety ruling ever imposed on a social media company.",
+      "title_zh": "Meta 遭罰 5.67 億美元 創社群平台兒少安全裁罰最高紀錄",
+      "summary_zh": "美國新墨西哥州法官裁定，Instagram、Facebook 與 WhatsApp 母公司 Meta 因平台危害兒童，須再支付 5.67 億美元罰款，成為社群媒體公司有史以來金額最高的兒少安全裁罰。",
+      "url": "https://www.bbc.co.uk/news/articles/cd7lz3wr2rlo",
+      "source": "BBC News"
+    },
+    {
+      "category": "科技/財經",
+      "title_en": "Trump imposes 15% tariff on key chip material to counter China",
+      "summary_en": "President Trump imposed a 15% tariff on polysilicon, a key material for semiconductors and solar panels, aiming to counter Chinese producers who hold a near monopoly on global polysilicon production. The move adds fresh friction to the tech supply chain between the two powers.",
+      "title_zh": "川普對關鍵晶片原料課徵 15% 關稅 劍指中國",
+      "summary_zh": "美國總統川普宣布對多晶矽課徵 15% 關稅。多晶矽是半導體與太陽能板的關鍵原料，而中國生產商在全球多晶矽供應中近乎壟斷。此舉為美中科技供應鏈再添新的摩擦。",
+      "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo",
+      "source": "BBC News"
+    },
+    {
+      "category": "羽球",
+      "title_en": "BWF World Championships seedings out: Shi Yu Qi tops men's singles, Sindhu seeded 9th",
+      "summary_en": "Seedings for the BWF World Championships in New Delhi were confirmed, with defending champion Shi Yu Qi leading the men's singles draw. India's PV Sindhu is seeded 9th, while doubles pair Satwiksairaj Rankireddy and Chirag Shetty received the 5th seeding. Organisers say the fully renovated IGI Stadium is ready to host the event.",
+      "title_zh": "世錦賽種子名單出爐 石宇奇領銜男單 辛度列第 9 種子",
+      "summary_zh": "新德里 BWF 世界羽球錦標賽種子名單確認，衛冕冠軍石宇奇位居男單頭號種子；印度名將辛度列第 9 種子，男雙組合蘭基雷迪／謝提獲第 5 種子。主辦單位表示，全面整修後的 IGI 體育館已準備就緒。",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNTGh0dE9RNDRGbGtzRmc2ekFGZDk1U3lfTFk4Z3h2SXFmQUZnc3NEX3g2T",
+      "source": "News On AIR"
+    }
+  ],
+  "quiz": [
+    {
+      "word": "refineries",
+      "sentence": "Ukraine struck two oil ____ deep inside Russian territory to limit Russia's war revenues.",
+      "hint_zh": "名詞（複數）：煉油廠"
+    },
+    {
+      "word": "revenues",
+      "sentence": "President Zelensky said the strikes aim to limit the ____ Russia uses to finance its war.",
+      "hint_zh": "名詞（複數）：收入、財源"
+    },
+    {
+      "word": "degrading",
+      "sentence": "The long-range attacks underline Kyiv's strategy of ____ Russia's energy income.",
+      "hint_zh": "動詞（現在分詞）：削弱、降低"
+    },
+    {
+      "word": "ruling",
+      "sentence": "It is the largest child-safety ____ ever imposed on a social media company.",
+      "hint_zh": "名詞：裁決、裁定"
+    },
+    {
+      "word": "platforms",
+      "sentence": "Meta was ordered to pay $567 million over the way its ____ have harmed children.",
+      "hint_zh": "名詞（複數）：平台"
+    },
+    {
+      "word": "tariff",
+      "sentence": "President Trump imposed a 15% ____ on polysilicon, a key material for semiconductors.",
+      "hint_zh": "名詞：關稅"
+    },
+    {
+      "word": "monopoly",
+      "sentence": "Chinese producers hold a near ____ on global polysilicon production.",
+      "hint_zh": "名詞：壟斷"
+    },
+    {
+      "word": "friction",
+      "sentence": "The move adds fresh ____ to the tech supply chain between the two powers.",
+      "hint_zh": "名詞：摩擦"
+    },
+    {
+      "word": "defending",
+      "sentence": "____ champion Shi Yu Qi leads the men's singles draw in New Delhi.",
+      "hint_zh": "形容詞（現在分詞）：衛冕的"
+    },
+    {
+      "word": "renovated",
+      "sentence": "Organisers say the fully ____ IGI Stadium is ready to host the event.",
+      "hint_zh": "動詞（過去分詞）：整修、翻新"
+    }
+  ]
+}
