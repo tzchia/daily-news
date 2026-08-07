@@ -73,6 +73,20 @@
   .block.zh h2 { color: var(--accent-warm); }
   .block p { font-size: 0.95rem; color: var(--text-dim); }
   .block.zh p { color: #c3cfda; }
+
+  /* ── 中英句子對照高亮 ── */
+  .zsen {
+    cursor: pointer; border-radius: 4px;
+    padding: 1px 2px; margin: -1px -2px;
+    transition: background 0.15s;
+  }
+  .zsen:hover { background: rgba(255,183,77,0.12); }
+  .zsen.sel { background: rgba(255,183,77,0.24); }
+  .esen { border-radius: 4px; transition: background 0.25s, box-shadow 0.25s; }
+  .esen.hl {
+    background: rgba(79,195,247,0.22);
+    box-shadow: 0 0 0 3px rgba(79,195,247,0.22);
+  }
   .card-foot { padding: 10px 18px 14px; background: var(--zh-bg); }
   .card-foot a { color: var(--accent); font-size: 0.88rem; text-decoration: none; word-break: break-all; }
   .card-foot a:hover { text-decoration: underline; }
@@ -173,7 +187,7 @@
   <a class="nav-btn" id="next-btn">後一天 →</a>
   <select class="nav-btn" id="date-select" title="選擇日期"></select>
 </div>
-<div class="tip-note">💡 點一下英文單字可查中文翻譯</div>
+<div class="tip-note">💡 點英文單字查翻譯 · 點中文句子高亮對應英文</div>
 <main id="news-container">
   <div class="empty">載入中…</div>
 </main>
@@ -206,6 +220,27 @@ function esc(s) {
 function wrapWords(s) {
   return esc(s).replace(/&[a-zA-Z]+;|[A-Za-z][A-Za-z'’\-]*/g,
     m => m[0] === "&" ? m : `<span class="w">${m}</span>`);
+}
+
+/* ── 中英句子切分與對齊（點中文句子高亮對應英文） ── */
+let EN_SPLIT = null;
+try { EN_SPLIT = new RegExp("(?<=[^A-Z][.!?])\\s+(?=[A-Z\"\u201C\u2018('])"); } catch (e) {} // 舊瀏覽器不支援 lookbehind 就整段當一句
+function splitEn(s) { return EN_SPLIT ? String(s).split(EN_SPLIT) : [String(s)]; }
+function splitZh(s) { return String(s).match(/[^。！？]+[。！？]*/g) || [String(s)]; }
+// 中文第 i 句對應英文第幾句：句數相同 1:1，否則按比例對應
+function mapIdx(i, zhN, enN) {
+  if (zhN === enN) return i;
+  return Math.min(enN - 1, Math.floor(i * enN / zhN));
+}
+function alignedEn(text) {
+  return splitEn(text).map((s, i) =>
+    `<span class="esen" data-s="${i}">${wrapWords(s)}</span>`).join(" ");
+}
+function alignedZh(text, enText) {
+  const enN = splitEn(enText).length;
+  const zh = splitZh(text);
+  return zh.map((s, i) =>
+    `<span class="zsen" data-s="${mapIdx(i, zh.length, enN)}" title="點我看對應英文">${esc(s)}</span>`).join("");
 }
 
 async function loadIndex() {
@@ -250,12 +285,12 @@ async function loadDay() {
       return `<article class="news-card">
         <div class="card-head"><span class="cat-badge">${emoji} ${esc(item.category)}</span></div>
         <div class="block en">
-          <h2>${wrapWords(item.title_en)}</h2>
-          <p>${wrapWords(item.summary_en)}</p>
+          <h2 data-f="t">${alignedEn(item.title_en)}</h2>
+          <p data-f="s">${alignedEn(item.summary_en)}</p>
         </div>
         <div class="block zh">
-          <h2>${esc(item.title_zh)}</h2>
-          <p>${esc(item.summary_zh)}</p>
+          <h2 data-f="t">${alignedZh(item.title_zh, item.title_en)}</h2>
+          <p data-f="s">${alignedZh(item.summary_zh, item.summary_en)}</p>
         </div>
         <div class="card-foot">🔗 <a href="${item.url}" target="_blank" rel="noopener">${esc(item.source || item.url)}</a></div>
       </article>`;
@@ -345,6 +380,33 @@ function showPop(el) {
 }));
 
 const container = document.getElementById("news-container");
+
+/* ── 點中文句子 → 高亮對應英文句 ── */
+let hlTimer = null;
+function clearSenHl() {
+  document.querySelectorAll(".esen.hl").forEach(x => x.classList.remove("hl"));
+  document.querySelectorAll(".zsen.sel").forEach(x => x.classList.remove("sel"));
+  if (hlTimer) { clearTimeout(hlTimer); hlTimer = null; }
+}
+container.addEventListener("click", e => {
+  const z = e.target.closest ? e.target.closest(".zsen") : null;
+  if (!z) return;
+  const wasSel = z.classList.contains("sel");
+  clearSenHl();
+  if (wasSel) return; // 再點一次同句 = 取消
+  const card = z.closest(".news-card");
+  const f = z.closest("[data-f]").dataset.f;
+  const en = card.querySelector(`.block.en [data-f="${f}"] .esen[data-s="${z.dataset.s}"]`);
+  if (!en) return;
+  z.classList.add("sel");
+  en.classList.add("hl");
+  const r = en.getBoundingClientRect();
+  if (r.top < 0 || r.bottom > window.innerHeight) {
+    en.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  hlTimer = setTimeout(clearSenHl, 8000);
+});
+
 container.addEventListener("click", e => {
   if (e.target.classList.contains("q-reveal")) {
     const i = +e.target.dataset.i;
