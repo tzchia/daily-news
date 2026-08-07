@@ -142,6 +142,7 @@
   #dog.show, #chi.show { display: block; animation: dog-pop 3s ease forwards; }
   #dog img, #chi img { display: block; margin: 0 auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.5)); }
   #dog img { width: 150px; height: auto; }
+  #dog img.card { border-radius: 14px; border: 1px solid var(--border); }
   #chi img { width: 160px; height: auto; border-radius: 14px; border: 1px solid var(--border); }
   #dog .dog-txt, #chi .dog-txt {
     color: var(--accent-warm); font-weight: 700; font-size: 1.05rem;
@@ -318,10 +319,10 @@ const dog = document.getElementById("dog");
 const chi = document.getElementById("chi");
 const dogImg = document.getElementById("dog-img");
 const dogTxt = document.getElementById("dog-txt");
-/* 累積答對 1–3 題：紅衣帕恰狗；4–6：綠衣；7–9：黃衣開心；10 全對：騎耀西 */
+/* 累積答對 1–3 題：紅衣帕恰狗；4–6：綠衣比讚；7–9：撅屁股回眸；10 全對：騎耀西 */
 const DOG_TIERS = [
   { min: 10, src: "assets/pochacco-yoshi.webp",  txt: "全對！帕恰狗騎耀西出動！🏆" },
-  { min: 7,  src: "assets/pochacco-yellow.webp", txt: "太強了！🎊🎉" },
+  { min: 7,  src: "assets/pochacco-peek.gif",   txt: "太強了！🎊🎉", card: true },
   { min: 4,  src: "assets/pochacco-green.webp",  txt: "答對了！讚讚 👍" },
   { min: 1,  src: "assets/pochacco.gif",         txt: "答對了！🎉" }
 ];
@@ -330,6 +331,7 @@ function showDog() {
   const n = countGood();
   const tier = DOG_TIERS.find(t => n >= t.min) || DOG_TIERS[DOG_TIERS.length - 1];
   if (dogImg.getAttribute("src") !== tier.src) dogImg.src = tier.src;
+  dogImg.classList.toggle("card", !!tier.card); // 白底圖用圓角卡片樣式
   dogTxt.textContent = tier.txt;
   showPop(dog);
 }
