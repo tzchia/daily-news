@@ -78,11 +78,13 @@
   .zsen {
     cursor: pointer; border-radius: 4px;
     padding: 1px 2px; margin: -1px -2px;
-    transition: background 0.15s;
+    transition: background 0.15s, color 0.15s;
   }
   .zsen:hover { background: rgba(255,183,77,0.12); }
-  .zsen.sel { background: rgba(255,183,77,0.24); }
+  /* 點到的中文句：不加底色標註，改用更亮的文字顏色指示 */
+  .zsen.sel { background: none; color: #ffe082; text-shadow: 0 0 12px rgba(255,224,130,0.35); }
   .esen { border-radius: 4px; transition: background 0.25s, box-shadow 0.25s; }
+  /* 唯一帶底色標註的斷句：對應的英文句 */
   .esen.hl {
     background: rgba(79,195,247,0.22);
     box-shadow: 0 0 0 3px rgba(79,195,247,0.22);
