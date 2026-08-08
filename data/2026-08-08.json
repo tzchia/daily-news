@@ -1,0 +1,93 @@
+{
+  "date": "2026-08-08",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Saudi Arabia, Turkey and Pakistan sign defence pact",
+      "summary_en": "Saudi Arabia, Turkey and Pakistan have signed a joint defence agreement in Mecca, stipulating that an armed attack on any one of the three states shall be regarded as an attack against them all. The pact aims to strengthen collective deterrence against aggression, though it provides no specifics on each party's obligations. The deal has drawn a sharp reaction from Tehran.",
+      "title_zh": "沙烏地阿拉伯、土耳其與巴基斯坦簽署聯合防禦協定",
+      "summary_zh": "沙烏地阿拉伯、土耳其與巴基斯坦於麥加簽署聯合防禦協定，明定對三國中任何一國的武裝攻擊，都將被視為對三國全體的攻擊。該協定旨在強化對侵略行為的集體嚇阻，但未具體說明各方的義務，並已引發德黑蘭方面的強烈反應。",
+      "url": "https://www.bbc.co.uk/news/articles/c30418m4mj4o",
+      "source": "BBC News"
+    },
+    {
+      "category": "世界",
+      "title_en": "Thai PM vows to introduce stricter gun laws after eight killed in shooting",
+      "summary_en": "Thailand's prime minister has vowed to introduce stricter gun control laws after a 14-year-old killed his grandparents and five teachers at a school near Bangkok, leaving eight people dead and 22 injured. The new legislation would restrict the carrying of firearms in public, allowing only government officials on duty to carry guns.",
+      "title_zh": "泰國校園槍擊案八死 總理誓言推動更嚴格槍枝管制",
+      "summary_zh": "泰國曼谷近郊一名 14 歲少年槍殺祖父母及五名學校教師，造成八人死亡、22 人受傷，總理阿努廷誓言推動更嚴格的槍枝管制法。新法將限制在公共場所攜帶槍枝，僅允許執勤中的政府官員持槍。",
+      "url": "https://www.bbc.co.uk/news/articles/cdewx6rew04o",
+      "source": "BBC News"
+    },
+    {
+      "category": "科技/財經",
+      "title_en": "Meta fined $567m in largest child safety ruling against social media giant",
+      "summary_en": "A US judge in New Mexico has ordered Meta to pay another $567m for its failure to warn the public about dangers its platforms posed to children, marking the largest fine against the company over child safety. The ruling brings Meta's total fines in the case to $942m, and the judge called the company a 'public nuisance' akin to air pollution. Meta says it disagrees with the ruling and will appeal.",
+      "title_zh": "Meta 因兒童安全問題再遭罰 5.67 億美元 創社群巨頭最高罰款紀錄",
+      "summary_zh": "美國新墨西哥州法官裁定 Meta 須再支付 5.67 億美元罰款，理由是未能警告大眾其平台對兒童構成的危害，為該公司在兒童安全議題上遭受的最高額罰款。此案罰款總額達 9.42 億美元，法官形容 Meta 是猶如空氣污染的「公共危害」。Meta 表示不服判決並將提出上訴。",
+      "url": "https://www.bbc.co.uk/news/articles/cd7lz3wr2rlo",
+      "source": "BBC News"
+    },
+    {
+      "category": "羽球",
+      "title_en": "Korea Masters badminton: Ashmita stuns top seed to set up all-Indian semi-final",
+      "summary_en": "India's Ashmita Chaliha stunned top seed Hina Akechi of Japan 20-22, 21-15, 21-19 to reach the women's singles semi-finals at the BWF Korea Masters Super 300. She will face compatriot Rakshitha Sree, who overcame Chinese Taipei Open champion Tanvi Sharma, in an all-Indian semi-final, with the winner set to challenge Han Qian Xi or Kim Ga Ram.",
+      "title_zh": "韓國羽球大師賽：印度女單會師四強 Chaliha 爆冷擊敗頭號種子",
+      "summary_zh": "印度好手 Ashmita Chaliha 以 20-22、21-15、21-19 爆冷擊敗日本頭號種子 Hina Akechi，晉級 BWF 韓國大師賽（超級 300）女單四強。她將與擊敗中華台北公開賽冠軍 Tanvi Sharma 的同胞 Rakshitha Sree 上演全印度準決賽，勝者將對上 Han Qian Xi 或 Kim Ga Ram。",
+      "url": "https://www.deccanherald.com/sports/badminton/korea-masters-badminton-ashmita-and-rakshitha-set-up-all-indian-semifinal-4102891",
+      "source": "Deccan Herald"
+    }
+  ],
+  "quiz": [
+    {
+      "word": "stipulating",
+      "sentence": "Saudi Arabia, Turkey and Pakistan have signed a joint defence agreement in Mecca, ____ that an armed attack on any one of the three states shall be regarded as an attack against them all.",
+      "hint_zh": "動詞（現在分詞）：明文規定、載明"
+    },
+    {
+      "word": "deterrence",
+      "sentence": "The pact aims to strengthen collective ____ against aggression.",
+      "hint_zh": "名詞：嚇阻、威懾（力）"
+    },
+    {
+      "word": "obligations",
+      "sentence": "The pact aims to strengthen collective deterrence against aggression, though it provides no specifics on each party's ____.",
+      "hint_zh": "名詞（複數）：義務、責任"
+    },
+    {
+      "word": "vowed",
+      "sentence": "Thailand's prime minister has ____ to introduce stricter gun control laws after a 14-year-old killed his grandparents and five teachers at a school near Bangkok.",
+      "hint_zh": "動詞（過去分詞）：發誓、誓言承諾"
+    },
+    {
+      "word": "legislation",
+      "sentence": "The new ____ would restrict the carrying of firearms in public, allowing only government officials on duty to carry guns.",
+      "hint_zh": "名詞：立法、法案"
+    },
+    {
+      "word": "restrict",
+      "sentence": "The new legislation would ____ the carrying of firearms in public, allowing only government officials on duty to carry guns.",
+      "hint_zh": "動詞：限制、約束"
+    },
+    {
+      "word": "nuisance",
+      "sentence": "The judge called the company a 'public ____' akin to air pollution.",
+      "hint_zh": "名詞：危害、妨害（法律用語：公共妨害）"
+    },
+    {
+      "word": "appeal",
+      "sentence": "Meta says it disagrees with the ruling and will ____.",
+      "hint_zh": "動詞：上訴"
+    },
+    {
+      "word": "stunned",
+      "sentence": "India's Ashmita Chaliha ____ top seed Hina Akechi of Japan 20-22, 21-15, 21-19 to reach the women's singles semi-finals at the BWF Korea Masters Super 300.",
+      "hint_zh": "動詞（過去式）：爆冷擊敗、使震驚"
+    },
+    {
+      "word": "compatriot",
+      "sentence": "She will face ____ Rakshitha Sree, who overcame Chinese Taipei Open champion Tanvi Sharma, in an all-Indian semi-final.",
+      "hint_zh": "名詞：同胞、同國選手"
+    }
+  ]
+}
