@@ -8,7 +8,51 @@
       "title_zh": "阿曼稱荷莫茲海峽談判樂觀 伊朗警告達成協議不代表立即重啟航道",
       "summary_zh": "阿曼表示，與伊朗就確保荷莫茲海峽航運路線的協議已進行正面磋商；全球約五分之一的石油與天然氣通常經由此海峽運輸。伊朗外長阿拉格齊表示談判已進入最後階段，但警告海峽重新開放仍取決於其他條件，包括美國須提供賠償。阿曼同時警告勿攻擊海峽船隻，此前阿聯酋指控一枚伊朗飛彈擊中其國營石油公司的油輪。",
       "url": "https://www.bbc.co.uk/news/articles/c934j5y2lq9o",
-      "source": "BBC News"
+      "source": "BBC News",
+      "align": {
+        "title": [
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "summary_segs": [
+          "Oman said positive talks have been taking place with Iran over an agreement to secure a shipping route through the Strait of Hormuz,",
+          "through which around a fifth of the world's oil and natural gas usually flows.",
+          "Iranian Foreign Minister Abbas Araghchi said negotiations were in their final stages,",
+          "but warned that reopening the strait remained subject to other conditions,",
+          "including compensation from the US.",
+          "Oman also warned against attacks on shipping,",
+          "after the UAE said an Iranian missile had struck one of its tankers."
+        ]
+      }
     },
     {
       "category": "世界",
@@ -17,7 +61,37 @@
       "title_zh": "颱風「海豚」重創日本沖繩 接著撲向中國東部沿海",
       "summary_zh": "颱風「海豚」週六侵襲日本沖繩，最大風速達每小時162公里，造成至少4萬4千棟建築停電、至少5人受傷。那霸國際機場關閉導致航班取消；颱風預計於週日深夜至週一凌晨在中國東部沿海登陸，當地已提前關閉港口與學校，浙江沿海颱風警報並已升至最高等級。",
       "url": "https://www.bbc.co.uk/news/articles/cvglp2zlvrlo",
-      "source": "BBC News"
+      "source": "BBC News",
+      "align": {
+        "title": [
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            4
+          ]
+        ]
+      }
     },
     {
       "category": "科技/財經",
@@ -26,7 +100,41 @@
       "title_zh": "川普政府再度推動開除聯準會理事庫克 央行獨立性之爭升溫",
       "summary_zh": "川普政府重啟開除聯準會理事麗莎·庫克的行動。兩個月前最高法院以5比4裁定，在她就遭解職提起的訴訟進行期間可保住職位；庫克否認川普方面指控的房貸詐欺行為。此番再度出手使圍繞央行獨立性的空前角力進一步升級，全球金融市場正密切關注聯準會的利率動向。",
       "url": "https://apnews.com/article/federal-reserve-lisa-cook-trump-fire-mortgage-fraud-01eb76b6bc499fcc100921cee91e08a2",
-      "source": "AP News"
+      "source": "AP News",
+      "align": {
+        "title": [
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "summary_segs": [
+          "The Trump administration is moving ahead with its efforts to fire Federal Reserve governor Lisa Cook,",
+          "two months after the Supreme Court allowed her to retain her job",
+          "while she fights the president's effort to terminate her over mortgage fraud allegations she has denied.",
+          "The renewed push escalates an unprecedented fight over the central bank's independence,",
+          "which financial markets around the world watch closely."
+        ]
+      }
     },
     {
       "category": "棒球",
@@ -35,7 +143,30 @@
       "title_zh": "道奇遭再見轟苦吞7連敗 終結者戴亞茲被新秀轟出致命兩分砲",
       "summary_zh": "洛杉磯道奇吞下本季最長的7連敗：響尾蛇新秀沃德施密特從終結者艾德溫·戴亞茲手中擊出兩分再見全壘打，助隊以4比3逆轉獲勝。儘管7月5日以來戰績僅10勝16敗，這支尋求三連霸的世界大賽衛冕軍在國聯西區仍保有7.5場的安全領先。",
       "url": "https://www.espn.com/mlb/story/_/id/49558569/reeling-dodgers-lose-season-high-7th-straight-game-diamondbacks-w",
-      "source": "ESPN"
+      "source": "ESPN",
+      "align": {
+        "title": [
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            4
+          ],
+          [
+            3
+          ]
+        ]
+      }
     }
   ],
   "quiz": [
