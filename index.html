@@ -359,8 +359,13 @@ function checkOne(i, quiet) {
   if (!v) { mark.textContent = ""; return null; }
   const ok = v === QUIZ[i].word.toLowerCase();
   inp.classList.add(ok ? "ok" : "bad");
-  mark.textContent = ok ? "✅" : "❌";
-  if (ok) awardFood(i);
+  let tag = "";
+  if (ok) {
+    const st = awardFood(i);
+    tag = st === "new" ? " +1🦴" : st === "revealed" ? " 👀看過答案，今日無🦴" :
+          st === "err" ? " ⚠️瀏覽器儲存被擋" : " ✔已領🦴";
+  }
+  mark.textContent = ok ? "✅" + tag : "❌";
   if (ok && !quiet) { speak(QUIZ[i].word); showDog(); }
   if (!ok && !quiet) showPop(chi);
   return ok;
@@ -382,12 +387,16 @@ function earnedObj() {
 }
 function setEarned(o) { localStorage.setItem("pgame:earned:" + dates[currentIdx], JSON.stringify(o)); }
 function awardFood(i) {
-  const e = earnedObj();
-  if (e[i]) return; // 已領過或看過答案
-  e[i] = 1;
-  setEarned(e);
-  gameFood(1);
-  checkAllBonus(e);
+  try {
+    const e = earnedObj();
+    if (e[i] === 2) return "revealed"; // 今天看過答案
+    if (e[i]) return "dup";            // 今天已領過
+    e[i] = 1;
+    setEarned(e);
+    gameFood(1);
+    checkAllBonus(e);
+    return "new";
+  } catch (err) { return "err"; }      // localStorage 被擋（無痕/隱私模式）
 }
 function checkAllBonus(e) {
   if (e.bonus) return;
