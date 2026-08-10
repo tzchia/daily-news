@@ -166,7 +166,7 @@
       <button class="draw" id="draw1">單抽 🦴×5</button>
       <button class="draw ten" id="draw10">十連抽 🦴×45</button>
     </div>
-    <div class="pity-note">機率：N 62% / R 26% / SR 9% / SSR 3% · <span id="pity-txt"></span> · 重複卡自動換回狗糧</div>
+    <div class="pity-note"><span id="pity-txt"></span> · 重複卡自動換回狗糧</div>
   </div>
 
   <div class="section-title">📖 本月圖鑑 <small id="month-label"></small></div>
@@ -264,6 +264,9 @@ const S = {
   /* SSR 保底計數（每月獨立，抽到 SSR 歸零） */
   get ssrPity() { return +(localStorage.getItem("pgame:ssrpity:" + MK) || 0); },
   set ssrPity(v) { localStorage.setItem("pgame:ssrpity:" + MK, v); },
+  /* 本月總抽數（純累計，不歸零） */
+  get draws() { return +(localStorage.getItem("pgame:draws:" + MK) || 0); },
+  set draws(v) { localStorage.setItem("pgame:draws:" + MK, v); },
   col(mk) { try { return JSON.parse(localStorage.getItem("pgame:col:" + mk)) || {}; } catch (e) { return {}; } },
   setCol(mk, o) { localStorage.setItem("pgame:col:" + mk, JSON.stringify(o)); }
 };
@@ -282,6 +285,7 @@ function drawOne() {
   const rar = rollRarity();
   S.pity = (rar === "SR" || rar === "SSR") ? 0 : S.pity + 1;
   S.ssrPity = rar === "SSR" ? 0 : S.ssrPity + 1;
+  S.draws = S.draws + 1;
   const pool = CUR.cards.filter(c => c.rar === rar);
   return pool[Math.floor(Math.random() * pool.length)];
 }
@@ -328,7 +332,7 @@ function render() {
   document.getElementById("collected").textContent = ownedN;
   document.getElementById("total").textContent = CUR.cards.length;
   document.getElementById("pity-txt").textContent =
-    `再 ${Math.max(0, PITY_LIMIT - S.pity)} 抽內必出 SR 以上 · 再 ${Math.max(0, SSR_PITY_LIMIT - S.ssrPity)} 抽內必出 SSR`;
+    `本月已抽 ${S.draws} 次 · 再 ${Math.max(0, PITY_LIMIT - S.pity)} 抽內必出 SR 以上 · 再 ${Math.max(0, SSR_PITY_LIMIT - S.ssrPity)} 抽內必出 SSR`;
   document.getElementById("draw1").disabled = S.food < DRAW_COST;
   document.getElementById("draw10").disabled = S.food < TEN_COST;
   document.getElementById("collection").innerHTML =
