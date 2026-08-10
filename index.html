@@ -362,7 +362,7 @@ function checkOne(i, quiet) {
   let tag = "";
   if (ok) {
     const st = awardFood(i);
-    tag = st === "new" ? " +1🦴" : st === "revealed" ? " 👀看過答案，今日無🦴" :
+    tag = st === "new" ? " +1🦴" :
           st === "err" ? " ⚠️瀏覽器儲存被擋" : " ✔已領🦴";
   }
   mark.textContent = ok ? "✅" + tag : "❌";
@@ -373,7 +373,7 @@ function checkOne(i, quiet) {
 
 /* ── 狗糧經濟（連動 game.html 帕恰狗圖鑑）──
  * 答對 1 題 = 🦴×1（每題每天只算一次）；當日 10 題全對再加碼 🦴×5。
- * 「顯示答案」看過的題目不給狗糧，防呆。 */
+ * 「顯示答案」也算答對照樣給糧（輕鬆學習路線）。 */
 function gameFood(delta) {
   const v = +(localStorage.getItem("pgame:food") || 0) + (delta || 0);
   if (delta) localStorage.setItem("pgame:food", v);
@@ -389,8 +389,7 @@ function setEarned(o) { localStorage.setItem("pgame:earned:" + dates[currentIdx]
 function awardFood(i) {
   try {
     const e = earnedObj();
-    if (e[i] === 2) return "revealed"; // 今天看過答案
-    if (e[i]) return "dup";            // 今天已領過
+    if (e[i] === 1) return "dup";      // 今天已領過（=2 是舊版「看過答案」記號，補發）
     e[i] = 1;
     setEarned(e);
     gameFood(1);
@@ -489,9 +488,8 @@ container.addEventListener("click", e => {
     inp.classList.remove("ok", "bad");
     inp.classList.add("revealed");
     document.getElementById("qmark-" + i).textContent = "👁";
-    const eo = earnedObj(); // 看過答案這題就不給狗糧
-    if (!eo[i]) { eo[i] = 2; setEarned(eo); }
     speak(QUIZ[i].word); // 顯示答案同時念出來
+    checkOne(i, true);   // 直接判分給糧
   }
   if (e.target.id === "q-check") checkAll();
 });
