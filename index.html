@@ -493,8 +493,7 @@ container.addEventListener("click", e => {
     inp.classList.remove("ok", "bad");
     inp.classList.add("revealed");
     document.getElementById("qmark-" + i).textContent = "👁";
-    speak(QUIZ[i].word); // 顯示答案同時念出來
-    checkOne(i, true);   // 直接判分給糧
+    speak(QUIZ[i].word); // 顯示答案同時念出來（狗糧等按「全部對答案」時才結算）
   }
   if (e.target.id === "q-check") checkAll();
 });
