@@ -292,6 +292,23 @@ const S = {
   col(mk) { try { return JSON.parse(localStorage.getItem("pgame:col:" + mk)) || {}; } catch (e) { return {}; } },
   setCol(mk, o) { localStorage.setItem("pgame:col:" + mk, JSON.stringify(o)); }
 };
+/* ═══════════ 重置本月進度（?reset=1）═══════════ */
+if (new URLSearchParams(location.search).get("reset") === "1") {
+  if (confirm("確定要重置本月進度嗎？\n\n將清除：🍨 香蕉冰淇淋、答題領取紀錄、本月圖鑑、抽卡次數與保底。\n此動作無法復原！")) {
+    const doomed = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k === "pgame:food" || k === "pgame:pity" ||
+          k === "pgame:col:" + MK || k === "pgame:ssrpity:" + MK ||
+          k === "pgame:draws:" + MK || k === "pgame:meta:" + MK ||
+          (k && k.startsWith("pgame:earned:" + MK))) doomed.push(k);
+    }
+    doomed.forEach(k => localStorage.removeItem(k));
+    alert("已重置完成！重新開始收集吧 🍨");
+  }
+  location.replace(location.pathname); /* 去掉參數，避免重整又觸發 */
+}
+
 /* 記錄本月系列名/總數，殿堂用（就算之後 SERIES 改了也記得當時的樣子） */
 localStorage.setItem("pgame:meta:" + MK, JSON.stringify({ name: CUR.name, total: CUR.cards.length }));
 
