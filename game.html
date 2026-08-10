@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帕恰狗圖鑑 · 夏日系列</title>
+<style>
+  :root {
+    --bg: #eef4fb;
+    --bg2: #fdf6ec;
+    --card: #ffffff;
+    --border: #d8e2ee;
+    --text: #3a4a5a;
+    --text-dim: #8395a7;
+    --blue: #7db8e8;
+    --pink: #f5a8bc;
+    --yellow: #f7d98c;
+    --n: #9aa8b6;
+    --r: #6fb7e0;
+    --sr: #b18ae0;
+    --ssr: #f0b34c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+    color: var(--text);
+    font-family: "Noto Sans TC", -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6; min-height: 100vh;
+  }
+  header { text-align: center; padding: 22px 16px 8px; }
+  header h1 { font-size: 1.35rem; letter-spacing: 1px; }
+  header .sub { color: var(--text-dim); font-size: 0.85rem; margin-top: 2px; }
+  .topbar {
+    display: flex; justify-content: center; align-items: center; gap: 10px;
+    flex-wrap: wrap; padding: 10px 16px;
+  }
+  .chip {
+    background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+    padding: 6px 14px; font-size: 0.92rem; box-shadow: 0 2px 6px rgba(120,150,180,0.12);
+  }
+  .chip b { color: #e08030; }
+  a.chip { text-decoration: none; color: var(--text); cursor: pointer; }
+  a.chip:hover { border-color: var(--blue); }
+  main { max-width: 860px; margin: 0 auto; padding: 8px 14px 70px; }
+
+  /* ── 抽卡區 ── */
+  .gacha-box {
+    background: var(--card); border: 2px solid var(--border); border-radius: 18px;
+    padding: 18px; text-align: center; margin: 12px 0 22px;
+    box-shadow: 0 4px 14px rgba(120,150,180,0.14);
+  }
+  .gacha-box h2 { font-size: 1.1rem; margin-bottom: 4px; }
+  .gacha-note { color: var(--text-dim); font-size: 0.82rem; margin-bottom: 12px; }
+  .gacha-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  button.draw {
+    border: none; border-radius: 14px; cursor: pointer;
+    padding: 12px 26px; font-size: 1rem; font-weight: 700; color: #fff;
+    background: linear-gradient(135deg, #7db8e8, #5a9fd6);
+    box-shadow: 0 4px 10px rgba(90,159,214,0.35);
+    transition: transform 0.1s;
+  }
+  button.draw.ten { background: linear-gradient(135deg, #f0b34c, #e0993a); box-shadow: 0 4px 10px rgba(224,153,58,0.35); }
+  button.draw:active { transform: scale(0.96); }
+  button.draw:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+  .pity-note { color: var(--text-dim); font-size: 0.78rem; margin-top: 10px; }
+
+  /* ── 圖鑑 ── */
+  .section-title { font-size: 1.05rem; margin: 22px 4px 10px; display: flex; align-items: baseline; gap: 10px; }
+  .section-title small { color: var(--text-dim); font-weight: 400; font-size: 0.82rem; }
+  .grid {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  .ccard {
+    background: var(--card); border-radius: 14px; overflow: hidden;
+    border: 2px solid var(--border); position: relative;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .ccard:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(120,150,180,0.22); }
+  .ccard.r-N   { border-color: var(--n); }
+  .ccard.r-R   { border-color: var(--r); }
+  .ccard.r-SR  { border-color: var(--sr); }
+  .ccard.r-SSR { border-color: var(--ssr); box-shadow: 0 0 14px rgba(240,179,76,0.4); }
+  .cimg { width: 100%; aspect-ratio: 3/4; display: block; object-fit: cover; background: #fff; }
+  .cname { font-size: 0.85rem; text-align: center; padding: 6px 4px 2px; font-weight: 600; }
+  .cbadge {
+    position: absolute; top: 6px; left: 6px; font-size: 0.72rem; font-weight: 800;
+    color: #fff; padding: 2px 8px; border-radius: 10px; letter-spacing: 1px;
+  }
+  .r-N .cbadge   { background: var(--n); }
+  .r-R .cbadge   { background: var(--r); }
+  .r-SR .cbadge  { background: var(--sr); }
+  .r-SSR .cbadge { background: linear-gradient(135deg, #f0b34c, #e07f3a); }
+  .ccount {
+    position: absolute; top: 6px; right: 6px; font-size: 0.72rem;
+    background: rgba(255,255,255,0.9); border: 1px solid var(--border);
+    border-radius: 10px; padding: 2px 7px; color: var(--text-dim);
+  }
+  .cstars { text-align: center; font-size: 0.7rem; padding-bottom: 7px; letter-spacing: 2px; }
+  .ccard.locked .cimg { filter: grayscale(1) brightness(1.06) contrast(0.82); opacity: 0.5; }
+  .ccard.locked .cname { color: var(--text-dim); }
+  .locked-mark {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; pointer-events: none;
+  }
+
+  /* ── 殿堂 ── */
+  .hall { display: flex; flex-wrap: wrap; gap: 10px; }
+  .hall-item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 10px 16px; font-size: 0.9rem;
+  }
+  .hall-item b { color: #e08030; }
+  .hall-empty { color: var(--text-dim); font-size: 0.85rem; padding: 4px; }
+
+  /* ── 抽卡結果彈窗 ── */
+  #overlay {
+    position: fixed; inset: 0; z-index: 300; display: none;
+    background: rgba(40,60,90,0.55); backdrop-filter: blur(3px);
+    align-items: center; justify-content: center; padding: 18px;
+  }
+  #overlay.show { display: flex; }
+  .result-box {
+    background: var(--card); border-radius: 20px; padding: 22px 20px 18px;
+    max-width: 620px; width: 100%; max-height: 86vh; overflow-y: auto; text-align: center;
+    animation: pop-in 0.35s cubic-bezier(0.2, 1.4, 0.4, 1);
+  }
+  @keyframes pop-in { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .result-box h3 { margin-bottom: 12px; font-size: 1.1rem; }
+  .rgrid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); justify-items: center; }
+  .rgrid .ccard { width: 100%; animation: card-in 0.4s ease backwards; }
+  .rnew {
+    position: absolute; bottom: 44px; right: 6px; background: var(--pink); color: #fff;
+    font-size: 0.68rem; font-weight: 800; padding: 1px 7px; border-radius: 8px;
+  }
+  .rdup { color: var(--text-dim); font-size: 0.72rem; }
+  @keyframes card-in { from { transform: translateY(24px) scale(0.7); opacity: 0; } to { transform: none; opacity: 1; } }
+  .close-btn {
+    margin-top: 14px; background: var(--blue); color: #fff; border: none;
+    border-radius: 12px; padding: 9px 30px; font-size: 0.95rem; font-weight: 700; cursor: pointer;
+  }
+  .refund-note { color: var(--text-dim); font-size: 0.8rem; margin-top: 8px; }
+
+  footer { text-align: center; color: var(--text-dim); font-size: 0.78rem; padding: 18px; }
+  footer a { color: var(--blue); text-decoration: none; }
+  @media (max-width: 480px) {
+    .grid { grid-template-columns: repeat(auto-fill, minmax(105px, 1fr)); gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🐶 帕恰狗圖鑑</h1>
+  <div class="sub" id="series-name">夏日系列 · 每月重置</div>
+</header>
+<div class="topbar">
+  <span class="chip">🦴 狗糧 <b id="food">0</b></span>
+  <span class="chip">📖 收集 <b id="collected">0</b>/<span id="total">12</span></span>
+  <a class="chip" href="index.html">📰 去答題賺狗糧</a>
+</div>
+<main>
+  <div class="gacha-box">
+    <h2>✨ 夏日狗糧抽卡機 ✨</h2>
+    <div class="gacha-note">每天到「每日英文新聞」答單字填空：答對 1 題 = 🦴×1，當日全對再加碼 🦴×5</div>
+    <div class="gacha-btns">
+      <button class="draw" id="draw1">單抽 🦴×5</button>
+      <button class="draw ten" id="draw10">十連抽 🦴×45</button>
+    </div>
+    <div class="pity-note">機率：N 62% / R 26% / SR 9% / SSR 3% · <span id="pity-txt"></span> · 重複卡自動換回狗糧</div>
+  </div>
+
+  <div class="section-title">📖 本月圖鑑 <small id="month-label"></small></div>
+  <div class="grid" id="collection"></div>
+
+  <div class="section-title">🏛️ 歷代殿堂 <small>過去月份的收集成果</small></div>
+  <div class="hall" id="hall"></div>
+</main>
+
+<div id="overlay">
+  <div class="result-box">
+    <h3 id="result-title">抽卡結果</h3>
+    <div class="rgrid" id="result-grid"></div>
+    <div class="refund-note" id="refund-note"></div>
+    <button class="close-btn" id="close-result">收下！</button>
+  </div>
+</div>
+
+<footer>
+  進度存在此瀏覽器（localStorage）· 每月 1 日圖鑑自動換新系列<br>
+  <a href="index.html">← 回每日英文新聞</a>
+</footer>
+
+<script>
+/* ═══════════ 卡片資料（美術佔位版）═══════════
+ * img: null → 用內建 SVG 絨毛狗佔位圖；拿到真卡圖後
+ * 把檔案丟進 assets/cards/，img 填路徑即可無痛替換。 */
+const SERIES = {
+  "2026-08": { name: "夏日系列", cards: [
+    { id: "n1",  rar: "N",   name: "日光浴",    acc: "☀️", bg: ["#fff8e6", "#ffe9b8"], img: null },
+    { id: "n2",  rar: "N",   name: "喝麥茶",    acc: "🍵", bg: ["#f2f9ee", "#d9eecd"], img: null },
+    { id: "n3",  rar: "N",   name: "搖尾巴",    acc: "🐾", bg: ["#f0f6fc", "#d8e8f8"], img: null },
+    { id: "n4",  rar: "N",   name: "吹電風扇",  acc: "🌀", bg: ["#eef7f7", "#d2ecec"], img: null },
+    { id: "n5",  rar: "N",   name: "吃西瓜",    acc: "🍉", bg: ["#fdf1f1", "#fbd9d9"], img: null },
+    { id: "n6",  rar: "N",   name: "夏日午睡",  acc: "💤", bg: ["#f3f1fb", "#e0dbf5"], img: null },
+    { id: "r1",  rar: "R",   name: "冰淇淋",    acc: "🍦", bg: ["#fff4ec", "#ffdfc2"], img: null },
+    { id: "r2",  rar: "R",   name: "游泳圈",    acc: "🛟", bg: ["#ecf6ff", "#c9e6ff"], img: null },
+    { id: "r3",  rar: "R",   name: "小雞朋友",  acc: "🐤", bg: ["#fffbe8", "#fff0ae"], img: null },
+    { id: "sr1", rar: "SR",  name: "衝浪高手",  acc: "🏄", bg: ["#e8f4ff", "#b9dcff"], img: null },
+    { id: "sr2", rar: "SR",  name: "雲朵瞌睡",  acc: "☁️", bg: ["#eef2fb", "#cfdcf5"], img: null },
+    { id: "ssr1", rar: "SSR", name: "夏日天使", acc: "😎", bg: ["#fff6e0", "#ffe3a0"], img: null }
+  ]}
+};
+/* 找不到當月系列時沿用最近一套（換月忘了上新卡也不會壞） */
+const DEFAULT_SERIES_KEY = "2026-08";
+
+const RATES = [["SSR", 0.03], ["SR", 0.09], ["R", 0.26], ["N", 0.62]];
+const DRAW_COST = 5, TEN_COST = 45, PITY_LIMIT = 12; /* 12 抽內必出 SR+ */
+const DUP_REFUND = { N: 1, R: 2, SR: 3, SSR: 5 };
+const STARS = { N: "★", R: "★★", SR: "★★★", SSR: "★★★★" };
+
+/* ═══════════ 佔位卡圖：內建 SVG 絨毛狗 ═══════════ */
+function placeholderSVG(card) {
+  const [c1, c2] = card.bg;
+  const deco = card.rar === "SSR"
+    ? '<text x="30" y="42" font-size="22">✨</text><text x="180" y="60" font-size="20">✨</text><text x="42" y="250" font-size="18">💛</text>'
+    : card.rar === "SR"
+    ? '<text x="34" y="46" font-size="18">⭐</text><text x="182" y="252" font-size="16">⭐</text>' : "";
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225 300">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/>
+    </linearGradient></defs>
+    <rect width="225" height="300" fill="url(#g)"/>${deco}
+    <ellipse cx="112" cy="248" rx="58" ry="12" fill="rgba(0,0,0,0.07)"/>
+    <ellipse cx="112" cy="196" rx="46" ry="40" fill="#fff" stroke="#3a3a3a" stroke-width="3"/>
+    <ellipse cx="58" cy="132" rx="16" ry="34" fill="#2b2b2b" transform="rotate(24 58 132)"/>
+    <ellipse cx="166" cy="132" rx="16" ry="34" fill="#2b2b2b" transform="rotate(-24 166 132)"/>
+    <circle cx="112" cy="128" r="52" fill="#fff" stroke="#3a3a3a" stroke-width="3"/>
+    <path d="M104 74 q4 -14 2 -20 M112 73 q0 -14 0 -21 M120 74 q-4 -14 -2 -20" stroke="#2b2b2b" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <circle cx="94" cy="124" r="6.5" fill="#2b2b2b"/>
+    <circle cx="130" cy="124" r="6.5" fill="#2b2b2b"/>
+    <ellipse cx="112" cy="140" rx="7" ry="5.4" fill="#2b2b2b"/>
+    <ellipse cx="80" cy="142" rx="9" ry="6" fill="#f8b8c8" opacity="0.85"/>
+    <ellipse cx="144" cy="142" rx="9" ry="6" fill="#f8b8c8" opacity="0.85"/>
+    <ellipse cx="82" cy="206" rx="15" ry="13" fill="#fff" stroke="#3a3a3a" stroke-width="3"/>
+    <ellipse cx="142" cy="206" rx="15" ry="13" fill="#fff" stroke="#3a3a3a" stroke-width="3"/>
+    <text x="158" y="200" font-size="40">${card.acc}</text>
+  </svg>`;
+  return "data:image/svg+xml," + encodeURIComponent(svg);
+}
+function cardImg(card) { return card.img || placeholderSVG(card); }
+
+/* ═══════════ 狀態（localStorage）═══════════ */
+function monthKey() { return new Date().toLocaleDateString("sv").slice(0, 7); } /* YYYY-MM */
+function seriesOf(mk) { return SERIES[mk] || SERIES[DEFAULT_SERIES_KEY]; }
+const MK = monthKey();
+const CUR = seriesOf(MK);
+
+const S = {
+  get food() { return +(localStorage.getItem("pgame:food") || 0); },
+  set food(v) { localStorage.setItem("pgame:food", v); },
+  get pity() { return +(localStorage.getItem("pgame:pity") || 0); },
+  set pity(v) { localStorage.setItem("pgame:pity", v); },
+  col(mk) { try { return JSON.parse(localStorage.getItem("pgame:col:" + mk)) || {}; } catch (e) { return {}; } },
+  setCol(mk, o) { localStorage.setItem("pgame:col:" + mk, JSON.stringify(o)); }
+};
+/* 記錄本月系列名/總數，殿堂用（就算之後 SERIES 改了也記得當時的樣子） */
+localStorage.setItem("pgame:meta:" + MK, JSON.stringify({ name: CUR.name, total: CUR.cards.length }));
+
+/* ═══════════ 抽卡邏輯 ═══════════ */
+function rollRarity() {
+  if (S.pity + 1 >= PITY_LIMIT) return Math.random() < 0.25 ? "SSR" : "SR"; /* 保底 */
+  let x = Math.random(), acc = 0;
+  for (const [r, p] of RATES) { acc += p; if (x < acc) return r; }
+  return "N";
+}
+function drawOne() {
+  const rar = rollRarity();
+  S.pity = (rar === "SR" || rar === "SSR") ? 0 : S.pity + 1;
+  const pool = CUR.cards.filter(c => c.rar === rar);
+  return pool[Math.floor(Math.random() * pool.length)];
+}
+function doDraw(n) {
+  const cost = n === 10 ? TEN_COST : DRAW_COST;
+  if (S.food < cost) return;
+  S.food -= cost;
+  const col = S.col(MK);
+  const results = [];
+  let refund = 0;
+  for (let i = 0; i < n; i++) {
+    const c = drawOne();
+    const isNew = !col[c.id];
+    col[c.id] = (col[c.id] || 0) + 1;
+    if (!isNew) refund += DUP_REFUND[c.rar];
+    results.push({ card: c, isNew });
+  }
+  S.setCol(MK, col);
+  if (refund) S.food += refund;
+  render();
+  showResults(results, refund);
+}
+
+/* ═══════════ 畫面 ═══════════ */
+function cardHTML(c, opts) {
+  const { count = 0, isNew = false, showDup = false } = opts || {};
+  const owned = count > 0;
+  return `<div class="ccard r-${c.rar} ${owned ? "" : "locked"}">
+    <span class="cbadge">${c.rar}</span>
+    ${owned && count > 1 ? `<span class="ccount">×${count}</span>` : ""}
+    <img class="cimg" src="${cardImg(c)}" alt="${c.name}" loading="lazy">
+    ${owned ? "" : '<span class="locked-mark">🔒</span>'}
+    ${isNew ? '<span class="rnew">NEW!</span>' : ""}
+    <div class="cname">${c.name}</div>
+    <div class="cstars">${STARS[c.rar]}${showDup && !isNew ? ' <span class="rdup">重複 +🦴' + DUP_REFUND[c.rar] + "</span>" : ""}</div>
+  </div>`;
+}
+function render() {
+  const col = S.col(MK);
+  document.getElementById("food").textContent = S.food;
+  document.getElementById("series-name").textContent = CUR.name + " · 每月重置";
+  document.getElementById("month-label").textContent = MK;
+  const ownedN = CUR.cards.filter(c => col[c.id]).length;
+  document.getElementById("collected").textContent = ownedN;
+  document.getElementById("total").textContent = CUR.cards.length;
+  document.getElementById("pity-txt").textContent = `再 ${Math.max(0, PITY_LIMIT - S.pity)} 抽內必出 SR 以上`;
+  document.getElementById("draw1").disabled = S.food < DRAW_COST;
+  document.getElementById("draw10").disabled = S.food < TEN_COST;
+  document.getElementById("collection").innerHTML =
+    CUR.cards.map(c => cardHTML(c, { count: col[c.id] || 0 })).join("");
+  renderHall();
+}
+function renderHall() {
+  const items = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    const m = k && k.match(/^pgame:col:(\d{4}-\d{2})$/);
+    if (!m || m[1] === MK) continue;
+    const mk = m[1];
+    let meta = {};
+    try { meta = JSON.parse(localStorage.getItem("pgame:meta:" + mk)) || {}; } catch (e) {}
+    const col = S.col(mk);
+    const owned = Object.keys(col).length;
+    const total = meta.total || "?";
+    const full = owned === meta.total;
+    items.push({ mk, html: `<div class="hall-item">${full ? "🏆" : "📕"} ${mk} ${meta.name || ""} <b>${owned}/${total}</b>${full ? " 全收集！" : ""}</div>` });
+  }
+  items.sort((a, b) => b.mk.localeCompare(a.mk));
+  document.getElementById("hall").innerHTML = items.length
+    ? items.map(x => x.html).join("")
+    : '<div class="hall-empty">還沒有歷史紀錄——本月圖鑑月底結算後會搬進來 🗓️</div>';
+}
+function showResults(results, refund) {
+  const best = results.some(r => r.card.rar === "SSR") ? "🌈 出 SSR 啦！！"
+             : results.some(r => r.card.rar === "SR") ? "💜 出 SR！"
+             : "抽卡結果";
+  document.getElementById("result-title").textContent = best;
+  document.getElementById("result-grid").innerHTML = results.map((r, i) => {
+    const col = S.col(MK);
+    return cardHTML(r.card, { count: col[r.card.id], isNew: r.isNew, showDup: true })
+      .replace('class="ccard', `style="animation-delay:${i * 0.08}s" class="ccard`);
+  }).join("");
+  document.getElementById("refund-note").textContent =
+    refund ? `重複卡自動換回 🦴×${refund}` : "";
+  document.getElementById("overlay").classList.add("show");
+}
+document.getElementById("close-result").onclick = () => document.getElementById("overlay").classList.remove("show");
+document.getElementById("overlay").addEventListener("click", e => {
+  if (e.target.id === "overlay") e.target.classList.remove("show");
+});
+document.getElementById("draw1").onclick = () => doDraw(1);
+document.getElementById("draw10").onclick = () => doDraw(10);
+render();
+</script>
+</body>
+</html>
