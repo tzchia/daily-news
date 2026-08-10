@@ -1,0 +1,116 @@
+{
+  "date": "2026-08-10",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Israel rejects Trump's 15-point plan for Gaza, Netanyahu says",
+      "summary_en": "Israeli Prime Minister Benjamin Netanyahu has rejected US President Donald Trump's 15-point plan for Gaza, stating that no military pull-out will happen until Hamas is \"genuinely\" disarmed. A Hamas official told the BBC the group reaffirms its commitment to the agreement and is ready to engage seriously in implementing the plan. The rejection signals another blow for Trump's Gaza peace plan, which was announced in September last year.",
+      "title_zh": "納坦雅胡表示，以色列拒絕川普的加薩15點方案",
+      "summary_zh": "以色列總理納坦雅胡拒絕美國總統川普的加薩15點方案，並表示在哈瑪斯「真正」解除武裝前，以軍不會撤出加薩。哈瑪斯官員告訴BBC，該組織重申對協議的承諾，並準備認真投入方案的落實。這項拒絕對川普去年9月宣布的加薩和平計畫再度造成打擊。",
+      "url": "https://www.bbc.co.uk/news/articles/c5yw4lpe0yeo",
+      "source": "BBC News",
+      "align": {
+        "title": [[1], [0]],
+        "summary": [[0], [1], [1], [2], [2], [2], [3, 4]]
+      }
+    },
+    {
+      "category": "世界",
+      "title_en": "Residents warned to brace for the worst as Canada wildfire rages out of control",
+      "summary_en": "A state of emergency has been declared in British Columbia after thousands of people were forced to flee their homes as a fast-moving wildfire spread rapidly in western Canada, doubling in size since it was first detected on Friday. The Bald Range fire now covers more than 53 sq miles (136 sq km) across Summerland, Peachland and other areas, and officials said the flames were so high that they had created their own weather systems.",
+      "title_zh": "加拿大野火失控延燒，居民被警告須做最壞打算",
+      "summary_zh": "卑詩省已宣布進入緊急狀態；一場快速移動的野火在加拿大西部迅速蔓延，自週五首次被發現以來面積已倍增，數千人被迫逃離家園。Bald Range野火目前延燒超過53平方英里（136平方公里），範圍涵蓋Summerland、Peachland等地區，官員表示火勢之高甚至形成了自己的天氣系統。",
+      "url": "https://www.bbc.co.uk/news/articles/cx25dkwk3e3o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [0], [1], [0], [2], [2, 3], [4]]
+      }
+    },
+    {
+      "category": "科技/財經",
+      "title_en": "SK hynix to invest 54.3 trillion won in new semiconductor fabs",
+      "summary_en": "SK hynix's board has approved investments of 35.2 trillion won for Y2, the second fab at the Yongin Semiconductor Cluster, and 19.1 trillion won for M17, a new fab in Cheongju, to support future HBM, DRAM and NAND demand driven by AI growth. Construction of Y2 is scheduled to begin in July 2027, and the company said it has accelerated the completion schedule for the Yongin cluster by 12 years, bringing the target date forward from 2045 to 2033.",
+      "title_zh": "SK海力士將投資54.3兆韓元興建新半導體晶圓廠",
+      "summary_zh": "SK海力士董事會已批准兩筆投資：以35.2兆韓元興建龍仁半導體聚落的第二座晶圓廠Y2，另以19.1兆韓元在清州興建新廠M17，以因應AI成長帶動的未來HBM、DRAM與NAND需求。Y2預計於2027年7月動工；公司並表示已將龍仁聚落的完工時程提前12年，目標日期從2045年提前至2033年。",
+      "url": "https://www.thelec.net/news/articleView.html?idxno=12918",
+      "source": "THE ELEC",
+      "align": {
+        "title": [[0]],
+        "summary": [[0, 1], [2, 3], [4, 5], [6], [7], [8]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "Ashmita Chaliha wins maiden BWF Tour title after comeback victory at Korea Masters",
+      "summary_en": "India's Ashmita Chaliha won her first BWF World Tour title after completing a comeback win over China's Han Qian Xi in the women's singles final at the Korea Masters, conceding the first game but roaring back to win 14-21, 21-14, 21-14 in 53 minutes. In the men's doubles, Malaysia's Tee Kai Wun and Yap Roy King captured their maiden title as a pair, defeating compatriots Soh Wooi Yik and Man Wei Chong 21-13, 21-18 in an all-Malaysian final.",
+      "title_zh": "Ashmita Chaliha韓國大師賽上演逆轉，奪生涯首座BWF巡迴賽冠軍",
+      "summary_zh": "印度好手Ashmita Chaliha在韓國大師賽女單決賽逆轉擊敗中國的Han Qian Xi，先丟一局後強勢回擊，以14-21、21-14、21-14耗時53分鐘取勝，摘下生涯首座BWF世界巡迴賽冠軍。男雙方面，馬來西亞的Tee Kai Wun／Yap Roy King在全馬來西亞內戰中以21-13、21-18擊敗同胞Soh Wooi Yik／Man Wei Chong，奪下配對後的首座冠軍。",
+      "url": "https://sportstar.thehindu.com/badminton/ashmita-chaliha-korea-masters-2026-win-maiden-bwf-tour-title-result-match-report/article71323972.ece",
+      "source": "Sportstar",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [1], [0], [2], [3, 4], [3]],
+        "summary_segs": [
+          "India's Ashmita Chaliha won her first BWF World Tour title after completing a comeback win over China's Han Qian Xi in the women's singles final at the Korea Masters,",
+          "conceding the first game but roaring back to win 14-21, 21-14, 21-14 in 53 minutes.",
+          "In the men's doubles,",
+          "Malaysia's Tee Kai Wun and Yap Roy King captured their maiden title as a pair,",
+          "defeating compatriots Soh Wooi Yik and Man Wei Chong 21-13, 21-18 in an all-Malaysian final."
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "rejected",
+      "sentence": "Israeli Prime Minister Benjamin Netanyahu has ____ US President Donald Trump's 15-point plan for Gaza, stating that no military pull-out will happen until Hamas is genuinely disarmed.",
+      "hint_zh": "動詞（過去分詞）：拒絕"
+    },
+    {
+      "word": "commitment",
+      "sentence": "A Hamas official told the BBC the group reaffirms its ____ to the agreement and is ready to engage seriously in implementing the plan.",
+      "hint_zh": "名詞：承諾"
+    },
+    {
+      "word": "signals",
+      "sentence": "The rejection ____ another blow for Trump's Gaza peace plan, which was announced in September last year.",
+      "hint_zh": "動詞（第三人稱單數）：顯示、預示"
+    },
+    {
+      "word": "declared",
+      "sentence": "A state of emergency has been ____ in British Columbia as a fast-moving wildfire spread rapidly in western Canada.",
+      "hint_zh": "動詞（過去分詞）：宣布"
+    },
+    {
+      "word": "detected",
+      "sentence": "A fast-moving wildfire spread rapidly in western Canada, doubling in size since it was first ____ on Friday.",
+      "hint_zh": "動詞（過去分詞）：偵測到、發現"
+    },
+    {
+      "word": "flee",
+      "sentence": "Thousands of people were forced to ____ their homes as a fast-moving wildfire spread rapidly in western Canada.",
+      "hint_zh": "動詞：逃離"
+    },
+    {
+      "word": "approved",
+      "sentence": "SK hynix's board has ____ investments of 35.2 trillion won for Y2, the second fab at the Yongin Semiconductor Cluster.",
+      "hint_zh": "動詞（過去分詞）：批准、核准"
+    },
+    {
+      "word": "accelerated",
+      "sentence": "The company said it has ____ the completion schedule for the Yongin cluster by 12 years, bringing the target date forward from 2045 to 2033.",
+      "hint_zh": "動詞（過去分詞）：加快、提前"
+    },
+    {
+      "word": "maiden",
+      "sentence": "Malaysia's Tee Kai Wun and Yap Roy King captured their ____ title as a pair in an all-Malaysian final.",
+      "hint_zh": "形容詞：首次的、初次的"
+    },
+    {
+      "word": "compatriots",
+      "sentence": "Malaysia's Tee Kai Wun and Yap Roy King captured their maiden title, defeating ____ Soh Wooi Yik and Man Wei Chong in an all-Malaysian final.",
+      "hint_zh": "名詞（複數）：同胞、同國選手"
+    }
+  ]
+}
