@@ -98,6 +98,24 @@
   }
   .cstars { text-align: center; font-size: 0.7rem; padding-bottom: 7px; letter-spacing: 2px; }
   .ccard.locked .cimg { filter: grayscale(1) brightness(1.06) contrast(0.82); opacity: 0.5; }
+  .ccard:not(.locked) { cursor: zoom-in; }
+
+  /* ── 卡圖放大燈箱 ── */
+  #lightbox {
+    position: fixed; inset: 0; z-index: 400; display: none;
+    background: rgba(20, 16, 10, 0.88); backdrop-filter: blur(6px);
+    align-items: center; justify-content: center; flex-direction: column;
+    cursor: zoom-out; padding: 16px;
+  }
+  #lightbox.show { display: flex; }
+  #lb-img {
+    max-width: min(92vw, 560px); max-height: 80vh; object-fit: contain;
+    border-radius: 16px; box-shadow: 0 12px 48px rgba(0,0,0,0.55);
+    animation: lb-pop 0.18s ease-out;
+  }
+  @keyframes lb-pop { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  #lb-cap { color: #fff; margin-top: 12px; font-weight: 700; font-size: 1rem; text-align: center; }
+  #lb-cap small { display: block; font-weight: 400; opacity: 0.75; margin-top: 3px; letter-spacing: 2px; }
   .ccard.locked .cname { color: var(--text-dim); }
   .locked-mark {
     position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
@@ -313,7 +331,7 @@ function doDraw(n) {
 function cardHTML(c, opts) {
   const { count = 0, isNew = false, showDup = false } = opts || {};
   const owned = count > 0;
-  return `<div class="ccard r-${c.rar} ${owned ? "" : "locked"}">
+  return `<div class="ccard r-${c.rar} ${owned ? "" : "locked"}" ${owned ? `data-cid="${c.id}"` : ""}>
     <span class="cbadge">${c.rar}</span>
     ${owned && count > 1 ? `<span class="ccount">×${count}</span>` : ""}
     <img class="cimg" src="${cardImg(c)}" alt="${c.name}" loading="lazy">
@@ -379,6 +397,24 @@ document.getElementById("overlay").addEventListener("click", e => {
 });
 document.getElementById("draw1").onclick = () => doDraw(1);
 document.getElementById("draw10").onclick = () => doDraw(10);
+
+/* ── 已獲得卡片點圖放大 ── */
+const lb = document.createElement("div");
+lb.id = "lightbox";
+lb.innerHTML = '<img id="lb-img" alt=""><div id="lb-cap"></div>';
+document.body.appendChild(lb);
+lb.addEventListener("click", () => lb.classList.remove("show"));
+document.addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("show"); });
+document.addEventListener("click", e => {
+  const cc = e.target.closest(".ccard[data-cid]");
+  if (!cc) return;
+  const c = CUR.cards.find(x => x.id === cc.dataset.cid);
+  if (!c) return;
+  document.getElementById("lb-img").src = cardImg(c);
+  document.getElementById("lb-cap").innerHTML =
+    `${c.name} <small>${c.rar} ${STARS[c.rar]}</small>`;
+  lb.classList.add("show");
+});
 render();
 </script>
 </body>
