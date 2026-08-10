@@ -195,7 +195,7 @@
   <select class="nav-btn" id="date-select" title="選擇日期"></select>
 </div>
 <div class="tip-note">💡 點英文單字查翻譯 · 點中文句子高亮對應英文</div>
-<div class="tip-note"><a href="game.html" style="color:var(--accent);text-decoration:none;">🐶 帕恰狗圖鑑：目前狗糧 🦴<span id="food-count">0</span>，答對單字賺狗糧 →</a></div>
+<div class="tip-note"><a href="game.html" style="color:var(--accent);text-decoration:none;">🐶 帕恰狗圖鑑：目前香蕉冰淇淋 🍌<span id="food-count">0</span>，答對單字賺香蕉冰淇淋 →</a></div>
 <main id="news-container">
   <div class="empty">載入中…</div>
 </main>
@@ -367,8 +367,8 @@ function checkOne(i, quiet) {
   let tag = "";
   if (ok) {
     const st = awardFood(i);
-    tag = st === "new" ? " +1🦴" :
-          st === "err" ? " ⚠️瀏覽器儲存被擋" : " ✔已領🦴";
+    tag = st === "new" ? " +1🍌" :
+          st === "err" ? " ⚠️瀏覽器儲存被擋" : " ✔已領🍌";
   }
   mark.textContent = ok ? "✅" + tag : "❌";
   if (ok && !quiet) { speak(QUIZ[i].word); showDog(); }
@@ -376,8 +376,8 @@ function checkOne(i, quiet) {
   return ok;
 }
 
-/* ── 狗糧經濟（連動 game.html 帕恰狗圖鑑）──
- * 答對 1 題 = 🦴×1（每題每天只算一次）；當日 10 題全對再加碼 🦴×5。
+/* ── 香蕉冰淇淋經濟（連動 game.html 帕恰狗圖鑑）──
+ * 答對 1 題 = 🍌×1（每題每天只算一次）；當日 10 題全對再加碼 🍌×5。
  * 「顯示答案」也算答對照樣給糧（輕鬆學習路線）。 */
 function gameFood(delta) {
   const v = +(localStorage.getItem("pgame:food") || 0) + (delta || 0);
@@ -493,7 +493,7 @@ container.addEventListener("click", e => {
     inp.classList.remove("ok", "bad");
     inp.classList.add("revealed");
     document.getElementById("qmark-" + i).textContent = "👁";
-    speak(QUIZ[i].word); // 顯示答案同時念出來（狗糧等按「全部對答案」時才結算）
+    speak(QUIZ[i].word); // 顯示答案同時念出來（香蕉冰淇淋等按「全部對答案」時才結算）
   }
   if (e.target.id === "q-check") checkAll();
 });
@@ -603,7 +603,7 @@ tip.addEventListener("click", e => {
 });
 window.addEventListener("scroll", hideTip, { passive: true });
 
-gameFood(0); // 頁頂狗糧數
+gameFood(0); // 頁頂香蕉冰淇淋數
 loadIndex().catch(() => {
   document.getElementById("news-container").innerHTML =
     '<div class="empty">尚無新聞資料，明天 08:00 後會出現第一份摘要。</div>';
