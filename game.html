@@ -215,6 +215,7 @@ const DEFAULT_SERIES_KEY = "2026-08";
 
 const RATES = [["SSR", 0.03], ["SR", 0.09], ["R", 0.26], ["N", 0.62]];
 const DRAW_COST = 5, TEN_COST = 45, PITY_LIMIT = 12; /* 12 抽內必出 SR+ */
+const SSR_PITY_LIMIT = 60; /* 本月累計 60 抽必出 SSR */
 const DUP_REFUND = { N: 1, R: 2, SR: 3, SSR: 5 };
 const STARS = { N: "★", R: "★★", SR: "★★★", SSR: "★★★★" };
 
@@ -260,6 +261,9 @@ const S = {
   set food(v) { localStorage.setItem("pgame:food", v); },
   get pity() { return +(localStorage.getItem("pgame:pity") || 0); },
   set pity(v) { localStorage.setItem("pgame:pity", v); },
+  /* SSR 保底計數（每月獨立，抽到 SSR 歸零） */
+  get ssrPity() { return +(localStorage.getItem("pgame:ssrpity:" + MK) || 0); },
+  set ssrPity(v) { localStorage.setItem("pgame:ssrpity:" + MK, v); },
   col(mk) { try { return JSON.parse(localStorage.getItem("pgame:col:" + mk)) || {}; } catch (e) { return {}; } },
   setCol(mk, o) { localStorage.setItem("pgame:col:" + mk, JSON.stringify(o)); }
 };
@@ -268,7 +272,8 @@ localStorage.setItem("pgame:meta:" + MK, JSON.stringify({ name: CUR.name, total:
 
 /* ═══════════ 抽卡邏輯 ═══════════ */
 function rollRarity() {
-  if (S.pity + 1 >= PITY_LIMIT) return Math.random() < 0.25 ? "SSR" : "SR"; /* 保底 */
+  if (S.ssrPity + 1 >= SSR_PITY_LIMIT) return "SSR"; /* 累計 60 抽硬保底 */
+  if (S.pity + 1 >= PITY_LIMIT) return Math.random() < 0.25 ? "SSR" : "SR"; /* 12 抽保底 SR+ */
   let x = Math.random(), acc = 0;
   for (const [r, p] of RATES) { acc += p; if (x < acc) return r; }
   return "N";
@@ -276,6 +281,7 @@ function rollRarity() {
 function drawOne() {
   const rar = rollRarity();
   S.pity = (rar === "SR" || rar === "SSR") ? 0 : S.pity + 1;
+  S.ssrPity = rar === "SSR" ? 0 : S.ssrPity + 1;
   const pool = CUR.cards.filter(c => c.rar === rar);
   return pool[Math.floor(Math.random() * pool.length)];
 }
@@ -321,7 +327,8 @@ function render() {
   const ownedN = CUR.cards.filter(c => col[c.id]).length;
   document.getElementById("collected").textContent = ownedN;
   document.getElementById("total").textContent = CUR.cards.length;
-  document.getElementById("pity-txt").textContent = `再 ${Math.max(0, PITY_LIMIT - S.pity)} 抽內必出 SR 以上`;
+  document.getElementById("pity-txt").textContent =
+    `再 ${Math.max(0, PITY_LIMIT - S.pity)} 抽內必出 SR 以上 · 再 ${Math.max(0, SSR_PITY_LIMIT - S.ssrPity)} 抽內必出 SSR`;
   document.getElementById("draw1").disabled = S.food < DRAW_COST;
   document.getElementById("draw10").disabled = S.food < TEN_COST;
   document.getElementById("collection").innerHTML =
