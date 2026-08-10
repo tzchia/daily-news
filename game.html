@@ -97,7 +97,11 @@
     border-radius: 10px; padding: 2px 7px; color: var(--text-dim);
   }
   .cstars { text-align: center; font-size: 0.7rem; padding-bottom: 7px; letter-spacing: 2px; }
-  .ccard.locked .cimg { filter: grayscale(1) brightness(1.06) contrast(0.82); opacity: 0.5; }
+  .cimg-locked {
+    width: 100%; aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center;
+    font-size: 2.2rem; color: var(--text-dim);
+    background: repeating-linear-gradient(45deg, #f3ede2, #f3ede2 12px, #ece4d5 12px, #ece4d5 24px);
+  }
   .ccard:not(.locked) { cursor: zoom-in; }
 
   /* ── 卡圖放大燈箱 ── */
@@ -334,8 +338,9 @@ function cardHTML(c, opts) {
   return `<div class="ccard r-${c.rar} ${owned ? "" : "locked"}" ${owned ? `data-cid="${c.id}"` : ""}>
     <span class="cbadge">${c.rar}</span>
     ${owned && count > 1 ? `<span class="ccount">×${count}</span>` : ""}
-    <img class="cimg" src="${cardImg(c)}" alt="${c.name}" loading="lazy">
-    ${owned ? "" : '<span class="locked-mark">🔒</span>'}
+    ${owned
+      ? `<img class="cimg" src="${cardImg(c)}" alt="${c.name}" loading="lazy">`
+      : '<div class="cimg-locked">❓</div>'}
     ${isNew ? '<span class="rnew">NEW!</span>' : ""}
     <div class="cname">${c.name}</div>
     <div class="cstars">${STARS[c.rar]}${showDup && !isNew ? ' <span class="rdup">重複 +🍨' + DUP_REFUND[c.rar] + "</span>" : ""}</div>
