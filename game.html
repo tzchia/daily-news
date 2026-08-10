@@ -172,17 +172,17 @@
   <div class="sub" id="series-name">夏日系列 · 每月重置</div>
 </header>
 <div class="topbar">
-  <span class="chip">🍌 香蕉冰淇淋 <b id="food">0</b></span>
+  <span class="chip">🍨 香蕉冰淇淋 <b id="food">0</b></span>
   <span class="chip">📖 收集 <b id="collected">0</b>/<span id="total">12</span></span>
   <a class="chip" href="index.html">📰 去答題賺香蕉冰淇淋</a>
 </div>
 <main>
   <div class="gacha-box">
     <h2>✨ 夏日香蕉冰淇淋抽卡機 ✨</h2>
-    <div class="gacha-note">每天到「每日英文新聞」答單字填空：答對 1 題 = 🍌×1，當日全對再加碼 🍌×5</div>
+    <div class="gacha-note">每天到「每日英文新聞」答單字填空：答對 1 題 = 🍨×1，當日全對再加碼 🍨×5</div>
     <div class="gacha-btns">
-      <button class="draw" id="draw1">單抽 🍌×5</button>
-      <button class="draw ten" id="draw10">十連抽 🍌×45</button>
+      <button class="draw" id="draw1">單抽 🍨×5</button>
+      <button class="draw ten" id="draw10">十連抽 🍨×45</button>
     </div>
     <div class="pity-note"><span id="pity-txt"></span> · 重複卡自動換回香蕉冰淇淋</div>
   </div>
@@ -338,7 +338,7 @@ function cardHTML(c, opts) {
     ${owned ? "" : '<span class="locked-mark">🔒</span>'}
     ${isNew ? '<span class="rnew">NEW!</span>' : ""}
     <div class="cname">${c.name}</div>
-    <div class="cstars">${STARS[c.rar]}${showDup && !isNew ? ' <span class="rdup">重複 +🍌' + DUP_REFUND[c.rar] + "</span>" : ""}</div>
+    <div class="cstars">${STARS[c.rar]}${showDup && !isNew ? ' <span class="rdup">重複 +🍨' + DUP_REFUND[c.rar] + "</span>" : ""}</div>
   </div>`;
 }
 function render() {
@@ -388,7 +388,7 @@ function showResults(results, refund) {
       .replace('class="ccard', `style="animation-delay:${i * 0.08}s" class="ccard`);
   }).join("");
   document.getElementById("refund-note").textContent =
-    refund ? `重複卡自動換回 🍌×${refund}` : "";
+    refund ? `重複卡自動換回 🍨×${refund}` : "";
   document.getElementById("overlay").classList.add("show");
 }
 document.getElementById("close-result").onclick = () => document.getElementById("overlay").classList.remove("show");
