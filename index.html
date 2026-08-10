@@ -98,12 +98,17 @@
 
   /* ── 長按查字 ── */
   .w {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
     cursor: pointer;
     border-bottom: 1px dotted transparent;
     transition: background 0.1s;
+  }
+  /* 觸控裝置才禁選取（避免長按跳出系統選單）；桌機可自由圈選複製 */
+  @media (hover: none) {
+    .w {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
   }
   .w:hover { border-bottom-color: var(--accent); }
   .w.active { background: rgba(79,195,247,0.28); border-radius: 3px; }
@@ -585,6 +590,9 @@ function hideTip() {
 }
 
 document.addEventListener("click", e => {
+  /* 使用者正在圈選文字（複製）時不觸發查字 */
+  const sel = window.getSelection();
+  if (sel && !sel.isCollapsed) return;
   const w = e.target.closest ? e.target.closest(".w") : null;
   if (!w) { if (!tip.contains(e.target)) hideTip(); return; }
   if (w === activeW) { hideTip(); return; }
