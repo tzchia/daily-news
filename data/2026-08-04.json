@@ -1,41 +1,93 @@
 {
-  "date": "2026-08-04",
-  "items": [
-    {
-      "category": "世界",
-      "title_en": "Iran says it is in talks with Oman but not the US after Trump says negotiations to resume",
-      "summary_en": "Iran said it is negotiating with Oman, not the US, over a temporary route through the Strait of Hormuz to let commercial shipping resume, prompting Trump to call Iran's leadership \"unbelievably duplicitous\" on Truth Social. Trump claimed he called off \"massive\" US strikes because a deal on Hormuz was near, and oil prices fell on the news, with Brent crude down 4.5% to $83.98.",
-      "title_zh": "川普稱談判將重啟後，伊朗表示只與阿曼對話、並未與美國談判",
-      "summary_zh": "伊朗表示正與阿曼（而非美國）就荷姆茲海峽臨時通行路線進行協商，以讓商業航運恢復，川普隨即在 Truth Social 上抨擊伊朗領導層「難以置信地表裡不一」。川普聲稱因協議在望而取消了對伊朗的「大規模」空襲，消息傳出後油價應聲下跌，布蘭特原油下挫 4.5% 至每桶 83.98 美元。",
-      "url": "https://www.bbc.co.uk/news/articles/c23579jzv08o",
-      "source": "BBC News"
-    },
-    {
-      "category": "世界",
-      "title_en": "Russia says seven killed and 40 injured by Ukrainian drone hitting busy beach",
-      "summary_en": "A drone crashed into a crowded beach near Arkhipo-Osipovka on Russia's Black Sea coast, killing seven people including three children and injuring 40, with 17 hospitalised, the Krasnodar governor said. The governor accused Ukraine of a deliberate strike on civilians; Ukraine has not commented, and some reports suggest air defences or signal jamming may have brought the drone down.",
-      "title_zh": "俄羅斯稱烏克蘭無人機墜落擁擠海灘，釀 7 死 40 傷",
-      "summary_zh": "一架無人機墜入俄羅斯黑海沿岸阿爾希波-奧西波夫卡村附近的擁擠海灘並爆炸，克拉斯諾達爾州州長表示共 7 人喪生（含 3 名兒童）、40 人受傷，其中 17 人送醫。州長指控烏克蘭蓄意攻擊平民；烏方尚未回應，部分報導指無人機可能是遭防空火力或電子干擾擊落後墜毀。",
-      "url": "https://www.bbc.co.uk/news/articles/cr7kmnyrdn7o",
-      "source": "BBC News"
-    },
-    {
-      "category": "科技/財經",
-      "title_en": "US and Japan take action to prop up yen in rare joint move",
-      "summary_en": "Japan and the US confirmed they jointly intervened in currency markets last week to halt the yen's slide after it hit a fresh 40-year low, the first coordinated intervention since 2011. Bank of Japan data suggests Tokyo may have sold almost $59bn of dollars to buy yen, and both governments said they will not hesitate to intervene jointly again.",
-      "title_zh": "美日罕見聯手干預匯市，出手撐日圓",
-      "summary_zh": "日本與美國證實上週聯合進場干預匯市，以遏止日圓跌至 40 年新低後的跌勢，這是 2011 年以來兩國首次協同干預。日本央行資料顯示東京當局可能拋售了近 590 億美元買回日圓，兩國政府並表示未來將毫不猶豫再度聯手干預。",
-      "url": "https://www.bbc.co.uk/news/articles/cglj1pr0wjwo",
-      "source": "BBC News"
-    },
-    {
-      "category": "羽球",
-      "title_en": "Teenage sensation Tanvi Sharma makes history as youngest Taipei Open champion",
-      "summary_en": "India's Tanvi Sharma, aged 17 years and 223 days, became the youngest-ever women's singles champion at the Taipei Open, beating sixth seed Nguyen Thuy Linh of Vietnam 21-16, 21-16 in Sunday's final. Her win broke the record previously held by Taiwanese badminton legend Tai Tzu Ying, who won the title at 18 years and 109 days.",
-      "title_zh": "17 歲印度小將 Tanvi Sharma 奪台北羽球公開賽女單冠軍，改寫最年輕紀錄",
-      "summary_zh": "印度新星 Tanvi Sharma 以 17 歲又 223 天之齡，在週日決賽以 21比16、21比16 直落二擊敗第六種子越南好手阮翠玲，成為台北羽球公開賽史上最年輕的女單冠軍。這項紀錄先前由台灣羽球天后戴資穎保持，她當年以 18 歲又 109 天奪冠。",
-      "url": "https://www.ewn.co.za/teenage-sensation-tanvi-sharma-makes-history-as-youngest-taipei-open-champion/",
-      "source": "EWN"
-    }
-  ]
+ "date": "2026-08-04",
+ "items": [
+  {
+   "category": "世界",
+   "title_en": "Iran says it is in talks with Oman but not the US after Trump says negotiations to resume",
+   "summary_en": "Iran said it is negotiating with Oman, not the US, over a temporary route through the Strait of Hormuz to let commercial shipping resume, prompting Trump to call Iran's leadership \"unbelievably duplicitous\" on Truth Social. Trump claimed he called off \"massive\" US strikes because a deal on Hormuz was near, and oil prices fell on the news, with Brent crude down 4.5% to $83.98.",
+   "title_zh": "川普稱談判將重啟後，伊朗表示只與阿曼對話、並未與美國談判",
+   "summary_zh": "伊朗表示正與阿曼（而非美國）就荷姆茲海峽臨時通行路線進行協商，以讓商業航運恢復，川普隨即在 Truth Social 上抨擊伊朗領導層「難以置信地表裡不一」。川普聲稱因協議在望而取消了對伊朗的「大規模」空襲，消息傳出後油價應聲下跌，布蘭特原油下挫 4.5% 至每桶 83.98 美元。",
+   "url": "https://www.bbc.co.uk/news/articles/c23579jzv08o",
+   "source": "BBC News"
+  },
+  {
+   "category": "世界",
+   "title_en": "Russia says seven killed and 40 injured by Ukrainian drone hitting busy beach",
+   "summary_en": "A drone crashed into a crowded beach near Arkhipo-Osipovka on Russia's Black Sea coast, killing seven people including three children and injuring 40, with 17 hospitalised, the Krasnodar governor said. The governor accused Ukraine of a deliberate strike on civilians; Ukraine has not commented, and some reports suggest air defences or signal jamming may have brought the drone down.",
+   "title_zh": "俄羅斯稱烏克蘭無人機墜落擁擠海灘，釀 7 死 40 傷",
+   "summary_zh": "一架無人機墜入俄羅斯黑海沿岸阿爾希波-奧西波夫卡村附近的擁擠海灘並爆炸，克拉斯諾達爾州州長表示共 7 人喪生（含 3 名兒童）、40 人受傷，其中 17 人送醫。州長指控烏克蘭蓄意攻擊平民；烏方尚未回應，部分報導指無人機可能是遭防空火力或電子干擾擊落後墜毀。",
+   "url": "https://www.bbc.co.uk/news/articles/cr7kmnyrdn7o",
+   "source": "BBC News"
+  },
+  {
+   "category": "科技/財經",
+   "title_en": "US and Japan take action to prop up yen in rare joint move",
+   "summary_en": "Japan and the US confirmed they jointly intervened in currency markets last week to halt the yen's slide after it hit a fresh 40-year low, the first coordinated intervention since 2011. Bank of Japan data suggests Tokyo may have sold almost $59bn of dollars to buy yen, and both governments said they will not hesitate to intervene jointly again.",
+   "title_zh": "美日罕見聯手干預匯市，出手撐日圓",
+   "summary_zh": "日本與美國證實上週聯合進場干預匯市，以遏止日圓跌至 40 年新低後的跌勢，這是 2011 年以來兩國首次協同干預。日本央行資料顯示東京當局可能拋售了近 590 億美元買回日圓，兩國政府並表示未來將毫不猶豫再度聯手干預。",
+   "url": "https://www.bbc.co.uk/news/articles/cglj1pr0wjwo",
+   "source": "BBC News"
+  },
+  {
+   "category": "羽球",
+   "title_en": "Teenage sensation Tanvi Sharma makes history as youngest Taipei Open champion",
+   "summary_en": "India's Tanvi Sharma, aged 17 years and 223 days, became the youngest-ever women's singles champion at the Taipei Open, beating sixth seed Nguyen Thuy Linh of Vietnam 21-16, 21-16 in Sunday's final. Her win broke the record previously held by Taiwanese badminton legend Tai Tzu Ying, who won the title at 18 years and 109 days.",
+   "title_zh": "17 歲印度小將 Tanvi Sharma 奪台北羽球公開賽女單冠軍，改寫最年輕紀錄",
+   "summary_zh": "印度新星 Tanvi Sharma 以 17 歲又 223 天之齡，在週日決賽以 21比16、21比16 直落二擊敗第六種子越南好手阮翠玲，成為台北羽球公開賽史上最年輕的女單冠軍。這項紀錄先前由台灣羽球天后戴資穎保持，她當年以 18 歲又 109 天奪冠。",
+   "url": "https://www.ewn.co.za/teenage-sensation-tanvi-sharma-makes-history-as-youngest-taipei-open-champion/",
+   "source": "EWN"
+  }
+ ],
+ "quiz": [
+  {
+   "word": "negotiating",
+   "sentence": "Iran said it is ____ with Oman, not the US, over a temporary route through the Strait of Hormuz.",
+   "hint_zh": "動詞（現在分詞）：談判、協商"
+  },
+  {
+   "word": "temporary",
+   "sentence": "Iran is discussing a ____ route through the Strait of Hormuz to let commercial shipping resume.",
+   "hint_zh": "形容詞：臨時的、暫時的"
+  },
+  {
+   "word": "resume",
+   "sentence": "The route through the Strait of Hormuz would let commercial shipping ____.",
+   "hint_zh": "動詞：恢復、重新開始"
+  },
+  {
+   "word": "crashed",
+   "sentence": "A drone ____ into a crowded beach near Arkhipo-Osipovka on Russia's Black Sea coast.",
+   "hint_zh": "動詞（過去式）：墜毀、撞上"
+  },
+  {
+   "word": "deliberate",
+   "sentence": "The governor accused Ukraine of a ____ strike on civilians.",
+   "hint_zh": "形容詞：蓄意的、故意的"
+  },
+  {
+   "word": "injuring",
+   "sentence": "The drone killed seven people including three children, ____ 40 more, with 17 hospitalised.",
+   "hint_zh": "動詞（現在分詞）：使受傷"
+  },
+  {
+   "word": "intervened",
+   "sentence": "Japan and the US confirmed they jointly ____ in currency markets last week to halt the yen's slide.",
+   "hint_zh": "動詞（過去式）：干預、介入"
+  },
+  {
+   "word": "hesitate",
+   "sentence": "Both governments said they will not ____ to intervene jointly again.",
+   "hint_zh": "動詞：猶豫"
+  },
+  {
+   "word": "champion",
+   "sentence": "Tanvi Sharma became the youngest-ever women's singles ____ at the Taipei Open.",
+   "hint_zh": "名詞：冠軍"
+  },
+  {
+   "word": "legend",
+   "sentence": "Her win broke the record previously held by Taiwanese badminton ____ Tai Tzu Ying.",
+   "hint_zh": "名詞：傳奇人物"
+  }
+ ]
 }
