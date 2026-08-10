@@ -41,6 +41,14 @@
   .chip b { color: #e08030; }
   a.chip { text-decoration: none; color: var(--text); cursor: pointer; }
   a.chip:hover { border-color: var(--blue); }
+  .quiz-cta {
+    display: block; text-align: center; padding: 14px 16px;
+    font-size: 1.25rem; font-weight: 700; letter-spacing: 1px;
+    color: #fff; text-decoration: none;
+    background: linear-gradient(90deg, #f5b95f, #ef8f6b);
+    box-shadow: 0 2px 8px rgba(200,130,60,0.3);
+  }
+  .quiz-cta:hover { filter: brightness(1.06); }
   main { max-width: 860px; margin: 0 auto; padding: 8px 14px 70px; }
 
   /* ── 抽卡區 ── */
@@ -171,6 +179,7 @@
 </style>
 </head>
 <body>
+<a class="quiz-cta" href="index.html">📰 去答題賺香蕉冰淇淋 🍨</a>
 <header>
   <h1>🐶 帕恰狗圖鑑</h1>
   <div class="sub" id="series-name">夏日系列 · 每月重置</div>
@@ -178,7 +187,6 @@
 <div class="topbar">
   <span class="chip">🍨 香蕉冰淇淋 <b id="food">0</b></span>
   <span class="chip">📖 收集 <b id="collected">0</b>/<span id="total">12</span></span>
-  <a class="chip" href="index.html">📰 去答題賺香蕉冰淇淋</a>
 </div>
 <main>
   <div class="gacha-box">
