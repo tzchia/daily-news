@@ -464,7 +464,7 @@ container.addEventListener("click", e => {
   if (!z) return;
   const wasSel = z.classList.contains("sel");
   clearSenHl();
-  if (wasSel) return; // 再點一次同句 = 取消
+  if (wasSel) { try { speechSynthesis.cancel(); } catch (_) {} return; } // 再點一次同句 = 取消（並停止朗讀）
   const card = z.closest(".news-card");
   const f = z.closest("[data-f]").dataset.f;
   const ids = z.dataset.s.split(",").map(s => s.trim());
@@ -479,6 +479,7 @@ container.addEventListener("click", e => {
     if (xs.some(s => ids.includes(s))) x.classList.add("sel");
   });
   targets.forEach(t => t.classList.add("hl"));
+  speakEnSentence(card, f, ids); // 朗讀對應英文的完整句子
   const r = targets[0].getBoundingClientRect();
   if (r.top < 0 || r.bottom > window.innerHeight) {
     targets[0].scrollIntoView({ behavior: "smooth", block: "center" });
@@ -556,6 +557,22 @@ function speak(word) {
     if (v) u.voice = v;
     speechSynthesis.speak(u);
   } catch (e) {}
+}
+/* 點中文半句時朗讀對應英文「整句」：esen 是子句切分（逗號也切），
+   所以由對應子句往前後擴到句號/問號/驚嘆號邊界，再整句念出。 */
+const SENT_END = /[.!?]["'\u201D\u2019)\]]*\s*$/;
+function speakEnSentence(card, f, ids) {
+  const spans = Array.from(card.querySelectorAll(`.block.en [data-f="${f}"] .esen`));
+  if (!spans.length) return;
+  const nums = ids.map(Number).filter(n => Number.isInteger(n) && n >= 0 && n < spans.length);
+  if (!nums.length) return;
+  let start = Math.min.apply(null, nums);
+  let end = Math.max.apply(null, nums);
+  const txt = i => spans[i].textContent.trim();
+  while (start > 0 && !SENT_END.test(txt(start - 1))) start--;
+  while (end < spans.length - 1 && !SENT_END.test(txt(end))) end++;
+  const sentence = spans.slice(start, end + 1).map(s => s.textContent.trim()).join(" ");
+  if (sentence) speak(sentence);
 }
 if ("speechSynthesis" in window) speechSynthesis.getVoices(); // 預先載入語音清單
 
