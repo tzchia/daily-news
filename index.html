@@ -195,7 +195,7 @@
   <select class="nav-btn" id="date-select" title="選擇日期"></select>
 </div>
 <div class="tip-note">💡 點英文單字查翻譯 · 點中文句子高亮對應英文</div>
-<div class="tip-note"><a href="game.html" style="color:var(--accent);text-decoration:none;">🐶 帕恰狗圖鑑：目前香蕉冰淇淋 🍨<span id="food-count">0</span>，答對單字賺香蕉冰淇淋 →</a></div>
+<div class="tip-note"><a href="game.html" style="color:var(--accent);text-decoration:none;">🐶 帕恰狗圖鑑<span id="food-user"></span>：目前香蕉冰淇淋 🍨<span id="food-count">0</span>，答對單字賺香蕉冰淇淋 →</a></div>
 <main id="news-container">
   <div class="empty">載入中…</div>
 </main>
@@ -212,6 +212,7 @@
   來源：BBC News / Google News 等公開報導 · 每日 08:00（台北時間）更新<br>
   <a href="https://github.com/tzchia/daily-news">GitHub repo</a>
 </footer>
+<script src="assets/pgame-sync.js"></script>
 <script>
 const CAT_STYLE = {
   "世界": "🌍", "科技": "💻", "財經": "📈", "科技/財經": "💻",
@@ -380,17 +381,17 @@ function checkOne(i, quiet) {
  * 答對 1 題 = 🍨×1（每題每天只算一次）；當日 10 題全對再加碼 🍨×5。
  * 「顯示答案」也算答對照樣給糧（輕鬆學習路線）。 */
 function gameFood(delta) {
-  const v = +(localStorage.getItem("pgame:food") || 0) + (delta || 0);
-  if (delta) localStorage.setItem("pgame:food", v);
+  const v = +(localStorage.getItem(PSYNC.K("food")) || 0) + (delta || 0);
+  if (delta) { localStorage.setItem(PSYNC.K("food"), v); PSYNC.touch(); PSYNC.push(); }
   const el = document.getElementById("food-count");
   if (el) el.textContent = v;
   return v;
 }
 function earnedObj() {
-  try { return JSON.parse(localStorage.getItem("pgame:earned:" + dates[currentIdx])) || {}; }
+  try { return JSON.parse(localStorage.getItem(PSYNC.K("earned:" + dates[currentIdx]))) || {}; }
   catch (e) { return {}; }
 }
-function setEarned(o) { localStorage.setItem("pgame:earned:" + dates[currentIdx], JSON.stringify(o)); }
+function setEarned(o) { localStorage.setItem(PSYNC.K("earned:" + dates[currentIdx]), JSON.stringify(o)); PSYNC.touch(); PSYNC.push(); }
 function awardFood(i) {
   try {
     const e = earnedObj();
@@ -603,6 +604,12 @@ tip.addEventListener("click", e => {
 });
 window.addEventListener("scroll", hideTip, { passive: true });
 
+/* 顯示目前玩家 + 進頁面先拉一次雲端進度（別台裝置答的題才不會重複領） */
+(function () {
+  const u = PSYNC.user();
+  if (u) document.getElementById("food-user").textContent = "（" + u + "）";
+  if (u) PSYNC.pull().then(() => gameFood(0));
+})();
 gameFood(0); // 頁頂香蕉冰淇淋數
 loadIndex().catch(() => {
   document.getElementById("news-container").innerHTML =

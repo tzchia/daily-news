@@ -143,6 +143,34 @@
   .hall-item b { color: #e08030; }
   .hall-empty { color: var(--text-dim); font-size: 0.85rem; padding: 4px; }
 
+  /* ── 玩家選擇彈窗 ── */
+  #userbox {
+    position: fixed; inset: 0; z-index: 500; display: none;
+    background: rgba(40,60,90,0.6); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 18px;
+  }
+  #userbox.show { display: flex; }
+  .user-panel {
+    background: var(--card); border-radius: 20px; padding: 24px 22px 20px;
+    max-width: 420px; width: 100%; text-align: center;
+    animation: pop-in 0.35s cubic-bezier(0.2, 1.4, 0.4, 1);
+  }
+  .user-panel h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .user-note { color: var(--text-dim); font-size: 0.8rem; margin-bottom: 14px; }
+  .user-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 16px; }
+  button.user-btn {
+    border: 2px solid var(--border); background: #fff; border-radius: 14px;
+    padding: 10px 20px; font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--text);
+  }
+  button.user-btn.me { border-color: var(--blue); background: #eaf4fd; }
+  .user-new { display: flex; gap: 8px; justify-content: center; }
+  .user-new input {
+    border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px;
+    font-size: 0.95rem; width: 150px;
+  }
+  .user-new input:focus { outline: none; border-color: var(--blue); }
+  .user-status { margin-top: 10px; color: var(--text-dim); font-size: 0.78rem; min-height: 1.2em; }
+
   /* ── 抽卡結果彈窗 ── */
   #overlay {
     position: fixed; inset: 0; z-index: 300; display: none;
@@ -187,6 +215,7 @@
 <div class="topbar">
   <span class="chip">🍨 香蕉冰淇淋 <b id="food">0</b></span>
   <span class="chip">📖 收集 <b id="collected">0</b>/<span id="total">12</span></span>
+  <a class="chip" id="user-chip" title="切換玩家">👤 <b id="user-name">選擇玩家</b> <span id="cloud-dot"></span></a>
 </div>
 <main>
   <div class="gacha-box">
@@ -215,11 +244,25 @@
   </div>
 </div>
 
+<div id="userbox">
+  <div class="user-panel">
+    <h3>👤 誰在玩？</h3>
+    <div class="user-note">選你的名字，進度會雲端同步——換手機、換瀏覽器都接得回來</div>
+    <div class="user-list" id="user-list">載入中…</div>
+    <div class="user-new">
+      <input id="user-new-name" maxlength="12" placeholder="新玩家名字">
+      <button class="draw" id="user-create">建立</button>
+    </div>
+    <div class="user-status" id="user-status"></div>
+  </div>
+</div>
+
 <footer>
-  進度存在此瀏覽器（localStorage）· 每月 1 日圖鑑自動換新系列<br>
+  選擇玩家後進度雲端同步（跨裝置通用）· 每月 1 日圖鑑自動換新系列<br>
   <a href="index.html">← 回每日英文新聞</a>
 </footer>
 
+<script src="assets/pgame-sync.js"></script>
 <script>
 /* ═══════════ 卡片資料（美術佔位版）═══════════
  * img: null → 用內建 SVG 絨毛狗佔位圖；拿到真卡圖後
@@ -286,39 +329,43 @@ function seriesOf(mk) { return SERIES[mk] || SERIES[DEFAULT_SERIES_KEY]; }
 const MK = monthKey();
 const CUR = seriesOf(MK);
 
+/* 所有 key 走 PSYNC.K()：未選玩家 = 舊版 pgame:*，選了玩家 = pgame:u:{名}:*。
+ * 寫入時 touch()+push() 讓進度自動上雲。 */
+function put(suffix, v) { localStorage.setItem(PSYNC.K(suffix), v); PSYNC.touch(); PSYNC.push(); }
 const S = {
-  get food() { return +(localStorage.getItem("pgame:food") || 0); },
-  set food(v) { localStorage.setItem("pgame:food", v); },
-  get pity() { return +(localStorage.getItem("pgame:pity") || 0); },
-  set pity(v) { localStorage.setItem("pgame:pity", v); },
+  get food() { return +(localStorage.getItem(PSYNC.K("food")) || 0); },
+  set food(v) { put("food", v); },
+  get pity() { return +(localStorage.getItem(PSYNC.K("pity")) || 0); },
+  set pity(v) { put("pity", v); },
   /* SSR 保底計數（每月獨立，抽到 SSR 歸零） */
-  get ssrPity() { return +(localStorage.getItem("pgame:ssrpity:" + MK) || 0); },
-  set ssrPity(v) { localStorage.setItem("pgame:ssrpity:" + MK, v); },
+  get ssrPity() { return +(localStorage.getItem(PSYNC.K("ssrpity:" + MK)) || 0); },
+  set ssrPity(v) { put("ssrpity:" + MK, v); },
   /* 本月總抽數（純累計，不歸零） */
-  get draws() { return +(localStorage.getItem("pgame:draws:" + MK) || 0); },
-  set draws(v) { localStorage.setItem("pgame:draws:" + MK, v); },
-  col(mk) { try { return JSON.parse(localStorage.getItem("pgame:col:" + mk)) || {}; } catch (e) { return {}; } },
-  setCol(mk, o) { localStorage.setItem("pgame:col:" + mk, JSON.stringify(o)); }
+  get draws() { return +(localStorage.getItem(PSYNC.K("draws:" + MK)) || 0); },
+  set draws(v) { put("draws:" + MK, v); },
+  col(mk) { try { return JSON.parse(localStorage.getItem(PSYNC.K("col:" + mk))) || {}; } catch (e) { return {}; } },
+  setCol(mk, o) { put("col:" + mk, JSON.stringify(o)); }
 };
 /* ═══════════ 重置本月進度（?reset=1）═══════════ */
 if (new URLSearchParams(location.search).get("reset") === "1") {
   if (confirm("確定要重置本月進度嗎？\n\n將清除：🍨 香蕉冰淇淋、答題領取紀錄、本月圖鑑、抽卡次數與保底。\n此動作無法復原！")) {
     const doomed = [];
+    const targets = ["food", "pity", "col:" + MK, "ssrpity:" + MK, "draws:" + MK, "meta:" + MK]
+      .map(s => PSYNC.K(s));
+    const earnedPrefix = PSYNC.K("earned:" + MK);
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
-      if (k === "pgame:food" || k === "pgame:pity" ||
-          k === "pgame:col:" + MK || k === "pgame:ssrpity:" + MK ||
-          k === "pgame:draws:" + MK || k === "pgame:meta:" + MK ||
-          (k && k.startsWith("pgame:earned:" + MK))) doomed.push(k);
+      if (targets.indexOf(k) >= 0 || (k && k.startsWith(earnedPrefix))) doomed.push(k);
     }
     doomed.forEach(k => localStorage.removeItem(k));
+    PSYNC.touch(); PSYNC.pushNow();
     alert("已重置完成！重新開始收集吧 🍨");
   }
   location.replace(location.pathname); /* 去掉參數，避免重整又觸發 */
 }
 
 /* 記錄本月系列名/總數，殿堂用（就算之後 SERIES 改了也記得當時的樣子） */
-localStorage.setItem("pgame:meta:" + MK, JSON.stringify({ name: CUR.name, total: CUR.cards.length }));
+localStorage.setItem(PSYNC.K("meta:" + MK), JSON.stringify({ name: CUR.name, total: CUR.cards.length }));
 
 /* ═══════════ 抽卡邏輯 ═══════════ */
 function rollRarity() {
@@ -389,13 +436,15 @@ function render() {
 }
 function renderHall() {
   const items = [];
+  const colPrefix = PSYNC.K("col:");
   for (let i = 0; i < localStorage.length; i++) {
     const k = localStorage.key(i);
-    const m = k && k.match(/^pgame:col:(\d{4}-\d{2})$/);
+    if (!k || k.indexOf(colPrefix) !== 0) continue;
+    const m = k.slice(colPrefix.length).match(/^(\d{4}-\d{2})$/);
     if (!m || m[1] === MK) continue;
     const mk = m[1];
     let meta = {};
-    try { meta = JSON.parse(localStorage.getItem("pgame:meta:" + mk)) || {}; } catch (e) {}
+    try { meta = JSON.parse(localStorage.getItem(PSYNC.K("meta:" + mk))) || {}; } catch (e) {}
     const col = S.col(mk);
     const owned = Object.keys(col).length;
     const total = meta.total || "?";
@@ -445,7 +494,56 @@ document.addEventListener("click", e => {
     `${c.name} <small>${c.rar} ${STARS[c.rar]}</small>`;
   lb.classList.add("show");
 });
+
+/* ═══════════ 玩家選擇 / 雲端同步 UI ═══════════ */
+const userbox = document.getElementById("userbox");
+const DOT = { idle: "", sync: "☁️…", ok: "☁️", err: "⚠️離線" };
+PSYNC.onstatus = s => { document.getElementById("cloud-dot").textContent = DOT[s] || ""; };
+function renderUserChip() {
+  document.getElementById("user-name").textContent = PSYNC.user() || "選擇玩家";
+}
+async function openUserbox() {
+  userbox.classList.add("show");
+  const listEl = document.getElementById("user-list");
+  listEl.textContent = "載入中…";
+  const names = await PSYNC.listUsers();
+  listEl.innerHTML = names.length
+    ? names.map(n => `<button class="user-btn ${n === PSYNC.user() ? "me" : ""}" data-u="${n}">${n}</button>`).join("")
+    : '<span class="hall-empty">還沒有玩家——在下面輸入名字建立第一位！</span>';
+}
+async function pickUser(name) {
+  const st = document.getElementById("user-status");
+  st.textContent = "同步中…";
+  const ok = await PSYNC.selectUser(name);
+  if (!ok) { st.textContent = "名字不能是空的喔"; return; }
+  st.textContent = "";
+  userbox.classList.remove("show");
+  renderUserChip();
+  render();
+}
+document.getElementById("user-chip").onclick = openUserbox;
+document.getElementById("user-list").addEventListener("click", e => {
+  const b = e.target.closest(".user-btn");
+  if (b) pickUser(b.dataset.u);
+});
+document.getElementById("user-create").onclick = () =>
+  pickUser(document.getElementById("user-new-name").value);
+document.getElementById("user-new-name").addEventListener("keydown", e => {
+  if (e.key === "Enter") pickUser(e.target.value);
+});
+userbox.addEventListener("click", e => {
+  /* 已有玩家時點背景可關閉；第一次強制選人 */
+  if (e.target === userbox && PSYNC.user()) userbox.classList.remove("show");
+});
+
+/* ═══════════ 啟動 ═══════════ */
+renderUserChip();
 render();
+if (PSYNC.user()) {
+  PSYNC.pull().then(updated => { if (updated) render(); });
+} else {
+  openUserbox();
+}
 </script>
 </body>
 </html>
