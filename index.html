@@ -558,19 +558,15 @@ function speak(word) {
     speechSynthesis.speak(u);
   } catch (e) {}
 }
-/* 點中文半句時朗讀對應英文「整句」：esen 是子句切分（逗號也切），
-   所以由對應子句往前後擴到句號/問號/驚嘆號邊界，再整句念出。 */
-const SENT_END = /[.!?]["'\u201D\u2019)\]]*\s*$/;
+/* 點中文半句時朗讀對應英文：只念「高亮起來」的那段（對應的 esen 子句），
+   不往前後擴句，避免念到整段/整篇。 */
 function speakEnSentence(card, f, ids) {
   const spans = Array.from(card.querySelectorAll(`.block.en [data-f="${f}"] .esen`));
   if (!spans.length) return;
   const nums = ids.map(Number).filter(n => Number.isInteger(n) && n >= 0 && n < spans.length);
   if (!nums.length) return;
-  let start = Math.min.apply(null, nums);
-  let end = Math.max.apply(null, nums);
-  const txt = i => spans[i].textContent.trim();
-  while (start > 0 && !SENT_END.test(txt(start - 1))) start--;
-  while (end < spans.length - 1 && !SENT_END.test(txt(end))) end++;
+  const start = Math.min.apply(null, nums);
+  const end = Math.max.apply(null, nums);
   const sentence = spans.slice(start, end + 1).map(s => s.textContent.trim()).join(" ");
   if (sentence) speak(sentence);
 }
