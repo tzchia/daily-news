@@ -272,7 +272,7 @@
   <a href="index.html">← 回每日英文新聞</a>
 </footer>
 
-<script src="assets/pgame-sync.js"></script>
+<script src="assets/pgame-sync.js?v=2"></script>
 <script>
 /* ═══════════ 卡片資料（美術佔位版）═══════════
  * img: null → 用內建 SVG 絨毛狗佔位圖；拿到真卡圖後
@@ -553,7 +553,8 @@ dailyToast.id = "daily-toast";
 dailyToast.textContent = "🎁 每日登入禮：香蕉冰淇淋 🍨×1 GET！";
 document.body.appendChild(dailyToast);
 function claimDaily() {
-  if (!PSYNC.dailyLogin()) return;
+  /* 防呆：HTML 與 JS 快取更新時間差時 dailyLogin 可能還不存在 */
+  if (!PSYNC.dailyLogin || !PSYNC.dailyLogin()) return;
   render();
   dailyToast.classList.add("show");
   setTimeout(() => dailyToast.classList.remove("show"), 3200);
