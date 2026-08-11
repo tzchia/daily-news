@@ -131,12 +131,36 @@ window.PSYNC = (function () {
     return true;
   }
 
+  /* ── 每日登入禮：每天第一次打開就送 🍨×1 ──
+   * 記號 key = login:YYYY-MM-DD（跟著玩家同步上雲，跨裝置也只領一次）。
+   * 呼叫時機：pull() 完成之後（先看過雲端記號才不會重複發）。
+   * 回傳 true = 這次有發，頁面可跳提示。 */
+  function dailyLogin() {
+    try {
+      const today = new Date().toLocaleDateString("sv"); /* YYYY-MM-DD */
+      const key = K("login:" + today);
+      if (localStorage.getItem(key)) return false;
+      /* 清掉舊日期的登入記號，存檔不會越長越肥 */
+      const p = K("login:"), doomed = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.indexOf(p) === 0 && k !== key) doomed.push(k);
+      }
+      doomed.forEach(k => localStorage.removeItem(k));
+      localStorage.setItem(key, "1");
+      const fk = K("food");
+      localStorage.setItem(fk, +(localStorage.getItem(fk) || 0) + 1);
+      touch(); push();
+      return true;
+    } catch (e) { return false; }
+  }
+
   /* 離開頁面前把還沒推送的進度送出（keepalive 讓請求在跳頁後仍完成） */
   window.addEventListener("pagehide", () => { if (pushTimer) pushNow(); });
 
   return {
     user: user, K: K, touch: touch, push: push, pushNow: pushNow,
-    pull: pull, listUsers: listUsers, selectUser: selectUser,
+    pull: pull, listUsers: listUsers, selectUser: selectUser, dailyLogin: dailyLogin,
     set onstatus(f) { onStatus = f; if (f) f(status); },
     get status() { return status; }
   };

@@ -604,11 +604,18 @@ tip.addEventListener("click", e => {
 });
 window.addEventListener("scroll", hideTip, { passive: true });
 
-/* 顯示目前玩家 + 進頁面先拉一次雲端進度（別台裝置答的題才不會重複領） */
+/* 顯示目前玩家 + 進頁面先拉一次雲端進度（別台裝置答的題才不會重複領）
+ * pull 完成後領每日登入禮 🍨×1（PSYNC.dailyLogin 每天只發一次，兩頁共用記號） */
 (function () {
   const u = PSYNC.user();
   if (u) document.getElementById("food-user").textContent = "（" + u + "）";
-  if (u) PSYNC.pull().then(() => gameFood(0));
+  if (u) PSYNC.pull().then(() => {
+    if (PSYNC.dailyLogin()) {
+      gameFood(0);
+      dogTxt.textContent = "每日登入禮 🍨×1 GET！";
+      showPop(dog);
+    } else { gameFood(0); }
+  });
 })();
 gameFood(0); // 頁頂香蕉冰淇淋數
 loadIndex().catch(() => {

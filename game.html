@@ -171,6 +171,16 @@
   .user-new input:focus { outline: none; border-color: var(--blue); }
   .user-status { margin-top: 10px; color: var(--text-dim); font-size: 0.78rem; min-height: 1.2em; }
 
+  /* ── 每日登入禮 toast ── */
+  #daily-toast {
+    position: fixed; left: 50%; top: 14px; transform: translateX(-50%) translateY(-80px);
+    z-index: 600; background: linear-gradient(135deg, #f5b95f, #ef8f6b); color: #fff;
+    font-weight: 700; font-size: 0.95rem; padding: 10px 22px; border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(200,130,60,0.45); pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.2, 1.4, 0.4, 1);
+  }
+  #daily-toast.show { transform: translateX(-50%) translateY(0); }
+
   /* ── 抽卡結果彈窗 ── */
   #overlay {
     position: fixed; inset: 0; z-index: 300; display: none;
@@ -519,6 +529,7 @@ async function pickUser(name) {
   st.textContent = "";
   userbox.classList.remove("show");
   renderUserChip();
+  claimDaily();
   render();
 }
 document.getElementById("user-chip").onclick = openUserbox;
@@ -536,11 +547,23 @@ userbox.addEventListener("click", e => {
   if (e.target === userbox && PSYNC.user()) userbox.classList.remove("show");
 });
 
+/* ── 每日登入禮：每天第一次打開送 🍨×1 ── */
+const dailyToast = document.createElement("div");
+dailyToast.id = "daily-toast";
+dailyToast.textContent = "🎁 每日登入禮：香蕉冰淇淋 🍨×1 GET！";
+document.body.appendChild(dailyToast);
+function claimDaily() {
+  if (!PSYNC.dailyLogin()) return;
+  render();
+  dailyToast.classList.add("show");
+  setTimeout(() => dailyToast.classList.remove("show"), 3200);
+}
+
 /* ═══════════ 啟動 ═══════════ */
 renderUserChip();
 render();
 if (PSYNC.user()) {
-  PSYNC.pull().then(updated => { if (updated) render(); });
+  PSYNC.pull().then(updated => { if (updated) render(); claimDaily(); });
 } else {
   openUserbox();
 }
