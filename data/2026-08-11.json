@@ -1,0 +1,109 @@
+{
+  "date": "2026-08-11",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "At least 13 killed in Ukrainian drone strike deep into Russia",
+      "summary_en": "At least 13 people, including a child, were killed and 75 injured when Ukrainian drones struck Nizhnekamsk in Russia's Tatarstan republic, more than 1,100 kilometres from the Ukrainian border. Ukraine's Armed Forces said the city's oil refinery had been hit, making it one of the deadliest single attacks on Russia since Moscow's full-scale invasion began in 2022. Kyiv has recently stepped up long-range strikes on facilities it says contribute revenue and logistics to Russia's war effort.",
+      "title_zh": "烏克蘭無人機深入俄境攻擊，至少13人喪生",
+      "summary_zh": "烏克蘭無人機襲擊俄羅斯韃靼斯坦共和國的下卡姆斯克，造成至少13人死亡，其中包括一名兒童，另有75人受傷；該市距烏克蘭邊境超過1,100公里。烏克蘭軍方表示該市煉油廠遭擊中，這是2022年莫斯科全面入侵以來，俄羅斯境內死傷最慘重的單次攻擊之一。基輔近期加強遠程打擊，鎖定其所稱為俄羅斯戰爭提供收入與後勤的設施。",
+      "url": "https://www.bbc.co.uk/news/articles/cvgjvgv926po",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[2], [0, 2], [1], [2], [3], [4], [5], [5], [6], [6]]
+      }
+    },
+    {
+      "category": "世界",
+      "title_en": "Trump signs order to limit childhood vaccines and split MMR shots",
+      "summary_en": "President Donald Trump has signed an executive order that calls for fewer childhood vaccines, cutting the recommended number to 11 from 18, and recommends splitting the measles, mumps and rubella (MMR) shots. Multiple studies have found no connection between the shots and autism, and the American Academy of Pediatrics called the order \"disheartening\" and \"dangerous\" as measles cases reach a 35-year high in the US.",
+      "title_zh": "川普簽署行政命令，限縮兒童疫苗並拆分MMR疫苗",
+      "summary_zh": "美國總統川普簽署行政命令，要求減少兒童疫苗，將建議接種數量從18種降至11種，並建議將麻疹、腮腺炎與德國麻疹（MMR）疫苗分開施打。多項研究皆未發現疫苗與自閉症有任何關聯；在美國麻疹病例創35年新高之際，美國小兒科學會批評該命令「令人沮喪」且「危險」。",
+      "url": "https://www.bbc.co.uk/news/articles/ce3q5vl581wo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [0], [1], [2, 3], [4], [5], [5]]
+      }
+    },
+    {
+      "category": "科技/財經",
+      "title_en": "Nvidia gets $500bn from major investors to develop AI data centres",
+      "summary_en": "Nvidia has teamed up with some of Wall Street's largest banks and investors, including BlackRock, Goldman Sachs and KKR, to raise $500bn for artificial intelligence infrastructure. The investors are for the first time treating AI hardware and infrastructure as an asset class, and the financing will back new data centres and factories to manufacture AI chips. \"In AI, compute is revenue,\" chief executive Jensen Huang said.",
+      "title_zh": "輝達獲主要投資機構5,000億美元，開發AI資料中心",
+      "summary_zh": "輝達與華爾街多家大型銀行及投資機構聯手，包括貝萊德、高盛與KKR，為人工智慧基礎設施募集5,000億美元。投資方首度將AI硬體與基礎設施視為一種資產類別，資金將用於興建新資料中心，以及製造AI晶片的新工廠。執行長黃仁勳表示：「在AI領域，算力就是營收」。",
+      "url": "https://www.bbc.co.uk/news/articles/c78gr0jv0mdo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1, 2], [3], [4], [5], [5], [6, 7], [7]]
+      }
+    },
+    {
+      "category": "棒球",
+      "title_en": "Brewers' Misiorowski reaches 200 strikeouts faster than all but one pitcher in MLB history",
+      "summary_en": "Milwaukee Brewers flamethrower Jacob Misiorowski reached his 200th strikeout of the season in only 129 1/3 innings, decimating the franchise record and trailing only Spencer Strider in MLB history for the fastest pace. The righty struck out nine over six innings in the Brewers' 4-3 walk-off win over the Twins, opening the game with 21 straight fastballs, the slowest of which was clocked at 100.6 mph.",
+      "title_zh": "釀酒人Misiorowski達成200次三振，速度居MLB史上第二快",
+      "summary_zh": "密爾瓦基釀酒人火球男Jacob Misiorowski只用129又1/3局便達成本季第200次三振，大幅刷新隊史紀錄，達成速度在MLB歷史上僅次於Spencer Strider。這位右投在釀酒人以4比3再見擊敗雙城的比賽中，六局內送出九次三振，開賽更連續投出21顆速球，其中最慢的球速也達100.6英里。",
+      "url": "https://www.mlb.com/news/jacob-misiorowski-notches-200th-strikeout-of-season-vs-twins",
+      "source": "MLB.com",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [1], [2], [2], [3], [4]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "struck",
+      "sentence": "At least 13 people, including a child, were killed and 75 injured when Ukrainian drones ____ Nizhnekamsk in Russia's Tatarstan republic.",
+      "hint_zh": "動詞（過去式）：襲擊、擊中"
+    },
+    {
+      "word": "invasion",
+      "sentence": "Ukraine's Armed Forces said the city's oil refinery had been hit, making it one of the deadliest single attacks on Russia since Moscow's full-scale ____ began in 2022.",
+      "hint_zh": "名詞：入侵"
+    },
+    {
+      "word": "revenue",
+      "sentence": "Kyiv has recently stepped up long-range strikes on facilities it says contribute ____ and logistics to Russia's war effort.",
+      "hint_zh": "名詞：收入、營收"
+    },
+    {
+      "word": "executive",
+      "sentence": "President Donald Trump has signed an ____ order that calls for fewer childhood vaccines, cutting the recommended number to 11 from 18.",
+      "hint_zh": "形容詞：行政的"
+    },
+    {
+      "word": "connection",
+      "sentence": "Multiple studies have found no ____ between the shots and autism.",
+      "hint_zh": "名詞：關聯"
+    },
+    {
+      "word": "infrastructure",
+      "sentence": "Nvidia has teamed up with some of Wall Street's largest banks and investors to raise $500bn for artificial intelligence ____.",
+      "hint_zh": "名詞：基礎設施"
+    },
+    {
+      "word": "asset",
+      "sentence": "The investors are for the first time treating AI hardware and infrastructure as an ____ class.",
+      "hint_zh": "名詞：資產"
+    },
+    {
+      "word": "manufacture",
+      "sentence": "The financing will back new data centres and factories to ____ AI chips.",
+      "hint_zh": "動詞：製造"
+    },
+    {
+      "word": "decimating",
+      "sentence": "Jacob Misiorowski reached his 200th strikeout of the season in only 129 1/3 innings, ____ the franchise record.",
+      "hint_zh": "動詞（現在分詞）：粉碎、大幅刷新（紀錄）"
+    },
+    {
+      "word": "clocked",
+      "sentence": "The righty struck out nine over six innings, opening the game with 21 straight fastballs, the slowest of which was ____ at 100.6 mph.",
+      "hint_zh": "動詞（過去分詞）：測得（速度）"
+    }
+  ]
+}
