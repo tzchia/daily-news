@@ -107,28 +107,36 @@ window.PSYNC = (function () {
     return Array.from(names).sort();
   }
 
-  /* 選定（或建立）玩家。全新玩家會認領這台裝置的舊版未分帳進度 */
-  async function selectUser(name) {
+  /* 選定（或建立）玩家 —— 樂觀切換：名字合法就立刻生效並回傳，
+   * 雲端對帳（拉存檔／認領舊進度）丟到背景跑，UI 不用等。
+   * 回傳 false = 名字不合法；否則回傳 { ok:true, synced:Promise<boolean> }，
+   * synced resolve true = 本機進度被雲端更新，畫面需要重繪。 */
+  function selectUser(name) {
     name = String(name || "").trim().slice(0, 12).replace(/[<>&"':]/g, "");
     if (!name) return false;
-    let cloudHas = false;
-    try { const d = await api({ action: "get", u: name }); cloudHas = !!d.ok; } catch (e) {}
     localStorage.setItem("pgame:user", name);
+    return { ok: true, synced: reconcile(name) };
+  }
+  /* 背景對帳：整個流程最多只打一次 GET（舊版會連打兩次一樣的 get，慢一倍） */
+  async function reconcile(name) {
     const hasLocal = localTs() > 0 || Object.keys(collect()).length > 0;
-    if (!cloudHas && !hasLocal) {
-      const legacy = {};
-      for (let i = 0; i < localStorage.length; i++) {
-        const k = localStorage.key(i);
-        if (k && LEGACY.test(k)) legacy[k.slice("pgame:".length)] = localStorage.getItem(k);
-      }
-      Object.keys(legacy).forEach(s => localStorage.setItem(prefix(name) + s, legacy[s]));
-      Object.keys(legacy).forEach(s => localStorage.removeItem("pgame:" + s));
-      touch();
-      await pushNow();
-      return true;
+    if (hasLocal) return pull(); /* 本機已有此玩家進度 → 比 ts 決定拉或推 */
+    setStatus("sync");
+    let d = null;
+    try { d = await api({ action: "get", u: name }); setStatus("ok"); }
+    catch (e) { setStatus("err"); return false; } /* 離線：先玩本機，之後變動會再推 */
+    if (d && d.ok) { applyBlob(name, JSON.parse(d.s || "{}"), d.ts); return true; }
+    /* 雲端沒有、本機也沒有 → 全新玩家：認領這台裝置的舊版未分帳進度 */
+    const legacy = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && LEGACY.test(k)) legacy[k.slice("pgame:".length)] = localStorage.getItem(k);
     }
-    await pull();
-    return true;
+    Object.keys(legacy).forEach(s => localStorage.setItem(prefix(name) + s, legacy[s]));
+    Object.keys(legacy).forEach(s => localStorage.removeItem("pgame:" + s));
+    touch();
+    pushNow();
+    return Object.keys(legacy).length > 0;
   }
 
   /* ── 每日登入禮：每天第一次打開就送 🍨×1 ──

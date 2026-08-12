@@ -265,7 +265,7 @@
 <div id="userbox">
   <div class="user-panel">
     <h3>👤 誰在玩？</h3>
-    <div class="user-note">選你的名字，進度會雲端同步——換手機、換瀏覽器都接得回來</div>
+    <div class="user-note">選你的名字，進度會雲端同步</div>
     <div class="user-list" id="user-list">載入中…</div>
     <div class="user-new">
       <input id="user-new-name" maxlength="12" placeholder="新玩家名字">
@@ -280,7 +280,7 @@
   <a href="index.html">← 回每日英文新聞</a>
 </footer>
 
-<script src="assets/pgame-sync.js?v=2"></script>
+<script src="assets/pgame-sync.js?v=3"></script>
 <script>
 /* ═══════════ 卡片資料（美術佔位版）═══════════
  * img: null → 用內建 SVG 絨毛狗佔位圖；拿到真卡圖後
@@ -523,22 +523,38 @@ function renderUserChip() {
 async function openUserbox() {
   userbox.classList.add("show");
   const listEl = document.getElementById("user-list");
-  listEl.textContent = "載入中…";
+  /* 先列出這台裝置出現過的名字（不用等雲端），雲端名單回來再補 */
+  const local = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const m = (localStorage.key(i) || "").match(/^pgame:u:([^:]+):ts$/);
+    if (m) local.push(m[1]);
+  }
+  const paint = names => {
+    listEl.innerHTML = names.length
+      ? names.map(n => `<button class="user-btn ${n === PSYNC.user() ? "me" : ""}" data-u="${n}">${n}</button>`).join("")
+      : '<span class="hall-empty">還沒有玩家——在下面輸入名字建立第一位！</span>';
+  };
+  if (local.length) paint(local.sort()); else listEl.textContent = "載入中…";
   const names = await PSYNC.listUsers();
-  listEl.innerHTML = names.length
-    ? names.map(n => `<button class="user-btn ${n === PSYNC.user() ? "me" : ""}" data-u="${n}">${n}</button>`).join("")
-    : '<span class="hall-empty">還沒有玩家——在下面輸入名字建立第一位！</span>';
+  paint(names);
 }
-async function pickUser(name) {
+function pickUser(name) {
   const st = document.getElementById("user-status");
-  st.textContent = "同步中…";
-  const ok = await PSYNC.selectUser(name);
-  if (!ok) { st.textContent = "名字不能是空的喔"; return; }
+  if (!String(name || "").trim()) { st.textContent = "名字不能是空的喔"; return; }
+  const r = PSYNC.selectUser(name);
+  if (!r) { st.textContent = "名字不能是空的喔"; return; }
+  /* 樂觀切換：立刻關窗、先顯示本機進度，雲端同步在背景跑 */
   st.textContent = "";
   userbox.classList.remove("show");
   renderUserChip();
-  claimDaily();
   render();
+  /* 相容舊版快取 JS：舊 selectUser 回傳 Promise 本身 */
+  const synced = (typeof r.then === "function") ? r : r.synced;
+  if (synced && typeof synced.then === "function") {
+    synced.then(updated => { if (updated) render(); claimDaily(); });
+  } else {
+    claimDaily();
+  }
 }
 document.getElementById("user-chip").onclick = openUserbox;
 document.getElementById("user-list").addEventListener("click", e => {
