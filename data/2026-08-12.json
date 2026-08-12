@@ -10,23 +10,79 @@
       "url": "https://www.bbc.co.uk/news/articles/c20dqd9qwq4o",
       "source": "BBC News",
       "align": {
-        "title": [[1], [0]],
-        "title_segs": ["Rescuers scramble for survivors ", "with 180 dead in Colombia earthquake"],
-        "summary": [[0], [1], [2], [3], [4], [5], [6]]
+        "title": [
+          [
+            1
+          ],
+          [
+            0
+          ]
+        ],
+        "title_segs": [
+          "Rescuers scramble for survivors ",
+          "with 180 dead in Colombia earthquake"
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ]
       }
     },
     {
       "category": "財經",
-      "title_en": "Wall Street giants hand Nvidia $500bn to fund boom in AI projects",
-      "summary_en": "Nvidia has teamed up with some of Wall Street's largest banks and investors, including BlackRock, Goldman Sachs and KKR, to raise $500bn for artificial intelligence infrastructure. The financing will fund new data centres and chip factories, as investors for the first time treat AI hardware as an asset class. Some analysts warn that the surging investment may not earn the right return in the future.",
-      "title_zh": "華爾街巨頭注資輝達 5,000 億美元，助攻 AI 建設熱潮",
-      "summary_zh": "輝達與貝萊德、高盛、KKR 等華爾街大型銀行及投資機構合作，為人工智慧基礎建設募集 5,000 億美元資金。這筆資金將用於興建新的資料中心與晶片工廠，投資人首度將 AI 硬體視為一種資產類別。部分分析師警告，暴增的投資未來未必能取得應有的報酬。",
-      "url": "https://www.bbc.co.uk/news/articles/c78gr0jv0mdo",
-      "source": "BBC News",
+      "title_en": "TSMC, Sony agree to joint venture for next-gen image sensors",
+      "summary_en": "TSMC and Sony Semiconductor Solutions have signed a definitive agreement to establish a joint venture in Kumamoto, Japan, to develop next-generation smartphone image sensors. Sony will contribute about 465 billion yen and become the controlling shareholder, while TSMC will invest about 282 billion yen. The new company is scheduled to start commercial production in 2029.",
+      "title_zh": "台積電與 Sony 合資開發次世代影像感測器",
+      "summary_zh": "台積電與 Sony 半導體解決方案公司簽署最終協議，將在日本熊本縣合資成立新公司，開發次世代智慧型手機影像感測器。Sony 將出資約 4,650 億日圓並擔任控股股東，台積電則投資約 2,820 億日圓。新公司預計 2029 年開始商業化量產。",
+      "url": "https://focustaiwan.tw/business/202608110018",
+      "source": "Focus Taiwan (CNA)",
       "align": {
-        "title": [[0], [1]],
-        "title_segs": ["Wall Street giants hand Nvidia $500bn ", "to fund boom in AI projects"],
-        "summary": [[0, 1, 2], [3], [4], [5], [6], [6]]
+        "title": [
+          [
+            0,
+            1
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ]
       }
     },
     {
@@ -38,9 +94,42 @@
       "url": "https://www.mlb.com/gameday/823918",
       "source": "MLB.com",
       "align": {
-        "title": [[0], [1]],
-        "title_segs": ["Ohtani steals a base and scores twice ", "as Dodgers edge Royals 6-5"],
-        "summary": [[0], [0, 1], [2], [2], [3], [3], [4]]
+        "title": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "title_segs": [
+          "Ohtani steals a base and scores twice ",
+          "as Dodgers edge Royals 6-5"
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
       }
     }
   ],
@@ -61,24 +150,24 @@
       "hint_zh": "名詞（複數）：餘震"
     },
     {
-      "word": "infrastructure",
-      "sentence": "Nvidia has teamed up with Wall Street's largest banks and investors to raise $500bn for artificial intelligence ____.",
-      "hint_zh": "名詞：基礎建設"
+      "word": "establish",
+      "sentence": "TSMC and Sony Semiconductor Solutions have signed a definitive agreement to ____ a joint venture in Kumamoto, Japan.",
+      "hint_zh": "動詞：建立、設立"
     },
     {
-      "word": "investors",
-      "sentence": "The financing will fund new data centres and chip factories, as ____ for the first time treat AI hardware as an asset class.",
-      "hint_zh": "名詞（複數）：投資人"
+      "word": "contribute",
+      "sentence": "Sony will ____ about 465 billion yen and become the controlling shareholder.",
+      "hint_zh": "動詞：出資、貢獻"
     },
     {
-      "word": "surging",
-      "sentence": "Some analysts warn that the ____ investment may not earn the right return in the future.",
-      "hint_zh": "形容詞：急遽上升的、暴增的"
+      "word": "shareholder",
+      "sentence": "Sony will contribute about 465 billion yen and become the controlling ____.",
+      "hint_zh": "名詞：股東"
     },
     {
-      "word": "asset",
-      "sentence": "The financing will fund new data centres and chip factories, as investors for the first time treat AI hardware as an ____ class.",
-      "hint_zh": "名詞：資產"
+      "word": "commercial",
+      "sentence": "The new company is scheduled to start ____ production in 2029.",
+      "hint_zh": "形容詞：商業的"
     },
     {
       "word": "stolen",
