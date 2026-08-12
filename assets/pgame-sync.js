@@ -74,22 +74,74 @@ window.PSYNC = (function () {
     pushTimer = setTimeout(pushNow, 2000);
   }
 
-  /* 載入/切換玩家時呼叫。回傳 true = 本機被雲端更新，畫面需重繪 */
+  /* ── 逐項合併（兩台裝置交錯玩也不互蓋）──
+   * 🍨/保底/抽數取較大值；圖鑑每張卡取較多張數；答題與登入記號取聯集；
+   * 其他鍵取 ts 較新一方。特例：rst（重置世代）較新的一方整包獲勝，
+   * 否則 ?reset=1 清掉的進度會被別台裝置的舊存檔「合併」回來。 */
+  function jparse(v) { try { return JSON.parse(v) || {}; } catch (e) { return {}; } }
+  function merge(a, at, b, bt) {
+    const ra = +(a.rst || 0), rb = +(b.rst || 0);
+    if (ra !== rb) return ra > rb ? a : b;
+    const out = {}, keys = new Set(Object.keys(a).concat(Object.keys(b)));
+    keys.forEach(k => {
+      const va = a[k], vb = b[k];
+      if (va === undefined) { out[k] = vb; return; }
+      if (vb === undefined || va === vb) { out[k] = va; return; }
+      if (k === "food" || k === "pity" || k.indexOf("ssrpity:") === 0 || k.indexOf("draws:") === 0) {
+        out[k] = String(Math.max(+va || 0, +vb || 0));
+      } else if (k.indexOf("col:") === 0) {
+        const oa = jparse(va), ob = jparse(vb), m = {};
+        new Set(Object.keys(oa).concat(Object.keys(ob))).forEach(id => {
+          m[id] = Math.max(+oa[id] || 0, +ob[id] || 0);
+        });
+        out[k] = JSON.stringify(m);
+      } else if (k.indexOf("earned:") === 0) {
+        /* 聯集；1（已發）優先於 2（舊版看過答案記號） */
+        const oa = jparse(va), ob = jparse(vb), m = {};
+        new Set(Object.keys(oa).concat(Object.keys(ob))).forEach(q => {
+          m[q] = (oa[q] === 1 || ob[q] === 1) ? 1 : (oa[q] || ob[q]);
+        });
+        out[k] = JSON.stringify(m);
+      } else if (k.indexOf("login:") === 0) {
+        out[k] = "1";
+      } else {
+        out[k] = at >= bt ? va : vb;
+      }
+    });
+    return out;
+  }
+
+  /* 載入/切換玩家/切回分頁時呼叫。回傳 true = 本機進度有變，畫面需重繪 */
   async function pull() {
     const u = user(); if (!u) return false;
     setStatus("sync");
     try {
       const d = await api({ action: "get", u: u });
       setStatus("ok");
+      lastPull = Date.now();
       if (!d.ok) { if (localTs()) push(); return false; } /* 雲端還沒有這位玩家 */
-      if (d.ts > localTs()) {
-        applyBlob(u, JSON.parse(d.s || "{}"), d.ts);
-        return true;
-      }
-      if (localTs() > d.ts) push();
-      return false;
+      const lts = localTs(), local = collect();
+      if (d.ts === lts) return false; /* 已同步 */
+      const cloud = JSON.parse(d.s || "{}");
+      if (!Object.keys(local).length) { applyBlob(u, cloud, d.ts); return true; } /* 本機空 → 採雲端 */
+      const merged = merge(cloud, d.ts, local, lts);
+      const changedLocal = JSON.stringify(merged) !== JSON.stringify(local);
+      const changedCloud = JSON.stringify(merged) !== JSON.stringify(cloud);
+      if (changedLocal) applyBlob(u, merged, Math.max(d.ts, lts));
+      else localStorage.setItem(prefix(u) + "ts", Math.max(d.ts, lts));
+      if (changedCloud) { touch(); push(); } /* 合併結果回推，雲端也不丟進度 */
+      return changedLocal;
     } catch (e) { setStatus("err"); return false; }
   }
+
+  /* 切回分頁自動重新同步（手機還原舊分頁不重載，最容易看到舊進度）。
+   * 15 秒節流，避免快速切換狂打 GAS。 */
+  let lastPull = 0, onUpdate = null;
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState !== "visible" || !user()) return;
+    if (Date.now() - lastPull < 15000) return;
+    pull().then(updated => { if (updated && onUpdate) onUpdate(); });
+  });
 
   /* 玩家名單：雲端 + 本機出現過的名字（離線也列得出來） */
   async function listUsers() {
@@ -170,6 +222,7 @@ window.PSYNC = (function () {
     user: user, K: K, touch: touch, push: push, pushNow: pushNow,
     pull: pull, listUsers: listUsers, selectUser: selectUser, dailyLogin: dailyLogin,
     set onstatus(f) { onStatus = f; if (f) f(status); },
+    set onupdate(f) { onUpdate = f; }, /* 背景 pull 拉到新進度時通知頁面重繪 */
     get status() { return status; }
   };
 })();

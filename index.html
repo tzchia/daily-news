@@ -212,7 +212,7 @@
   來源：BBC News / Google News 等公開報導 · 每日 08:00（台北時間）更新<br>
   <a href="https://github.com/tzchia/daily-news">GitHub repo</a>
 </footer>
-<script src="assets/pgame-sync.js?v=3"></script>
+<script src="assets/pgame-sync.js?v=4"></script>
 <script>
 const CAT_STYLE = {
   "世界": "🌍", "科技": "💻", "財經": "📈", "科技/財經": "💻",
@@ -629,6 +629,10 @@ window.addEventListener("scroll", hideTip, { passive: true });
       showPop(dog);
     } else { gameFood(0); }
   });
+  /* 切回分頁時背景 pull 拉到較新進度 → 更新頁頂 🍨 數。
+   * 不重繪答題區（會清掉正在填的答案）；earned 記號讀 localStorage 已是最新，重複領有 dup 擋。
+   * （setter 只在新版 pgame-sync.js 存在；try 護舊快取） */
+  try { PSYNC.onupdate = () => gameFood(0); } catch (e) {}
 })();
 gameFood(0); // 頁頂香蕉冰淇淋數
 loadIndex().catch(() => {

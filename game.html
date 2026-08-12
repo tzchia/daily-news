@@ -280,7 +280,7 @@
   <a href="index.html">← 回每日英文新聞</a>
 </footer>
 
-<script src="assets/pgame-sync.js?v=3"></script>
+<script src="assets/pgame-sync.js?v=4"></script>
 <script>
 /* ═══════════ 卡片資料（美術佔位版）═══════════
  * img: null → 用內建 SVG 絨毛狗佔位圖；拿到真卡圖後
@@ -376,6 +376,8 @@ if (new URLSearchParams(location.search).get("reset") === "1") {
       if (targets.indexOf(k) >= 0 || (k && k.startsWith(earnedPrefix))) doomed.push(k);
     }
     doomed.forEach(k => localStorage.removeItem(k));
+    /* 重置世代記號：讓合併邏輯知道「清空」比別台裝置的舊存檔新，不會被合併回來 */
+    localStorage.setItem(PSYNC.K("rst"), Date.now());
     PSYNC.touch(); PSYNC.pushNow();
     alert("已重置完成！重新開始收集吧 🍨");
   }
@@ -517,6 +519,8 @@ document.addEventListener("click", e => {
 const userbox = document.getElementById("userbox");
 const DOT = { idle: "", sync: "☁️…", ok: "☁️", err: "⚠️離線" };
 PSYNC.onstatus = s => { document.getElementById("cloud-dot").textContent = DOT[s] || ""; };
+/* 切回分頁時背景 pull 拉到較新進度 → 自動重繪（🍨、圖鑑、保底一起更新） */
+PSYNC.onupdate = () => { render(); claimDaily(); };
 function renderUserChip() {
   document.getElementById("user-name").textContent = PSYNC.user() || "選擇玩家";
 }
