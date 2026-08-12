@@ -40,6 +40,11 @@ window.PSYNC = (function () {
   }
 
   let pushTimer = null, status = "idle", onStatus = null;
+  /* hydrated = 這個玩家這一輪至少成功問過一次雲端（知道雲端有什麼）。
+   * 沒 hydrated 前一律不准 POST——這就是洗檔事故的根源：
+   * 新裝置選了現有名字、GAS 剛好逾時 → 舊版誤當全新玩家，
+   * 把近乎空白的存檔用較新 ts 推上雲，整包蓋掉別人的進度。 */
+  let hydrated = false;
   function setStatus(s) { status = s; if (onStatus) onStatus(s); }
 
   async function api(params) {
@@ -52,6 +57,12 @@ window.PSYNC = (function () {
   async function pushNow() {
     const u = user(); if (!u) return;
     if (pushTimer) { clearTimeout(pushTimer); pushTimer = null; }
+    /* 洗檔保險絲：還沒成功看過雲端 → 先 pull 合併；pull 也失敗就拒推，
+     * 寧可晚點同步也不拿空白存檔蓋掉雲端。 */
+    if (!hydrated) {
+      await pull();
+      if (!hydrated) { setStatus("err"); return; }
+    }
     setStatus("sync");
     try {
       /* text/plain = CORS 簡單請求，GAS 不吃 preflight */
@@ -119,6 +130,7 @@ window.PSYNC = (function () {
       const d = await api({ action: "get", u: u });
       setStatus("ok");
       lastPull = Date.now();
+      hydrated = true; /* 成功看過雲端（含「雲端沒這玩家」），之後才允許推送 */
       if (!d.ok) { if (localTs()) push(); return false; } /* 雲端還沒有這位玩家 */
       const lts = localTs(), local = collect();
       if (d.ts === lts) return false; /* 已同步 */
@@ -166,6 +178,7 @@ window.PSYNC = (function () {
   function selectUser(name) {
     name = String(name || "").trim().slice(0, 12).replace(/[<>&"':]/g, "");
     if (!name) return false;
+    hydrated = false; /* 換玩家 = 對這個帳的雲端狀態一無所知，重新掛保險絲 */
     localStorage.setItem("pgame:user", name);
     return { ok: true, synced: reconcile(name) };
   }
@@ -175,8 +188,8 @@ window.PSYNC = (function () {
     if (hasLocal) return pull(); /* 本機已有此玩家進度 → 比 ts 決定拉或推 */
     setStatus("sync");
     let d = null;
-    try { d = await api({ action: "get", u: name }); setStatus("ok"); }
-    catch (e) { setStatus("err"); return false; } /* 離線：先玩本機，之後變動會再推 */
+    try { d = await api({ action: "get", u: name }); setStatus("ok"); hydrated = true; }
+    catch (e) { setStatus("err"); return false; } /* 離線：先玩本機，保險絲維持關閉（不准推） */
     if (d && d.ok) { applyBlob(name, JSON.parse(d.s || "{}"), d.ts); return true; }
     /* 雲端沒有、本機也沒有 → 全新玩家：認領這台裝置的舊版未分帳進度 */
     const legacy = {};
