@@ -1,0 +1,99 @@
+{
+  "date": "2026-08-12",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Rescuers scramble for survivors with 180 dead in Colombia earthquake",
+      "summary_en": "A magnitude 7.4 earthquake struck western Colombia on Monday, killing at least 181 people and injuring around 2,600, with about 200 still missing. The president has declared a state of emergency, and rescuers are scrambling to free survivors trapped in collapsed buildings in Cali and Pereira. More than 70 aftershocks have hit the region, and thousands of homes have been destroyed or damaged.",
+      "title_zh": "哥倫比亞強震釀 180 死，搜救人員搶救生還者",
+      "summary_zh": "規模 7.4 強震週一襲擊哥倫比亞西部，造成至少 181 人罹難、約 2,600 人受傷，仍有約 200 人失蹤。總統已宣布進入緊急狀態，搜救人員正全力搶救卡利與佩雷拉倒塌建築中受困的生還者。當地已發生超過 70 次餘震，數千棟房屋毀損。",
+      "url": "https://www.bbc.co.uk/news/articles/c20dqd9qwq4o",
+      "source": "BBC News",
+      "align": {
+        "title": [[1], [0]],
+        "title_segs": ["Rescuers scramble for survivors ", "with 180 dead in Colombia earthquake"],
+        "summary": [[0], [1], [2], [3], [4], [5], [6]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Wall Street giants hand Nvidia $500bn to fund boom in AI projects",
+      "summary_en": "Nvidia has teamed up with some of Wall Street's largest banks and investors, including BlackRock, Goldman Sachs and KKR, to raise $500bn for artificial intelligence infrastructure. The financing will fund new data centres and chip factories, as investors for the first time treat AI hardware as an asset class. Some analysts warn that the surging investment may not earn the right return in the future.",
+      "title_zh": "華爾街巨頭注資輝達 5,000 億美元，助攻 AI 建設熱潮",
+      "summary_zh": "輝達與貝萊德、高盛、KKR 等華爾街大型銀行及投資機構合作，為人工智慧基礎建設募集 5,000 億美元資金。這筆資金將用於興建新的資料中心與晶片工廠，投資人首度將 AI 硬體視為一種資產類別。部分分析師警告，暴增的投資未來未必能取得應有的報酬。",
+      "url": "https://www.bbc.co.uk/news/articles/c78gr0jv0mdo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [1]],
+        "title_segs": ["Wall Street giants hand Nvidia $500bn ", "to fund boom in AI projects"],
+        "summary": [[0, 1, 2], [3], [4], [5], [6], [6]]
+      }
+    },
+    {
+      "category": "棒球",
+      "title_en": "Ohtani steals a base and scores twice as Dodgers edge Royals 6-5",
+      "summary_en": "Shohei Ohtani went 2-for-4 with a double, an RBI and a stolen base, scoring twice as the Los Angeles Dodgers beat the Kansas City Royals 6-5 at home. Jack Dreyer earned the win and Edwin Diaz closed out the one-run victory with a save. The win opened the Dodgers' latest homestand.",
+      "title_zh": "大谷翔平盜壘＋跑回兩分，道奇 6 比 5 險勝皇家",
+      "summary_zh": "大谷翔平 4 打數 2 安打，包含一支二壘安打、1 分打點與 1 次盜壘，並跑回兩分，助洛杉磯道奇在主場以 6 比 5 擊敗堪薩斯市皇家。傑克・德萊爾摘下勝投，愛德溫・迪亞茲守住一分差勝利並拿下救援成功。這場勝利為道奇最新一波主場系列賽揭開序幕。",
+      "url": "https://www.mlb.com/gameday/823918",
+      "source": "MLB.com",
+      "align": {
+        "title": [[0], [1]],
+        "title_segs": ["Ohtani steals a base and scores twice ", "as Dodgers edge Royals 6-5"],
+        "summary": [[0], [0, 1], [2], [2], [3], [3], [4]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "magnitude",
+      "sentence": "A ____ 7.4 earthquake struck western Colombia on Monday, killing at least 181 people.",
+      "hint_zh": "名詞：（地震）規模；巨大程度"
+    },
+    {
+      "word": "declared",
+      "sentence": "The president has ____ a state of emergency.",
+      "hint_zh": "動詞（過去分詞）：宣布、宣告"
+    },
+    {
+      "word": "aftershocks",
+      "sentence": "More than 70 ____ have hit the region, and thousands of homes have been destroyed or damaged.",
+      "hint_zh": "名詞（複數）：餘震"
+    },
+    {
+      "word": "infrastructure",
+      "sentence": "Nvidia has teamed up with Wall Street's largest banks and investors to raise $500bn for artificial intelligence ____.",
+      "hint_zh": "名詞：基礎建設"
+    },
+    {
+      "word": "investors",
+      "sentence": "The financing will fund new data centres and chip factories, as ____ for the first time treat AI hardware as an asset class.",
+      "hint_zh": "名詞（複數）：投資人"
+    },
+    {
+      "word": "surging",
+      "sentence": "Some analysts warn that the ____ investment may not earn the right return in the future.",
+      "hint_zh": "形容詞：急遽上升的、暴增的"
+    },
+    {
+      "word": "asset",
+      "sentence": "The financing will fund new data centres and chip factories, as investors for the first time treat AI hardware as an ____ class.",
+      "hint_zh": "名詞：資產"
+    },
+    {
+      "word": "stolen",
+      "sentence": "Shohei Ohtani went 2-for-4 with a double, an RBI and a ____ base, scoring twice as the Dodgers beat the Royals 6-5 at home.",
+      "hint_zh": "形容詞（過去分詞）：偷來的；搭配 base 即「盜壘」"
+    },
+    {
+      "word": "victory",
+      "sentence": "Jack Dreyer earned the win and Edwin Diaz closed out the one-run ____ with a save.",
+      "hint_zh": "名詞：勝利"
+    },
+    {
+      "word": "homestand",
+      "sentence": "The win opened the Dodgers' latest ____.",
+      "hint_zh": "名詞：（棒球）主場連戰"
+    }
+  ]
+}
