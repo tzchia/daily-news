@@ -1,0 +1,126 @@
+{
+  "date": "2026-08-13",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Major Russian grain export terminals hit in Ukraine Black Sea port attack",
+      "summary_en": "A massive Ukrainian drone and missile strike on Russia's port of Novorossiysk has damaged two major grain export terminals and hit the last big Russian naval base on the Black Sea. Three people, including an eight-year-old child, were killed and 24 injured in the overnight attack, local officials said. Russia is the world's largest wheat exporter, and its exports for August could fall by more than half due to the disruption.",
+      "title_zh": "烏克蘭襲擊黑海港口 俄羅斯主要穀物出口碼頭受創",
+      "summary_zh": "烏克蘭對俄羅斯新羅西斯克港發動大規模無人機與飛彈攻擊，重創兩座主要穀物出口碼頭，並擊中俄羅斯在黑海最後一座大型海軍基地。當地官員表示，這場深夜攻擊造成 3 人喪生，其中包括一名 8 歲孩童，另有 24 人受傷。俄羅斯是全球最大的小麥出口國，受此干擾影響，8 月出口量恐減少超過一半。",
+      "url": "https://www.bbc.co.uk/news/articles/c5y49xp2wrno",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [1], [2], [5], [4], [3], [4], [6], [7], [7]],
+        "summary_segs": [
+          "A massive Ukrainian drone and missile strike on Russia's port of Novorossiysk",
+          " has damaged two major grain export terminals",
+          " and hit the last big Russian naval base on the Black Sea.",
+          " Three people, including an eight-year-old child,",
+          " were killed and 24 injured in the overnight attack,",
+          " local officials said.",
+          " Russia is the world's largest wheat exporter,",
+          " and its exports for August could fall by more than half due to the disruption."
+        ]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "US inflation eases as food and fuel costs cool",
+      "summary_en": "US prices rose 3.4% in the year to July, slightly lower than the 3.5% recorded in June, as food costs slowed and energy prices fell. New Federal Reserve chair Kevin Warsh said the central bank must stay patient as price growth cools gradually. Financial markets reacted calmly, with stocks little changed as the figures were broadly in line with expectations.",
+      "title_zh": "食品與燃料價格降溫 美國通膨放緩",
+      "summary_zh": "美國 7 月消費者物價年增 3.4%，略低於 6 月的 3.5%，主因食品價格漲勢趨緩、能源價格下跌。新任聯準會主席沃許表示，隨著物價漲幅逐步降溫，央行必須保持耐心。由於數據大致符合市場預期，金融市場反應平靜，股市變動不大。",
+      "url": "https://www.bbc.co.uk/news/articles/c0qv2nn1gpeo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [1], [2], [3], [5], [4], [7], [6], [7]],
+        "summary_segs": [
+          "US prices rose 3.4% in the year to July,",
+          " slightly lower than the 3.5% recorded in June,",
+          " as food costs slowed and energy prices fell.",
+          " New Federal Reserve chair Kevin Warsh said",
+          " the central bank must stay patient",
+          " as price growth cools gradually.",
+          " Financial markets reacted calmly,",
+          " with stocks little changed as the figures were broadly in line with expectations."
+        ]
+      }
+    },
+    {
+      "category": "籃球",
+      "title_en": "Russell Westbrook retires from the NBA after 18 seasons",
+      "summary_en": "Russell Westbrook, the NBA's career leader in triple-doubles and the 2017 MVP, announced Wednesday he is retiring after 18 seasons. The two-time scoring champion shared his decision in a video narrated by actor Michael B. Jordan. “You had to be there. And now it's over,” Westbrook wrote.",
+      "title_zh": "效力 18 個賽季 衛斯布魯克宣布自 NBA 退休",
+      "summary_zh": "NBA 生涯大三元紀錄保持人、2017 年 MVP 衛斯布魯克週三宣布，在征戰 18 個賽季後正式退休。這位兩屆得分王透過一支由演員麥可·B·喬丹旁白的影片公布這項決定。衛斯布魯克寫道：『你必須身歷其境，而現在一切都結束了』。",
+      "url": "https://apnews.com/article/nba-kings-russell-westbrook-retires-4c86c3c003efd958dd57883f2223c12a",
+      "source": "AP News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0, 1, 2], [3], [4], [5, 7], [6]],
+        "summary_segs": [
+          "Russell Westbrook,",
+          " the NBA's career leader in triple-doubles and the 2017 MVP,",
+          " announced Wednesday",
+          " he is retiring after 18 seasons.",
+          " The two-time scoring champion shared his decision in a video narrated by actor Michael B. Jordan.",
+          " “You had to be there.",
+          " And now it's over,”",
+          " Westbrook wrote."
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "damaged",
+      "sentence": "A massive Ukrainian drone and missile strike on Russia's port of Novorossiysk has ____ two major grain export terminals and hit the last big Russian naval base on the Black Sea.",
+      "hint_zh": "動詞（過去分詞）：損壞、重創"
+    },
+    {
+      "word": "injured",
+      "sentence": "Three people, including an eight-year-old child, were killed and 24 ____ in the overnight attack, local officials said.",
+      "hint_zh": "動詞（過去分詞）：受傷"
+    },
+    {
+      "word": "disruption",
+      "sentence": "Russia is the world's largest wheat exporter, and its exports for August could fall by more than half due to the ____.",
+      "hint_zh": "名詞：中斷、干擾"
+    },
+    {
+      "word": "slightly",
+      "sentence": "US prices rose 3.4% in the year to July, ____ lower than the 3.5% recorded in June, as food costs slowed and energy prices fell.",
+      "hint_zh": "副詞：略微、稍微"
+    },
+    {
+      "word": "slowed",
+      "sentence": "US prices rose 3.4% in the year to July, as food costs ____ and energy prices fell.",
+      "hint_zh": "動詞（過去式）：放緩、變慢"
+    },
+    {
+      "word": "patient",
+      "sentence": "New Federal Reserve chair Kevin Warsh said the central bank must stay ____ as price growth cools gradually.",
+      "hint_zh": "形容詞：有耐心的"
+    },
+    {
+      "word": "calmly",
+      "sentence": "Financial markets reacted ____, with stocks little changed as the figures were broadly in line with expectations.",
+      "hint_zh": "副詞：平靜地、冷靜地"
+    },
+    {
+      "word": "announced",
+      "sentence": "Russell Westbrook, the NBA's career leader in triple-doubles and the 2017 MVP, ____ Wednesday he is retiring after 18 seasons.",
+      "hint_zh": "動詞（過去式）：宣布"
+    },
+    {
+      "word": "retiring",
+      "sentence": "Russell Westbrook announced Wednesday he is ____ after 18 seasons.",
+      "hint_zh": "動詞（現在分詞）：退休"
+    },
+    {
+      "word": "narrated",
+      "sentence": "The two-time scoring champion shared his decision in a video ____ by actor Michael B. Jordan.",
+      "hint_zh": "動詞（過去分詞）：旁白、口述"
+    }
+  ]
+}
