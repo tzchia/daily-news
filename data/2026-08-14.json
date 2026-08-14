@@ -1,0 +1,130 @@
+{
+  "date": "2026-08-14",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Romania shuts only nuclear plant as heat causes huge drop in Danube River level",
+      "summary_en": "Romania has shut down its only nuclear power station because of extremely low water levels in the Danube river caused by prolonged hot weather affecting much of Europe. The Cernavoda plant, where two reactors produce about 20% of Romania's electricity, is not expected to be restarted within the next 10 days. Authorities had tried to increase the water flow by sinking barges loaded with rocks in the river.",
+      "title_zh": "熱浪致多瑙河水位驟降，羅馬尼亞關閉全國唯一核電廠",
+      "summary_zh": "因長期熱浪侵襲歐洲大部分地區，多瑙河水位極度偏低，羅馬尼亞已關閉全國唯一的核電廠。切爾納沃德電廠的兩座反應爐供應羅馬尼亞約20%的電力，預計未來10天內無法重啟。當局先前曾在河中沉入載滿石塊的駁船，試圖提高流向電廠的水量。",
+      "url": "https://www.bbc.com/news/articles/cqlxpq5q799o",
+      "source": "BBC News",
+      "align": {
+        "title": [[1], [0]],
+        "title_segs": [
+          "Romania shuts only nuclear plant",
+          "as heat causes huge drop in Danube River level"
+        ],
+        "summary": [[2], [1], [0], [3, 4], [5], [7], [6]],
+        "summary_segs": [
+          "Romania has shut down its only nuclear power station",
+          "because of extremely low water levels in the Danube river",
+          "caused by prolonged hot weather affecting much of Europe.",
+          "The Cernavoda plant,",
+          "where two reactors produce about 20% of Romania's electricity,",
+          "is not expected to be restarted within the next 10 days.",
+          "Authorities had tried to increase the water flow",
+          "by sinking barges loaded with rocks in the river."
+        ]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "'I lost $14,000 in a month': Investors hit by Korean stock market's wild swings",
+      "summary_en": "South Korea's tech-heavy Kospi, widely regarded as the world's most volatile stock index, faced one of the sharpest corrections in its history between June and August, comparable to the drops seen during Covid-19 and the 1997 Asian financial crisis. The index more than doubled its value since the start of the year to rise above 9,000 points in mid-June, before plunging to 5,500 within a few weeks. A key reason for the sell-off has been concerns over the huge amounts of money being spent on AI.",
+      "title_zh": "「一個月賠掉1.4萬美元」：南韓股市劇烈震盪重創散戶",
+      "summary_zh": "南韓以科技股為主的Kospi指數被視為全球波動最劇烈的股價指數，在6月至8月間出現史上最猛烈的回檔之一，跌幅堪比新冠疫情與1997年亞洲金融風暴。該指數今年以來一度翻倍，6月中旬站上9000點，隨後數週內暴跌至5500點。這波賣壓的主因，是市場憂心投入AI的巨額資金。",
+      "url": "https://www.bbc.com/news/articles/c2k7zj4knwlo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0, 1], [2], [3], [4], [5], [6], [7], [8]],
+        "summary_segs": [
+          "South Korea's tech-heavy Kospi,",
+          "widely regarded as the world's most volatile stock index,",
+          "faced one of the sharpest corrections in its history between June and August,",
+          "comparable to the drops seen during Covid-19 and the 1997 Asian financial crisis.",
+          "The index more than doubled its value since the start of the year",
+          "to rise above 9,000 points in mid-June,",
+          "before plunging to 5,500 within a few weeks.",
+          "A key reason for the sell-off",
+          "has been concerns over the huge amounts of money being spent on AI."
+        ]
+      }
+    },
+    {
+      "category": "棒球",
+      "title_en": "Montero, Tigers shut out Guardians without a strikeout, a first in MLB since 2014",
+      "summary_en": "Keider Montero pitched three-hit ball into the seventh inning and the Detroit Tigers blanked the Cleveland Guardians 3-0 on Thursday despite failing to record a strikeout. The Tigers became the first team to blank an opponent without a strikeout since Rick Porcello did it to the Athletics on July 1, 2014, a feat accomplished only seven times since 2000. Kenley Jansen earned his 15th save in a perfect ninth.",
+      "title_zh": "蒙特羅領軍老虎全場零三振完封守護者，MLB 2014年以來首見",
+      "summary_zh": "蒙特羅投到第七局僅被敲三支安打，底特律老虎週四以3比0完封克里夫蘭守護者，全場未投出任何三振。老虎成為2014年7月1日波塞洛對運動家一役以來，首支零三振完封對手的球隊，此紀錄自2000年以來僅出現七次。終結者簡森九局投出完美一局，收下本季第15次救援成功。",
+      "url": "https://www.espn.com/mlb/recap?gameId=401815751",
+      "source": "AP News",
+      "align": {
+        "title": [[0, 1], [2]],
+        "summary": [[0], [1], [2], [4], [3], [5], [6], [6]],
+        "summary_segs": [
+          "Keider Montero pitched three-hit ball into the seventh inning",
+          "and the Detroit Tigers blanked the Cleveland Guardians 3-0 on Thursday",
+          "despite failing to record a strikeout.",
+          "The Tigers became the first team to blank an opponent without a strikeout",
+          "since Rick Porcello did it to the Athletics on July 1, 2014,",
+          "a feat accomplished only seven times since 2000.",
+          "Kenley Jansen earned his 15th save in a perfect ninth."
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "prolonged",
+      "sentence": "Romania has shut down its only nuclear power station because of extremely low water levels in the Danube river caused by ____ hot weather affecting much of Europe.",
+      "hint_zh": "形容詞：長期持續的"
+    },
+    {
+      "word": "reactors",
+      "sentence": "The Cernavoda plant, where two ____ produce about 20% of Romania's electricity, is not expected to be restarted within the next 10 days.",
+      "hint_zh": "名詞（複數）：反應爐"
+    },
+    {
+      "word": "barges",
+      "sentence": "Authorities had tried to increase the water flow by sinking ____ loaded with rocks in the river.",
+      "hint_zh": "名詞（複數）：駁船"
+    },
+    {
+      "word": "volatile",
+      "sentence": "South Korea's tech-heavy Kospi, widely regarded as the world's most ____ stock index, faced one of the sharpest corrections in its history between June and August.",
+      "hint_zh": "形容詞：波動劇烈的、不穩定的"
+    },
+    {
+      "word": "plunging",
+      "sentence": "The index more than doubled its value since the start of the year to rise above 9,000 points in mid-June, before ____ to 5,500 within a few weeks.",
+      "hint_zh": "動詞（現在分詞）：暴跌"
+    },
+    {
+      "word": "sell-off",
+      "sentence": "A key reason for the ____ has been concerns over the huge amounts of money being spent on AI.",
+      "hint_zh": "名詞：（股市）拋售、賣壓"
+    },
+    {
+      "word": "comparable",
+      "sentence": "The Kospi faced one of the sharpest corrections in its history, ____ to the drops seen during Covid-19 and the 1997 Asian financial crisis.",
+      "hint_zh": "形容詞：可相比的、可比擬的"
+    },
+    {
+      "word": "blanked",
+      "sentence": "Keider Montero pitched three-hit ball into the seventh inning and the Detroit Tigers ____ the Cleveland Guardians 3-0 on Thursday despite failing to record a strikeout.",
+      "hint_zh": "動詞（過去式）：完封、使對手掛零"
+    },
+    {
+      "word": "feat",
+      "sentence": "The Tigers became the first team to blank an opponent without a strikeout since 2014, a ____ accomplished only seven times since 2000.",
+      "hint_zh": "名詞：壯舉、罕見成就"
+    },
+    {
+      "word": "accomplished",
+      "sentence": "The Tigers became the first team to blank an opponent without a strikeout since 2014, a feat ____ only seven times since 2000.",
+      "hint_zh": "動詞（過去分詞）：達成、完成"
+    }
+  ]
+}
