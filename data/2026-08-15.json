@@ -1,0 +1,199 @@
+{
+  "date": "2026-08-15",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Mangione admits killing UnitedHealthcare CEO and pleads guilty to federal charges",
+      "summary_en": "Luigi Mangione pleaded guilty in Manhattan federal court to interstate stalking resulting in death, admitting he shot UnitedHealthcare CEO Brian Thompson in December 2024. The 28-year-old told the court he planned the attack in advance and used a gun he printed on a 3-D printer, blaming his experience with the healthcare system. Prosecutors recommended a sentence of 24 to 30 years in prison, but the judge said the maximum is life, with sentencing scheduled for 18 December.",
+      "title_zh": "曼吉歐尼承認殺害聯合健康執行長，就聯邦罪名認罪",
+      "summary_zh": "曼吉歐尼在曼哈頓聯邦法院就「跨州跟蹤致死」罪名認罪，承認於2024年12月槍殺聯合健康執行長湯普森。這名28歲男子向法庭表示，他事先策劃攻擊，並使用自己3D列印的手槍行兇，將動機歸咎於自身的就醫經歷。檢方建議判處24至30年徒刑，但法官表示最高可判終身監禁，宣判訂於12月18日。",
+      "url": "https://www.bbc.co.uk/news/articles/cwy0nlq1l2wo",
+      "source": "BBC News",
+      "align": {
+        "title": [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "US says dozens of countries helped China dodge Trump's tariffs",
+      "summary_en": "The White House said in a report that more than 40 countries, including Canada, India, Mexico, Japan and South Korea, had helped China sidestep US tariffs by routing exports through nations that face lower American import duties. Between $30bn and roughly $300bn in goods have been moved through the practice known as transshipping, according to estimates quoted by the White House. The report is expected to strengthen the US bargaining position weeks before President Trump meets Chinese leader Xi Jinping in Washington.",
+      "title_zh": "美國指控數十國協助中國規避川普關稅",
+      "summary_zh": "白宮在報告中指出，包括加拿大、印度、墨西哥、日本與南韓在內的40多個國家，協助中國將出口貨物轉經關稅較低的國家輸美，藉此規避美國關稅。根據白宮引述的估計，透過這種稱為「轉運」的手法移動的貨物，金額介於300億至約3000億美元之間。這份報告預料將強化美方的談判籌碼，數週後川普總統將在華府會晤中國領導人習近平。",
+      "url": "https://www.bbc.co.uk/news/articles/c78gy6ep3n5o",
+      "source": "BBC News",
+      "align": {
+        "title": [
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            5
+          ],
+          [
+            5
+          ],
+          [
+            7
+          ],
+          [
+            6
+          ],
+          [
+            6
+          ],
+          [
+            8
+          ],
+          [
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "category": "棒球",
+      "title_en": "Brewers rally for three runs in the ninth to beat Dodgers 5-4",
+      "summary_en": "Jake Bauers delivered Milwaukee's third RBI single of the ninth inning with two outs, and the Brewers rallied for a 5-4 victory over the Los Angeles Dodgers to stay alone atop the National League standings. Closer Edwin Diaz gave up four straight one-out singles and has blown saves in three of his last four appearances. Pinch-hitter Max Muncy crushed a three-run homer, his 131st at Chavez Ravine, to become the top home run hitter in Dodger Stadium history.",
+      "title_zh": "釀酒人九局上灌進3分逆轉，5比4擊敗道奇",
+      "summary_zh": "鮑爾斯在九局上兩出局時敲出密爾瓦基該局第三支帶有打點的一壘安打，釀酒人以5比4逆轉洛杉磯道奇，獨居國家聯盟戰績榜首。道奇終結者迪亞茲一出局後連續被敲4支一壘安打，最近4次登板已3度搞砸救援。代打蒙西轟出3分砲，是他在查維茲峽谷球場的第131轟，成為道奇球場史上全壘打最多的打者。",
+      "url": "https://www.espn.com/mlb/recap/_/gameId/401816515",
+      "source": "ESPN (AP)",
+      "align": {
+        "title": [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "summary": [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "pleaded",
+      "sentence": "Luigi Mangione ____ guilty in Manhattan federal court to interstate stalking resulting in death.",
+      "hint_zh": "動詞（過去式）：認罪、抗辯（plead 的過去式）"
+    },
+    {
+      "word": "recommended",
+      "sentence": "Prosecutors ____ a sentence of 24 to 30 years in prison.",
+      "hint_zh": "動詞（過去式）：建議"
+    },
+    {
+      "word": "scheduled",
+      "sentence": "The judge said the maximum is life, with sentencing ____ for 18 December.",
+      "hint_zh": "動詞（過去分詞）：排定、安排"
+    },
+    {
+      "word": "sidestep",
+      "sentence": "More than 40 countries had helped China ____ US tariffs by routing exports through nations that face lower American import duties.",
+      "hint_zh": "動詞：迴避、規避"
+    },
+    {
+      "word": "estimates",
+      "sentence": "Between $30bn and roughly $300bn in goods have been moved, according to ____ quoted by the White House.",
+      "hint_zh": "名詞（複數）：估計數字"
+    },
+    {
+      "word": "transshipping",
+      "sentence": "Goods have been moved through the practice known as ____.",
+      "hint_zh": "名詞：轉運（貨物經第三地轉口再輸出）"
+    },
+    {
+      "word": "bargaining",
+      "sentence": "The report is expected to strengthen the US ____ position weeks before President Trump meets Chinese leader Xi Jinping.",
+      "hint_zh": "名詞（作形容詞用）：談判、議價"
+    },
+    {
+      "word": "rallied",
+      "sentence": "The Brewers ____ for a 5-4 victory over the Los Angeles Dodgers to stay alone atop the National League standings.",
+      "hint_zh": "動詞（過去式）：反攻、絕地反擊"
+    },
+    {
+      "word": "appearances",
+      "sentence": "Closer Edwin Diaz has blown saves in three of his last four ____.",
+      "hint_zh": "名詞（複數）：出場、登板次數"
+    },
+    {
+      "word": "crushed",
+      "sentence": "Pinch-hitter Max Muncy ____ a three-run homer to become the top home run hitter in Dodger Stadium history.",
+      "hint_zh": "動詞（過去式）：轟出、猛擊"
+    }
+  ]
+}
