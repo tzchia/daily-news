@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-16",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Rescuers search for survivors of powerful Indonesia earthquake",
+      "summary_en": "A magnitude 7.7 earthquake struck Indonesia's Flores island early on Saturday, killing at least 47 people and severely damaging hundreds of buildings. A tsunami warning prompted some 2,000 people to evacuate before it was lifted, while landslides blocked access to some villages. Rescue teams are still searching for survivors in the remote, mountainous region.",
+      "title_zh": "印尼發生強震，搜救人員持續搜尋生還者",
+      "summary_zh": "印尼弗洛勒斯島週六清晨發生規模7.7強震，造成至少47人死亡，數百棟建築嚴重受損。海嘯警報一度發布，促使約兩千人撤離，隨後解除，山崩則阻斷部分村莊的聯外道路。搜救隊仍在這片偏遠山區持續搜尋生還者。",
+      "url": "https://www.bbc.co.uk/news/articles/c3v00w5ylw9o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [1], [2], [2], [2], [3], [4, 5]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Anthropic eyes $2 trillion IPO valuation based on 2028 revenue forecast",
+      "summary_en": "Bankers are valuing AI company Anthropic at about $2 trillion for its October IPO, based on a projected 2028 revenue of $190-200 billion rather than current results. The company's revenue run rate surged from $9 billion to more than $47 billion in five months, but pricing an IPO on forecasts three years out is highly unusual.",
+      "title_zh": "Anthropic 傳以2028年營收預測估值，IPO 上看2兆美元",
+      "summary_zh": "投資銀行正以 AI 公司 Anthropic 2028年約1,900億至2,000億美元的營收預測、而非目前實績，為其10月的 IPO 估出約2兆美元的身價。該公司營收年化速率在五個月內從90億美元暴增至逾470億美元，但以三年後的預測為 IPO 定價極不尋常。",
+      "url": "https://247wallst.com/investing/2026/08/15/anthropic-expects-mind-blowing-200-billion-revenue-in-2028-as-ipo-looms/",
+      "source": "Reuters / 24/7 Wall St.",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0, 1], [0], [2], [3]]
+      }
+    },
+    {
+      "category": "棒球",
+      "title_en": "Joshua Báez becomes first player in MLB history to hit three home runs in his debut",
+      "summary_en": "Cardinals prospect Joshua Báez became the first player in MLB history to homer three times in his Major League debut, going 3-for-4 with five RBIs in an 8-4 victory over the Chicago Cubs. All three home runs came off Cubs starter Matthew Boyd, including a 449-foot shot on the very first pitch he saw.",
+      "title_zh": "MLB 史上第一人！紅雀新秀貝斯初登場轟出三發全壘打",
+      "summary_zh": "紅雀新秀貝斯（Joshua Báez）成為 MLB 史上首位在大聯盟初登場就轟出三發全壘打的球員，他4打數3安打、進帳5分打點，助紅雀以8比4擊敗芝加哥小熊。三發全壘打全數從小熊先發投手博伊德手中擊出，包括面對的第一球就轟出449英尺砲彈。",
+      "url": "https://www.mlb.com/news/joshua-baez-mlb-debut",
+      "source": "MLB.com",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [1], [2], [3]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "struck",
+      "sentence": "A magnitude 7.7 earthquake ____ Indonesia's Flores island early on Saturday, killing at least 47 people.",
+      "hint_zh": "動詞（過去式）：襲擊、侵襲"
+    },
+    {
+      "word": "evacuate",
+      "sentence": "A tsunami warning prompted some 2,000 people to ____ before it was lifted.",
+      "hint_zh": "動詞：撤離、疏散"
+    },
+    {
+      "word": "landslides",
+      "sentence": "A tsunami warning prompted some 2,000 people to evacuate before it was lifted, while ____ blocked access to some villages.",
+      "hint_zh": "名詞（複數）：山崩、土石流"
+    },
+    {
+      "word": "remote",
+      "sentence": "Rescue teams are still searching for survivors in the ____, mountainous region.",
+      "hint_zh": "形容詞：偏遠的"
+    },
+    {
+      "word": "projected",
+      "sentence": "Bankers are valuing the company based on a ____ 2028 revenue of $190-200 billion rather than current results.",
+      "hint_zh": "形容詞（過去分詞）：預估的、預測的"
+    },
+    {
+      "word": "surged",
+      "sentence": "The company's revenue run rate ____ from $9 billion to more than $47 billion in five months.",
+      "hint_zh": "動詞（過去式）：暴增、激增"
+    },
+    {
+      "word": "unusual",
+      "sentence": "Pricing an IPO on forecasts three years out is highly ____.",
+      "hint_zh": "形容詞：不尋常的、罕見的"
+    },
+    {
+      "word": "prospect",
+      "sentence": "Cardinals ____ Joshua Báez became the first player in MLB history to homer three times in his Major League debut.",
+      "hint_zh": "名詞：潛力新秀、備受期待的新人"
+    },
+    {
+      "word": "debut",
+      "sentence": "Cardinals prospect Joshua Báez became the first player in MLB history to homer three times in his Major League ____.",
+      "hint_zh": "名詞：初次登場、首秀"
+    },
+    {
+      "word": "victory",
+      "sentence": "He went 3-for-4 with five RBIs in an 8-4 ____ over the Chicago Cubs.",
+      "hint_zh": "名詞：勝利"
+    }
+  ]
+}
