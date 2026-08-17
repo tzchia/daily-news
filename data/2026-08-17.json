@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-17",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Russia says at least seven killed in largest Ukrainian attack of 2026",
+      "summary_en": "Russia reported at least seven people killed in what officials called Ukraine's largest-scale attack of 2026, involving 822 drones, 600 of them targeting Moscow. Russian strikes on Ukraine killed at least seven people and injured more than 39 overnight, with air-raid sirens sounding four times in Kyiv. President Zelensky said Russia launched more than 1,550 attack drones, nearly 1,560 guided aerial bombs and 62 missiles at 13 regions this week.",
+      "title_zh": "俄羅斯稱烏克蘭發動 2026 年最大規模攻擊，至少 7 人喪生",
+      "summary_zh": "俄羅斯通報至少 7 人喪生於官方所稱烏克蘭 2026 年最大規模攻擊，共出動 822 架無人機，其中 600 架瞄準莫斯科。俄軍夜間空襲烏克蘭也造成至少 7 死、逾 39 傷，基輔一夜之間四度響起防空警報。澤倫斯基總統表示，俄羅斯本週對 13 個地區發射逾 1,550 架攻擊無人機、近 1,560 枚導引炸彈與 62 枚飛彈。",
+      "url": "https://www.bbc.co.uk/news/articles/c1411pgje8xo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [2], [3], [4], [5], [5, 6]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Reddit to join the S&P 500 on Tuesday, replacing AvalonBay Communities",
+      "summary_en": "Reddit will join the S&P 500 on Tuesday, replacing AvalonBay Communities and becoming only the second pureplay social media company in the benchmark index after Meta. The stock surged nearly 14% after the announcement, as index funds tracking the S&P 500 must buy shares once a company is included. The inclusion comes weeks after Reddit posted its highest-ever quarterly revenue.",
+      "title_zh": "Reddit 將於週二納入 S&P 500 指數，取代 AvalonBay Communities",
+      "summary_zh": "Reddit 將於週二正式納入 S&P 500 指數，取代 AvalonBay Communities，成為繼 Meta 之後指數中第二家純社群媒體公司。消息公布後股價大漲近 14%，因為追蹤 S&P 500 的指數基金在成分股納入後必須買進其股票。此次納入距 Reddit 繳出史上最高單季營收僅數週。",
+      "url": "https://abcnews.com/Technology/wireStory/online-forum-reddit-join-influential-closely-tracked-sp-135647039",
+      "source": "Associated Press",
+      "align": {
+        "title": [[0], [1]],
+        "summary": [[0], [1], [1], [2], [3], [4]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "BWF World Championships open in New Delhi with Taiwan's Chou Tien-chen and Lin Chun-yi seeded",
+      "summary_en": "The 30th edition of the BWF World Championships begins Monday at the Indira Gandhi Arena in New Delhi, with India hosting the tournament for the first time since 2009. A total of 64 players in each singles draw and 48 pairs in each doubles event will compete over seven days. Taiwan's Chou Tien-chen and Lin Chun-yi are seeded sixth and 12th in men's singles, while defending champion Shi Yuqi faces home hope Ayush Shetty in a blockbuster first round.",
+      "title_zh": "BWF 世界羽球錦標賽新德里開打，台灣周天成、林俊易列種子",
+      "summary_zh": "第 30 屆 BWF 世界羽球錦標賽週一於新德里英迪拉·甘地體育館揭幕，這是印度自 2009 年以來首度主辦。單打各 64 名選手、三項雙打各 48 對組合將展開為期七天的爭奪。台灣周天成與林俊易分列男單第 6 與第 12 種子，衛冕冠軍石宇奇首輪則將對決地主新星謝提。",
+      "url": "https://www.olympics.com/en/news/bwf-world-championships-2026-full-schedule-order-of-play-all-results",
+      "source": "Olympics.com",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [2], [3], [4]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "targeting",
+      "sentence": "Russia reported at least seven people killed in what officials called Ukraine's largest-scale attack of 2026, involving 822 drones, 600 of them ____ Moscow.",
+      "hint_zh": "動詞（現在分詞）：瞄準、以…為目標"
+    },
+    {
+      "word": "launched",
+      "sentence": "President Zelensky said Russia ____ more than 1,550 attack drones, nearly 1,560 guided aerial bombs and 62 missiles at 13 regions this week.",
+      "hint_zh": "動詞（過去式）：發射、發動"
+    },
+    {
+      "word": "aerial",
+      "sentence": "Russia launched more than 1,550 attack drones, nearly 1,560 guided ____ bombs and 62 missiles at 13 regions this week.",
+      "hint_zh": "形容詞：空中的、空投的"
+    },
+    {
+      "word": "benchmark",
+      "sentence": "Reddit will join the S&P 500 on Tuesday, becoming only the second pureplay social media company in the ____ index after Meta.",
+      "hint_zh": "名詞：基準、指標"
+    },
+    {
+      "word": "surged",
+      "sentence": "The stock ____ nearly 14% after the announcement.",
+      "hint_zh": "動詞（過去式）：飆漲、激增"
+    },
+    {
+      "word": "tracking",
+      "sentence": "Index funds ____ the S&P 500 must buy shares once a company is included.",
+      "hint_zh": "動詞（現在分詞）：追蹤"
+    },
+    {
+      "word": "revenue",
+      "sentence": "The inclusion comes weeks after Reddit posted its highest-ever quarterly ____.",
+      "hint_zh": "名詞：營收、收入"
+    },
+    {
+      "word": "hosting",
+      "sentence": "The BWF World Championships begins Monday in New Delhi, with India ____ the tournament for the first time since 2009.",
+      "hint_zh": "動詞（現在分詞）：主辦、承辦"
+    },
+    {
+      "word": "compete",
+      "sentence": "A total of 64 players in each singles draw and 48 pairs in each doubles event will ____ over seven days.",
+      "hint_zh": "動詞：競爭、角逐"
+    },
+    {
+      "word": "defending",
+      "sentence": "Taiwan's Chou Tien-chen and Lin Chun-yi are seeded sixth and 12th in men's singles, while ____ champion Shi Yuqi faces home hope Ayush Shetty in a blockbuster first round.",
+      "hint_zh": "形容詞（現在分詞）：衛冕的"
+    }
+  ]
+}
