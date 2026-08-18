@@ -1,0 +1,104 @@
+{
+  "date": "2026-08-18",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Trump threatens to bomb US ally Oman if it 'gets in the way' over Iran deal",
+      "summary_en": "President Donald Trump has threatened to bomb Oman, a US ally, if it gets in the way of his administration's own talks with Iran, Fox News reports. The US and Oman have been negotiating separately with Tehran to reopen the Strait of Hormuz, which has been largely closed for nearly six months during the US-Iran war. The threat came as a 60-day Memorandum of Understanding between the US and Iran expires, with Trump saying he is not seeking an extension.",
+      "title_zh": "川普威脅轟炸美國盟友阿曼：若在伊朗協議上「擋路」",
+      "summary_zh": "福斯新聞報導，美國總統川普威脅，若盟友阿曼妨礙其政府與伊朗的談判，將對阿曼進行轟炸。美國與阿曼各自與德黑蘭談判，以重啟荷莫茲海峽；這條水道在美伊戰爭期間已封閉近六個月。威脅發出之際，美伊之間為期 60 天的諒解備忘錄即將到期，川普表示不尋求延長。",
+      "url": "https://www.bbc.co.uk/news/articles/cy5dzk0ryzdo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[3], [0], [1, 2], [0], [4], [4], [5], [6], [6], [7]]
+      }
+    },
+    {
+      "category": "科技/財經",
+      "title_en": "Instagram and Facebook could change forever if Meta loses child privacy trial",
+      "summary_en": "Meta faces a jury trial beginning Tuesday in a lawsuit filed by 30 US states, which allege the company violated federal and state privacy laws for children and are seeking upwards of $1 trillion in damages. The states want Meta to end 'like' counts, infinite scroll and autoplay, implement parental verification for teenage users, and change its recommendation algorithms. A loss would almost certainly force Meta to redesign its platforms nationwide, as the states represent nearly two-thirds of the US population.",
+      "title_zh": "若 Meta 敗訴兒少隱私官司，Instagram 與臉書恐永久改變",
+      "summary_zh": "Meta 週二起面臨由美國 30 州提起的訴訟陪審團審判，各州指控該公司違反聯邦與州的兒童隱私法，並求償超過 1 兆美元。各州要求 Meta 取消按讚數、無限捲動與自動播放，對青少年用戶實施家長驗證，並修改其推薦演算法。由於這些州涵蓋近三分之二的美國人口，若敗訴，Meta 幾乎肯定得在全美重新設計其平台。",
+      "url": "https://www.bbc.co.uk/news/articles/clyqpx6xk69o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [1], [2, 3], [4], [5], [7], [6], [6]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "Top seed Shi Yuqi suffers shock first-round exit at BWF World Championships",
+      "summary_en": "Defending champion and world number one Shi Yuqi crashed out in the first round of the 2026 BWF World Championships in New Delhi, edged out 21-14, 13-21, 21-19 by India's Ayush Shetty after a 73-minute battle. It marks Shi's first career loss to Shetty, whom he beat in this season's Asian Championships final. The tournament will conclude on Sunday, with five world titles up for grabs.",
+      "title_zh": "【後續】頭號種子石宇奇爆冷，世界羽球錦標賽首輪不敵謝提出局",
+      "summary_zh": "昨日報導預告的世錦賽首輪焦點對決結果出爐——衛冕冠軍、世界排名第一的石宇奇在新德里 2026 年 BWF 世界羽球錦標賽首輪爆冷出局，經過 73 分鐘激戰，以 21-14、13-21、21-19 遭印度好手謝提淘汰。這是石宇奇生涯首度輸給謝提，本季亞洲錦標賽決賽他才擊敗過對方。賽事將於週日落幕，共有五面世界冠軍金牌待決。",
+      "url": "https://english.news.cn/20260817/c3da9f0eb5c6497e9513cc609ef3df0d/c.html",
+      "source": "Xinhua",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [1], [1], [2], [3], [4], [5]],
+        "summary_segs": [
+          "Defending champion and world number one Shi Yuqi crashed out in the first round of the 2026 BWF World Championships in New Delhi,",
+          "edged out 21-14, 13-21, 21-19 by India's Ayush Shetty after a 73-minute battle.",
+          "It marks Shi's first career loss to Shetty,",
+          "whom he beat in this season's Asian Championships final.",
+          "The tournament will conclude on Sunday,",
+          "with five world titles up for grabs."
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "threatened",
+      "sentence": "President Donald Trump has ____ to bomb Oman, a US ally, if it gets in the way of his administration's own talks with Iran, Fox News reports.",
+      "hint_zh": "動詞（過去分詞）：威脅"
+    },
+    {
+      "word": "negotiating",
+      "sentence": "The US and Oman have been ____ separately with Tehran to reopen the Strait of Hormuz.",
+      "hint_zh": "動詞（現在分詞）：談判、協商"
+    },
+    {
+      "word": "extension",
+      "sentence": "The threat came as a 60-day Memorandum of Understanding between the US and Iran expires, with Trump saying he is not seeking an ____.",
+      "hint_zh": "名詞：延長、展期"
+    },
+    {
+      "word": "allege",
+      "sentence": "Meta faces a jury trial beginning Tuesday in a lawsuit filed by 30 US states, which ____ the company violated federal and state privacy laws for children.",
+      "hint_zh": "動詞：指控、聲稱"
+    },
+    {
+      "word": "damages",
+      "sentence": "The states are seeking upwards of $1 trillion in ____.",
+      "hint_zh": "名詞（複數）：損害賠償金"
+    },
+    {
+      "word": "verification",
+      "sentence": "The states want Meta to end 'like' counts, infinite scroll and autoplay, implement parental ____ for teenage users, and change its recommendation algorithms.",
+      "hint_zh": "名詞：驗證、核實"
+    },
+    {
+      "word": "redesign",
+      "sentence": "A loss would almost certainly force Meta to ____ its platforms nationwide, as the states represent nearly two-thirds of the US population.",
+      "hint_zh": "動詞：重新設計"
+    },
+    {
+      "word": "crashed",
+      "sentence": "Defending champion and world number one Shi Yuqi ____ out in the first round of the 2026 BWF World Championships in New Delhi.",
+      "hint_zh": "動詞（過去式）：（與 out 連用）慘遭淘汰、出局"
+    },
+    {
+      "word": "edged",
+      "sentence": "Shi Yuqi was ____ out 21-14, 13-21, 21-19 by India's Ayush Shetty after a 73-minute battle.",
+      "hint_zh": "動詞（過去分詞）：（與 out 連用）以些微差距擊敗"
+    },
+    {
+      "word": "conclude",
+      "sentence": "The tournament will ____ on Sunday, with five world titles up for grabs.",
+      "hint_zh": "動詞：結束、落幕"
+    }
+  ]
+}
