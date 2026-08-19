@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-19",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Death toll from Zimbabwe's Lake Kariba ferry disaster rises to 93",
+      "summary_en": "The death toll from a ferry disaster on Zimbabwe's Lake Kariba has risen to 93, making it the country's deadliest transport disaster. The ferry had a capacity of 90 passengers, but at least 168 people were on board when it was hit by a strong wave and overturned a week ago. President Emmerson Mnangagwa declared a state of disaster, and search and recovery efforts are continuing.",
+      "title_zh": "辛巴威卡里巴湖渡輪船難死亡人數升至93人",
+      "summary_zh": "辛巴威卡里巴湖渡輪船難的死亡人數已升至93人，成為該國史上最嚴重的交通災難。這艘渡輪核定載客量為90人，但一週前遭大浪襲擊翻覆時，船上至少有168人。總統姆南加瓦已宣布進入災難狀態，搜救與打撈行動仍在持續。",
+      "url": "https://www.bbc.co.uk/news/articles/cjwx58n1153o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [1], [2], [3], [3], [4], [5]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Global borrowing costs hit fresh highs on oil, AI and inflation",
+      "summary_en": "Long-term borrowing costs across some of the world's biggest economies hit fresh highs because of concerns over inflation, government debt levels and spending on artificial intelligence. The interest rate on US borrowing over 30 years hit 5.33% on Tuesday, the highest since June 2007, while UK long-term debt reached 5.85%. Rising oil prices are the main driver, as Brent crude surpassed $90 a barrel amid growing tensions in the Middle East.",
+      "title_zh": "油價、AI與通膨疑慮推升，全球長期借貸成本創新高",
+      "summary_zh": "受通膨、政府債務水準與AI支出的疑慮影響，全球主要經濟體的長期借貸成本創下新高。美國30年期公債殖利率週二觸及5.33%，為2007年6月以來最高，英國長天期公債殖利率也升至5.85%。油價上漲是主因，中東緊張情勢升溫使布蘭特原油突破每桶90美元。",
+      "url": "https://www.bbc.co.uk/news/articles/c1k1x1zdywdo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0, 1], [0]],
+        "summary": [[0, 1], [0], [2], [3], [4], [5], [6]]
+      }
+    },
+    {
+      "category": "棒球",
+      "title_en": "Tigers' Lee Hao-yu sets MLB single-season hits record for a Taiwanese player",
+      "summary_en": "Detroit Tigers infielder Lee Hao-yu set the record for the most hits by a Taiwanese player in a Major League Baseball season after getting three hits in an 8-5 win over the Pittsburgh Pirates. The 23-year-old surpassed Yu Chang's previous mark of 54 hits and finished 3-for-3 with two walks and two RBIs, raising his season total to 57. The victory snapped the Tigers' three-game losing streak and moved them into a tie for the American League's final wild card spot.",
+      "title_zh": "老虎隊李灝宇改寫台灣球員MLB單季安打紀錄",
+      "summary_zh": "底特律老虎隊內野手李灝宇在以8比5擊敗匹茲堡海盜的比賽中敲出3支安打，創下台灣球員在美國職棒大聯盟單季最多安打紀錄。這位23歲好手超越張育成先前54支安打的紀錄，全場3打數3安打外帶2次保送、2分打點，本季安打數累積至57支。這場勝利終止老虎隊3連敗，並讓他們追平美聯最後一張外卡席位。",
+      "url": "https://focustaiwan.tw/sports/202608180007",
+      "source": "Focus Taiwan (CNA)",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [0], [1], [1], [2], [3], [3]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "capacity",
+      "sentence": "The ferry had a ____ of 90 passengers, but at least 168 people were on board when it was hit by a strong wave.",
+      "hint_zh": "名詞：容量、核定載客量"
+    },
+    {
+      "word": "overturned",
+      "sentence": "At least 168 people were on board when the ferry was hit by a strong wave and ____ a week ago.",
+      "hint_zh": "動詞（過去式）：翻覆"
+    },
+    {
+      "word": "declared",
+      "sentence": "President Emmerson Mnangagwa ____ a state of disaster, and search and recovery efforts are continuing.",
+      "hint_zh": "動詞（過去式）：宣布"
+    },
+    {
+      "word": "borrowing",
+      "sentence": "Long-term ____ costs across some of the world's biggest economies hit fresh highs.",
+      "hint_zh": "名詞：借貸、舉債"
+    },
+    {
+      "word": "concerns",
+      "sentence": "Borrowing costs hit fresh highs because of ____ over inflation, government debt levels and spending on artificial intelligence.",
+      "hint_zh": "名詞（複數）：擔憂、疑慮"
+    },
+    {
+      "word": "reached",
+      "sentence": "The interest rate on US borrowing over 30 years hit 5.33% on Tuesday, while UK long-term debt ____ 5.85%.",
+      "hint_zh": "動詞（過去式）：達到"
+    },
+    {
+      "word": "surpassed",
+      "sentence": "Rising oil prices are the main driver, as Brent crude ____ $90 a barrel amid growing tensions in the Middle East.",
+      "hint_zh": "動詞（過去式）：超過、突破"
+    },
+    {
+      "word": "infielder",
+      "sentence": "Detroit Tigers ____ Lee Hao-yu set the record for the most hits by a Taiwanese player in a Major League Baseball season.",
+      "hint_zh": "名詞：內野手"
+    },
+    {
+      "word": "mark",
+      "sentence": "The 23-year-old surpassed Yu Chang's previous ____ of 54 hits, raising his season total to 57.",
+      "hint_zh": "名詞：紀錄、標竿"
+    },
+    {
+      "word": "snapped",
+      "sentence": "The victory ____ the Tigers' three-game losing streak and moved them into a tie for the American League's final wild card spot.",
+      "hint_zh": "動詞（過去式）：終止（連敗）"
+    }
+  ]
+}
