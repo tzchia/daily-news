@@ -1,0 +1,106 @@
+{
+  "date": "2026-08-20",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Ecuador intelligence chief and five Americans killed in Kenya helicopter crash",
+      "summary_en": "Ecuador's intelligence chief Michele Sensi-Contugi and his wife were killed in a helicopter crash in Kenya's Samburu county on Wednesday, along with five Americans. The helicopter was on a scenic flight from a wildlife conservancy in Loisaba to the Ewaso Nyiro river when it crashed near Mount Ololokwe. Kenya's aviation authority said investigators would examine the circumstances surrounding the accident.",
+      "title_zh": "厄瓜多情報首長與五名美國人於肯亞直升機空難中罹難",
+      "summary_zh": "厄瓜多情報首長桑西－孔圖吉及其妻子週三在肯亞桑布魯郡的直升機空難中罹難，另有五名美國人喪生。這架直升機當時正從洛伊薩巴的野生動物保護區飛往埃瓦索尼羅河進行觀光飛行，在奧洛洛克維山附近墜毀。肯亞民航局表示，調查人員將釐清事故發生的相關情況。",
+      "url": "https://www.bbc.co.uk/news/articles/clylkv4z59vo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [1], [2], [2], [3], [3]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "US long-term borrowing costs ease after government steps in",
+      "summary_en": "Long-term borrowing costs in the US eased on Wednesday after the Treasury announced it would double its debt buyback operations from $2bn to $4bn. The move came after the yield on 30-year bonds hit 5.34% on Tuesday, the highest level in almost 20 years, before easing to 5.18%. Analysts warned the intervention was unlikely to provide meaningful long-term relief given the size of outstanding Treasury debt.",
+      "title_zh": "【後續】美國政府出手後，長期借貸成本回落",
+      "summary_zh": "相較昨日報導的全球借貸成本創新高，最新進展是美國財政部宣布介入，將公債買回規模從20億美元加倍至40億美元，美國長期借貸成本週三應聲回落。30年期公債殖利率週二一度觸及5.34%、創近20年新高，隨後回落至5.18%。分析師警告，相對於龐大的未償公債餘額，這項干預恐難帶來實質的長期緩解。",
+      "url": "https://www.bbc.co.uk/news/articles/c70gp8252ejo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[1, 2], [0], [0], [0], [1, 2], [3], [4], [4], [4]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "Taiwan's All England champion Lin Chun-yi knocked out of BWF World Championships",
+      "summary_en": "Taiwan's Lin Chun-yi, who won the All England title this year, was eliminated from the badminton world championships in New Delhi after losing to Denmark's Rasmus Gemke 21-13, 17-21, 11-21. Earlier, American teenager Garret Tan, ranked 92nd in the world, stunned India's 14th-seeded Lakshya Sen 19-21, 21-19, 21-17 to silence the home crowd. Denmark's world number four Anders Antonsen survived two match points to edge Ireland's Nhat Nguyen and reach the third round.",
+      "title_zh": "台灣全英賽冠軍林俊易止步世界羽球錦標賽",
+      "summary_zh": "今年奪得全英公開賽冠軍的台灣好手林俊易，在新德里世界羽球錦標賽遭到淘汰，以21比13、17比21、11比21不敵丹麥的蓋姆克。稍早，世界排名第92的美國小將Garret Tan以19比21、21比19、21比17爆冷擊敗第14種子、印度名將拉克什亞・森，令地主觀眾陷入沉默。丹麥世界排名第四的安東森化解兩個賽末點，驚險擊退愛爾蘭的阮日並晉級第三輪。",
+      "url": "https://www.straitstimes.com/sport/us-teenager-garret-tan-shines-on-badminton-worlds-debut",
+      "source": "The Straits Times (AFP)",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [1], [2], [3], [3, 4], [5], [6], [7]],
+        "summary_segs": [
+          "Taiwan's Lin Chun-yi, who won the All England title this year,",
+          "was eliminated from the badminton world championships in New Delhi",
+          "after losing to Denmark's Rasmus Gemke 21-13, 17-21, 11-21.",
+          "Earlier, American teenager Garret Tan, ranked 92nd in the world,",
+          "stunned India's 14th-seeded Lakshya Sen 19-21, 21-19, 21-17",
+          "to silence the home crowd.",
+          "Denmark's world number four Anders Antonsen survived two match points",
+          "to edge Ireland's Nhat Nguyen and reach the third round."
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "intelligence",
+      "sentence": "Ecuador's ____ chief Michele Sensi-Contugi and his wife were killed in a helicopter crash in Kenya's Samburu county on Wednesday, along with five Americans.",
+      "hint_zh": "名詞：情報"
+    },
+    {
+      "word": "conservancy",
+      "sentence": "The helicopter was on a scenic flight from a wildlife ____ in Loisaba to the Ewaso Nyiro river when it crashed near Mount Ololokwe.",
+      "hint_zh": "名詞：（野生動物）保護區"
+    },
+    {
+      "word": "circumstances",
+      "sentence": "Kenya's aviation authority said investigators would examine the ____ surrounding the accident.",
+      "hint_zh": "名詞（複數）：情況、緣由"
+    },
+    {
+      "word": "eased",
+      "sentence": "Long-term borrowing costs in the US ____ on Wednesday after the Treasury announced it would double its debt buyback operations.",
+      "hint_zh": "動詞（過去式）：回落、趨緩"
+    },
+    {
+      "word": "buyback",
+      "sentence": "The Treasury announced it would double its debt ____ operations from $2bn to $4bn.",
+      "hint_zh": "名詞：（債券／股票）買回、回購"
+    },
+    {
+      "word": "yield",
+      "sentence": "The move came after the ____ on 30-year bonds hit 5.34% on Tuesday, the highest level in almost 20 years.",
+      "hint_zh": "名詞：（債券）殖利率、收益率"
+    },
+    {
+      "word": "outstanding",
+      "sentence": "Analysts warned the intervention was unlikely to provide meaningful long-term relief given the size of ____ Treasury debt.",
+      "hint_zh": "形容詞：未償還的、流通在外的"
+    },
+    {
+      "word": "eliminated",
+      "sentence": "Taiwan's Lin Chun-yi, who won the All England title this year, was ____ from the badminton world championships in New Delhi.",
+      "hint_zh": "動詞（過去分詞）：淘汰"
+    },
+    {
+      "word": "stunned",
+      "sentence": "American teenager Garret Tan, ranked 92nd in the world, ____ India's 14th-seeded Lakshya Sen to silence the home crowd.",
+      "hint_zh": "動詞（過去式）：爆冷擊敗、使震驚"
+    },
+    {
+      "word": "survived",
+      "sentence": "Denmark's world number four Anders Antonsen ____ two match points to edge Ireland's Nhat Nguyen and reach the third round.",
+      "hint_zh": "動詞（過去式）：挺過、倖免於"
+    }
+  ]
+}
