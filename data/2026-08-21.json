@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-21",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Russia 'purposefully' hit critical infrastructure in latest strikes, Kyiv mayor says",
+      "summary_en": "At least 17 people were killed and more than 40 injured in a massive overnight attack on Ukraine's capital, with blocks of flats, a children's hospital and a school among the sites struck. Kyiv mayor Vitali Klitschko said Russia purposefully targeted critical infrastructure for the first time in several months, leaving thousands of properties without power and disrupting hot water supply. President Zelensky warned that as long as Ukraine does not have enough anti-ballistic missiles, Russia will not seriously think about peace.",
+      "title_zh": "基輔市長：俄軍最新空襲蓄意攻擊關鍵基礎設施",
+      "summary_zh": "俄羅斯對烏克蘭首都基輔發動大規模夜間空襲，造成至少17人死亡、逾40人受傷，公寓大樓、兒童醫院與一所學校都遭到襲擊。基輔市長克里契科表示，俄軍數月來首次蓄意鎖定關鍵基礎設施攻擊，導致數千戶停電、熱水供應中斷。澤倫斯基總統警告，只要烏克蘭沒有足夠的反彈道飛彈，俄羅斯就不會認真考慮和平。",
+      "url": "https://www.bbc.co.uk/news/articles/c98vzmden5yo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0, 1]],
+        "summary": [[0], [0], [1, 2], [3], [3], [4], [5], [5], [6]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Founder of collapsed Chinese property giant Evergrande sentenced to life in prison",
+      "summary_en": "Hui Ka Yan, the founder of Evergrande, the property giant at the centre of China's housing market slump, has been sentenced to life in prison and had all of his personal property confiscated. He pleaded guilty in April to charges including embezzlement of assets and corporate bribery, and the Shenzhen court also fined his former companies a total of 15.82bn yuan ($2.35bn). Once ranked Asia's richest man, Hui oversaw Evergrande's rapid rise through aggressive expansion funded with borrowed money before the company collapsed in 2021.",
+      "title_zh": "中國恆大創辦人許家印遭判無期徒刑",
+      "summary_zh": "深陷中國房市崩跌風暴中心的地產巨頭恆大集團，創辦人許家印被判處無期徒刑，個人財產全數沒收。他於四月對挪用資產與商業行賄等多項罪名認罪，深圳法院並對其旗下前公司合計裁罰158.2億元人民幣（約23.5億美元）。許家印曾是亞洲首富，靠大量舉債的激進擴張帶領恆大快速崛起，公司最終在2021年崩塌。",
+      "url": "https://www.bbc.co.uk/news/articles/cd0x9mjjmgjo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[1, 2], [0, 3], [3], [4], [5], [6], [7], [7]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "Taiwan's Chou Tien-chen cruises into quarter-finals at BWF World Championships",
+      "summary_en": "Taiwan's sixth seed Chou Tien-chen beat Yushi Tanaka of Japan 21-14, 21-9 to reach the quarter-finals of the badminton world championships in New Delhi. The veteran will next face Indonesia's 11th-seeded Alwi Farhan, who ended Indian giantslayer Ayush Shetty's dream run in the round of 16, for a place in the semi-finals.",
+      "title_zh": "周天成晉級羽球世錦賽八強",
+      "summary_zh": "台灣第六種子周天成在新德里羽球世界錦標賽，以21比14、21比9直落二擊敗日本的田中湧士，晉級八強。這位老將八強戰將對上印尼第11種子法爾漢，法爾漢在16強終結了印度爆冷小將謝提的黑馬之旅；兩人將爭奪四強席位。",
+      "url": "https://sports.yahoo.com/articles/wang-downs-sindhu-break-indian-153448882.html",
+      "source": "AFP via Yahoo Sports",
+      "align": {
+        "title": [[0]],
+        "summary": [[0, 1], [0, 1], [1], [2], [3], [4]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "purposefully",
+      "sentence": "Kyiv mayor Vitali Klitschko said Russia ____ targeted critical infrastructure for the first time in several months.",
+      "hint_zh": "副詞：蓄意地、故意地"
+    },
+    {
+      "word": "disrupting",
+      "sentence": "Klitschko said Russia purposefully targeted critical infrastructure, leaving thousands of properties without power and ____ hot water supply.",
+      "hint_zh": "動詞（現在分詞）：使中斷"
+    },
+    {
+      "word": "overnight",
+      "sentence": "At least 17 people were killed and more than 40 injured in a massive ____ attack on Ukraine's capital.",
+      "hint_zh": "形容詞：夜間的、一夜之間的"
+    },
+    {
+      "word": "confiscated",
+      "sentence": "Hui Ka Yan has been sentenced to life in prison and had all of his personal property ____.",
+      "hint_zh": "動詞（過去分詞）：沒收"
+    },
+    {
+      "word": "embezzlement",
+      "sentence": "He pleaded guilty in April to charges including ____ of assets and corporate bribery.",
+      "hint_zh": "名詞：挪用資產、侵占公款"
+    },
+    {
+      "word": "slump",
+      "sentence": "Hui Ka Yan is the founder of Evergrande, the property giant at the centre of China's housing market ____.",
+      "hint_zh": "名詞：暴跌、崩跌"
+    },
+    {
+      "word": "aggressive",
+      "sentence": "Hui oversaw Evergrande's rapid rise through ____ expansion funded with borrowed money before the company collapsed in 2021.",
+      "hint_zh": "形容詞：激進的、積極擴張的"
+    },
+    {
+      "word": "veteran",
+      "sentence": "The ____ will next face Indonesia's 11th-seeded Alwi Farhan for a place in the semi-finals.",
+      "hint_zh": "名詞：老將、資深選手"
+    },
+    {
+      "word": "seed",
+      "sentence": "Taiwan's sixth ____ Chou Tien-chen beat Yushi Tanaka of Japan 21-14, 21-9.",
+      "hint_zh": "名詞：種子（選手／排名）"
+    },
+    {
+      "word": "quarter-finals",
+      "sentence": "Chou Tien-chen beat Yushi Tanaka of Japan to reach the ____ of the badminton world championships in New Delhi.",
+      "hint_zh": "名詞（複數）：八強賽、四分之一決賽"
+    }
+  ]
+}
