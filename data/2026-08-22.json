@@ -1,0 +1,97 @@
+{
+  "date": "2026-08-22",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Russian double-tap drone strike kills 15 in Ukrainian mall, officials say",
+      "summary_en": "At least 15 people were killed and 130 injured, including 23 children, in a Russian double-tap drone strike on the biggest shopping centre in the central Ukrainian city of Kryvyi Rih. President Volodymyr Zelensky said the attack in his home town was carried out in two waves, with the second strike targeting emergency workers at the scene. Rescuers from four other regions are being deployed to search for survivors trapped in the rubble.",
+      "title_zh": "官員指俄羅斯「雙擊」無人機襲擊烏克蘭購物中心，釀15死",
+      "summary_zh": "俄羅斯以「雙擊」戰術無人機襲擊烏克蘭中部城市克里維里赫最大的購物中心，造成至少15人死亡、130人受傷，其中包括23名兒童。總統澤倫斯基表示，這場發生在他家鄉的攻擊分兩波進行，第二波打擊瞄準了現場的救援人員。來自其他四個州的救援隊正被派往當地，搜救困在瓦礫中的倖存者。",
+      "url": "https://www.bbc.co.uk/news/articles/c39egw7nmk2o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0, 1], [0]],
+        "summary": [[2], [0], [1], [3], [3], [4], [5], [5]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "US borrowing costs rise as attempts to ease rates prove short-lived",
+      "summary_en": "Long-term borrowing costs in the US rose again despite the Treasury's intervention to buy back debt, with the interest rate on 30-year bonds climbing back to around 5.27% on Friday. Economists said the surprise move had proved short-lived, as traders remained focused on daunting levels of global borrowing after US national debt passed $40tn. The dollar weakened in response to the bond market volatility, while gold climbed to a more than three-month high.",
+      "title_zh": "【後續】美國政府壓低利率的嘗試曇花一現，長天期借貸成本再度攀升",
+      "summary_zh": "相較於前日報導財政部加碼買回債券後殖利率一度回落，這項干預的效果僅維持短暫時間，30年期公債殖利率週五又回升至約5.27%。經濟學家表示，在美國國債突破40兆美元後，交易員仍聚焦於各國政府龐大的借貸規模。美元因債市波動而走弱，金價則攀升至逾三個月高點。",
+      "url": "https://www.bbc.co.uk/news/articles/cvg92p3ez17o",
+      "source": "BBC News",
+      "align": {
+        "title": [[1], [0]],
+        "title_segs": ["US borrowing costs rise", "as attempts to ease rates prove short-lived"],
+        "summary": [[0], [2], [1], [2], [3], [3], [4], [5]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "At 36, Chou Tien-chen's 'miracle' journey continues as he seals BWF Worlds semifinal spot",
+      "summary_en": "Taiwan's Chou Tien-chen beat Indonesia's Alwi Farhan 21-15, 21-15 in the quarterfinals of the BWF World Championships in New Delhi, becoming the oldest men's singles medallist in the tournament's history at 36. The veteran, who returned to competition after colorectal cancer surgery in 2023, is now two wins away from a world title. 'I don't think about the age. I came prepared with all my patience,' Chou said.",
+      "title_zh": "【後續】36歲周天成「奇蹟」之旅續寫，鎖定世錦賽四強席位",
+      "summary_zh": "繼前日晉級八強後，周天成在新德里羽球世錦賽八強賽以21比15、21比15直落二擊敗印尼的法爾漢，以36歲之齡成為世錦賽史上最年長的男單獎牌得主。這位老將2023年因大腸癌接受手術後重返賽場，如今距離世界冠軍只差兩勝。他說他不去想年齡，是帶著十足的耐心做好準備上場。",
+      "url": "https://www.thestatesman.com/sports/at-36-chou-tien-chens-miracle-journey-continues-as-he-seals-bwf-worlds-semifinal-spot-1503511358.html",
+      "source": "The Statesman",
+      "align": {
+        "title": [[0, 1], [1]],
+        "summary": [[1], [0, 1], [2], [3, 4], [5], [6], [7]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "targeting",
+      "sentence": "President Volodymyr Zelensky said the attack in his home town was carried out in two waves, with the second strike ____ emergency workers at the scene.",
+      "hint_zh": "動詞（現在分詞）：瞄準、以…為攻擊目標"
+    },
+    {
+      "word": "deployed",
+      "sentence": "Rescuers from four other regions are being ____ to search for survivors trapped in the rubble.",
+      "hint_zh": "動詞（被動語態）：部署、派遣"
+    },
+    {
+      "word": "rubble",
+      "sentence": "Rescuers from four other regions are being deployed to search for survivors trapped in the ____.",
+      "hint_zh": "名詞：瓦礫、碎石堆"
+    },
+    {
+      "word": "intervention",
+      "sentence": "Long-term borrowing costs in the US rose again despite the Treasury's ____ to buy back debt.",
+      "hint_zh": "名詞：干預、介入"
+    },
+    {
+      "word": "daunting",
+      "sentence": "Economists said the surprise move had proved short-lived, as traders remained focused on ____ levels of global borrowing.",
+      "hint_zh": "形容詞：令人生畏的、艱鉅的"
+    },
+    {
+      "word": "volatility",
+      "sentence": "The dollar weakened in response to the bond market ____, while gold climbed to a more than three-month high.",
+      "hint_zh": "名詞：（市場）波動性"
+    },
+    {
+      "word": "weakened",
+      "sentence": "The dollar ____ in response to the bond market volatility.",
+      "hint_zh": "動詞（過去式）：走弱、轉弱"
+    },
+    {
+      "word": "medallist",
+      "sentence": "Taiwan's Chou Tien-chen beat Indonesia's Alwi Farhan 21-15, 21-15 in the quarterfinals, becoming the oldest men's singles ____ in the tournament's history at 36.",
+      "hint_zh": "名詞：獎牌得主"
+    },
+    {
+      "word": "veteran",
+      "sentence": "The ____, who returned to competition after colorectal cancer surgery in 2023, is now two wins away from a world title.",
+      "hint_zh": "名詞：老將、資深選手"
+    },
+    {
+      "word": "patience",
+      "sentence": "I came prepared with all my ____,' Chou said.",
+      "hint_zh": "名詞：耐心"
+    }
+  ]
+}
