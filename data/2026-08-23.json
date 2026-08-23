@@ -1,0 +1,103 @@
+{
+  "date": "2026-08-23",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Fourteen killed in Myanmar military air strikes on monastery",
+      "summary_en": "Fourteen people were killed in military air strikes at a monastery in Myanmar's central Sagaing region, opposition fighters and a local rescue worker said. Civilians had gathered at the site for a meditation retreat, and the site was struck twice as rescuers searched for survivors. Myanmar has been locked in civil war since the military staged a coup in 2021.",
+      "title_zh": "緬甸軍方空襲寺院釀14死",
+      "summary_zh": "反抗軍與當地救援人員表示，緬甸中部實皆省一座寺院遭軍方空襲，造成14人喪生。當時平民正聚集在該地參加禪修活動，救援人員搜救時該處又遭第二次轟炸。緬甸自2021年軍方政變以來便深陷內戰。",
+      "url": "https://www.bbc.com/news/articles/cqlxlvz01z1o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[1], [0], [0], [2], [3], [4]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Carney calls Trump's fresh tariffs a 'miscalculation' after trade talks collapse",
+      "summary_en": "US-Canada trade talks collapsed late on Friday, prompting new 50% US tariffs covering about $20bn of Canadian imports including wine and dairy. Canadian Prime Minister Mark Carney said Canada will retaliate 'reluctantly' and match US tariffs dollar-for-dollar from 8 September. The collapse comes amid a mandatory review of the USMCA pact, which underpins $1.6tn in annual trilateral trade.",
+      "title_zh": "美加貿易談判破局 卡尼批川普新關稅是「誤判」",
+      "summary_zh": "美加貿易談判於週五深夜破局，美國隨即對約200億美元的加拿大進口商品加徵50%新關稅，涵蓋葡萄酒與乳製品等。加拿大總理卡尼表示將「不情願地」反制，自9月8日起對美國關稅採取一比一等額報復。談判破局正值《美墨加協定》強制性審查期間，該協定支撐每年1.6兆美元的三邊貿易。",
+      "url": "https://www.bbc.com/news/articles/cx272np7vgyo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [1], [1], [2], [2], [3], [4]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "Chou Tien-chen falls to Kodai Naraoka in BWF Worlds semi-final, takes bronze",
+      "summary_en": "Taiwan's Chou Tien-chen lost 21-17, 11-21, 10-21 to Japan's Kodai Naraoka in the BWF World Championships men's singles semi-final, missing his first-ever final. The 36-year-old takes home bronze, his second World Championships medal and a record for a Taiwanese men's singles player. His world ranking is expected to rise to No. 4.",
+      "title_zh": "【後續】周天成4強遭奈良岡功大逆轉 摘世錦賽銅牌寫台灣男單紀錄",
+      "summary_zh": "繼前日晉級4強確保獎牌後，周天成在世錦賽男單準決賽以21比17、11比21、10比21遭日本好手奈良岡功大逆轉，無緣生涯首度闖進決賽。36歲的他收下銅牌，這是他生涯第2面世錦賽獎牌，也締造台灣男單第1人紀錄。他的世界排名預計將升上第4名。",
+      "url": "https://www.cna.com.tw/news/aspt/202608220225.aspx",
+      "source": "中央社 CNA",
+      "align": {
+        "title": [[0, 1]],
+        "summary": [[0], [0], [1], [2], [3], [3], [4]],
+        "summary_segs": [
+          "Taiwan's Chou Tien-chen lost 21-17, 11-21, 10-21 to Japan's Kodai Naraoka in the BWF World Championships men's singles semi-final,",
+          "missing his first-ever final.",
+          "The 36-year-old takes home bronze,",
+          "his second World Championships medal and a record for a Taiwanese men's singles player.",
+          "His world ranking is expected to rise to No. 4."
+        ]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "opposition",
+      "sentence": "Fourteen people were killed in military air strikes at a monastery in Myanmar's central Sagaing region, ____ fighters and a local rescue worker said.",
+      "hint_zh": "名詞（作形容詞用）：反對派的、反抗勢力的"
+    },
+    {
+      "word": "retreat",
+      "sentence": "Civilians had gathered at the site for a meditation ____, and the site was struck twice as rescuers searched for survivors.",
+      "hint_zh": "名詞：靜修營、退隱修行活動"
+    },
+    {
+      "word": "coup",
+      "sentence": "Myanmar has been locked in civil war since the military staged a ____ in 2021.",
+      "hint_zh": "名詞：政變"
+    },
+    {
+      "word": "collapsed",
+      "sentence": "US-Canada trade talks ____ late on Friday, prompting new 50% US tariffs covering about $20bn of Canadian imports including wine and dairy.",
+      "hint_zh": "動詞（過去式）：破裂、崩潰"
+    },
+    {
+      "word": "retaliate",
+      "sentence": "Canadian Prime Minister Mark Carney said Canada will ____ 'reluctantly' and match US tariffs dollar-for-dollar from 8 September.",
+      "hint_zh": "動詞：報復、反擊"
+    },
+    {
+      "word": "mandatory",
+      "sentence": "The collapse comes amid a ____ review of the USMCA pact, which underpins $1.6tn in annual trilateral trade.",
+      "hint_zh": "形容詞：強制性的、法定必須的"
+    },
+    {
+      "word": "underpins",
+      "sentence": "The collapse comes amid a mandatory review of the USMCA pact, which ____ $1.6tn in annual trilateral trade.",
+      "hint_zh": "動詞（第三人稱單數）：支撐、鞏固"
+    },
+    {
+      "word": "missing",
+      "sentence": "Taiwan's Chou Tien-chen lost 21-17, 11-21, 10-21 to Japan's Kodai Naraoka in the BWF World Championships men's singles semi-final, ____ his first-ever final.",
+      "hint_zh": "動詞（現在分詞）：錯失、無緣"
+    },
+    {
+      "word": "bronze",
+      "sentence": "The 36-year-old takes home ____, his second World Championships medal and a record for a Taiwanese men's singles player.",
+      "hint_zh": "名詞：銅牌"
+    },
+    {
+      "word": "expected",
+      "sentence": "His world ranking is ____ to rise to No. 4.",
+      "hint_zh": "動詞（過去分詞）：預期、預計"
+    }
+  ]
+}
