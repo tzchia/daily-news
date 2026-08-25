@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-25",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Iran faces 'greatest financial offensive ever', says US treasury secretary",
+      "summary_en": "The US announced a host of sanctions against Iran, in what Treasury Secretary Scott Bessent called 'the single greatest financial offensive ever'. Bessent said the US would sever all economic ties with Iran, and warned that any nation financially partnering with the country would also be isolated. In response, Iran warned it would shut down all oil exports from the region if the war continued.",
+      "title_zh": "美國財長：伊朗面臨「史上最大金融攻勢」",
+      "summary_zh": "美國宣布對伊朗實施一系列制裁，財政部長貝森特稱之為「史上最大規模的金融攻勢」。貝森特表示美國將切斷與伊朗的所有經濟往來，並警告任何與伊朗金融合作的國家也將遭到孤立。伊朗則回應，若戰爭持續，將關閉該地區所有石油出口。",
+      "url": "https://www.bbc.co.uk/news/articles/c0qxew81y83o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0, 1]],
+        "summary": [[0], [1], [2], [3], [4, 5], [5], [5]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Shein aims for almost $27bn valuation in stock market debut",
+      "summary_en": "Fast-fashion giant Shein could see its stock market valuation reach almost $27bn when it makes its debut in Hong Kong on 1 September. The company will offer nearly 280 million shares after failed attempts to list in the US and London due to regulatory challenges. The valuation is much lower than the $100bn it was worth in 2022, reflecting weaker sales growth and higher costs.",
+      "title_zh": "Shein 掛牌上市，目標估值近 270 億美元",
+      "summary_zh": "快時尚巨頭 Shein 將於 9 月 1 日在香港掛牌上市，市值估計接近 270 億美元。在先前赴美與倫敦上市因監管挑戰接連失敗後，該公司將發行近 2.8 億股。此估值遠低於 2022 年時的 1,000 億美元，反映銷售成長放緩與成本上升。",
+      "url": "https://www.bbc.co.uk/news/articles/cdeweewjdxno",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [0]],
+        "summary": [[0], [0], [1], [1], [2], [3]]
+      }
+    },
+    {
+      "category": "棒球",
+      "title_en": "Astros Part Ways With GM Dana Brown",
+      "summary_en": "The Houston Astros announced they have mutually agreed to part ways with general manager Dana Brown after a recent skid. Brown's duties will be transitioned to three assistant GMs and senior advisor Jeff Bagwell, while owner Jim Crane will oversee baseball operations during the transition. Brown helped the organization win two division titles over the past four seasons.",
+      "title_zh": "太空人隊與總管布朗分道揚鑣",
+      "summary_zh": "休士頓太空人隊宣布在近期戰績下滑後，與總管布朗（Dana Brown）雙方合意分道揚鑣。布朗的職務將移交給三位助理總管與資深顧問貝格威爾（Jeff Bagwell），過渡期間將由老闆克瑞恩（Jim Crane）督導棒球事務。過去四個賽季，布朗曾協助球團拿下兩座分區冠軍。",
+      "url": "https://www.mlbtraderumors.com/2026/08/astros-part-ways-with-gm-dana-brown.html",
+      "source": "MLB Trade Rumors",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [0], [1], [2], [3], [3]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "sanctions",
+      "sentence": "The US announced a host of ____ against Iran, in what Treasury Secretary Scott Bessent called 'the single greatest financial offensive ever'.",
+      "hint_zh": "名詞（複數）：制裁"
+    },
+    {
+      "word": "sever",
+      "sentence": "Bessent said the US would ____ all economic ties with Iran.",
+      "hint_zh": "動詞：切斷、斷絕"
+    },
+    {
+      "word": "isolated",
+      "sentence": "Bessent warned that any nation financially partnering with the country would also be ____.",
+      "hint_zh": "動詞（過去分詞）：被孤立"
+    },
+    {
+      "word": "valuation",
+      "sentence": "Fast-fashion giant Shein could see its stock market ____ reach almost $27bn when it makes its debut in Hong Kong.",
+      "hint_zh": "名詞：估值"
+    },
+    {
+      "word": "regulatory",
+      "sentence": "The company will offer nearly 280 million shares after failed attempts to list in the US and London due to ____ challenges.",
+      "hint_zh": "形容詞：監管的"
+    },
+    {
+      "word": "debut",
+      "sentence": "Shein could see its stock market valuation reach almost $27bn when it makes its ____ in Hong Kong on 1 September.",
+      "hint_zh": "名詞：首次亮相、初次登場"
+    },
+    {
+      "word": "reflecting",
+      "sentence": "The valuation is much lower than the $100bn it was worth in 2022, ____ weaker sales growth and higher costs.",
+      "hint_zh": "動詞（現在分詞）：反映"
+    },
+    {
+      "word": "mutually",
+      "sentence": "The Houston Astros announced they have ____ agreed to part ways with general manager Dana Brown.",
+      "hint_zh": "副詞：相互地、雙方一致地"
+    },
+    {
+      "word": "transitioned",
+      "sentence": "Brown's duties will be ____ to three assistant GMs and senior advisor Jeff Bagwell.",
+      "hint_zh": "動詞（過去分詞）：移交、轉移"
+    },
+    {
+      "word": "oversee",
+      "sentence": "Owner Jim Crane will ____ baseball operations during the transition.",
+      "hint_zh": "動詞：監督、督導"
+    }
+  ]
+}
