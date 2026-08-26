@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-26",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "Winter energy prices in UK expected to rise to three-year high",
+      "summary_en": "Millions of UK households face an increase in the energy price cap by regulator Ofgem as winter approaches. The price increase will affect heating and electricity costs across the country. This comes as energy companies grapple with volatile wholesale markets and rising infrastructure costs. Ofgem sets the maximum price suppliers can charge for gas and electricity to household customers.",
+      "title_zh": "英國冬季能源價格創三年新高",
+      "summary_zh": "數百萬英國家庭面臨冬季來臨時，監管機構 Ofgem 將提高能源價格上限。此次上漲將影響全國取暖和電力成本。這是在能源公司面臨批發市場波動與基建成本上升之際發生的。Ofgem 規定供應商向住戶收取的天然氣與電力最高價格。",
+      "url": "https://www.bbc.co.uk/news/articles/cqjkl1xvgw5o",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [0], [1], [2], [3]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "AI gold rush prompts crypto mining firms to pivot away from Bitcoin",
+      "summary_en": "The surging demand for artificial intelligence computing power is transforming the cryptocurrency mining industry. Major crypto mining firms are retrofitting their operations to focus on AI computing rather than Bitcoin mining. Bitcoin's price remains well below its all-time peak of nearly a year ago, making the pivot economically attractive. The shift highlights AI's emergence as a more lucrative use of computational resources than traditional cryptocurrency mining.",
+      "title_zh": "AI 熱潮驅動加密貨幣礦場轉向人工智慧運算",
+      "summary_zh": "人工智慧運算能力需求激增，正在改造加密貨幣挖礦產業。主要加密貨幣礦場業者正在調整其營運重點，改為專注 AI 運算，而非比特幣挖礦。比特幣價格仍遠低於近一年前的歷史高點，使轉向在經濟上具有吸引力。此轉變凸顯 AI 已成為運算資源比傳統加密貨幣挖礦更有利可圖的應用。",
+      "url": "https://www.bbc.co.uk/news/articles/c07ler8x9kpo",
+      "source": "BBC News",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [0], [1], [2], [3]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "An Se-young wins second career world badminton title in Delhi",
+      "summary_en": "South Korea's An Se-young captured her second career world championship title at the BWF World Badminton Championships in New Delhi. The dominant player added another major trophy to her resume after previously winning the world title in 2022. An Se-young's victory demonstrates her continued mastery of women's singles badminton. She will now shift focus to defending her Asian Games title at the upcoming continental competition.",
+      "title_zh": "安賽楨德里奪生涯第二個世界冠軍",
+      "summary_zh": "南韓選手安賽楨在新德里舉辦的 BWF 世界羽球錦標賽中，贏得生涯第二個世界冠軍頭銜。這位統治級選手在 2022 年奪得首個世界冠軍後，再添一項重量級錦標。安賽楨的勝利充分展現其在女單羽球領域的持續優勢。她現在將把焦點轉向在即將舉辦的亞洲運動會防衛亞運冠軍頭銜。",
+      "url": "https://en.yna.co.kr/ENG/Contents/Index.html",
+      "source": "Yonhap News Agency",
+      "align": {
+        "title": [[0]],
+        "summary": [[0], [1], [2], [3]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "infrastructure",
+      "sentence": "This comes as energy companies grapple with volatile wholesale markets and rising ____ costs.",
+      "hint_zh": "名詞：基礎設施"
+    },
+    {
+      "word": "regulate",
+      "sentence": "Ofgem ____ the maximum price suppliers can charge for gas and electricity.",
+      "hint_zh": "動詞：規範、監管"
+    },
+    {
+      "word": "volatile",
+      "sentence": "Energy companies grapple with ____ wholesale markets and rising infrastructure costs.",
+      "hint_zh": "形容詞：波動的、易變的"
+    },
+    {
+      "word": "pivot",
+      "sentence": "Major crypto mining firms are retrofitting their operations to ____ to focus on AI computing.",
+      "hint_zh": "動詞：轉向、轉變"
+    },
+    {
+      "word": "lucrative",
+      "sentence": "AI has emerged as a more ____ use of computational resources than traditional cryptocurrency mining.",
+      "hint_zh": "形容詞：有利可圖的"
+    },
+    {
+      "word": "transforming",
+      "sentence": "The surging demand for artificial intelligence computing power is ____ the cryptocurrency mining industry.",
+      "hint_zh": "動詞（現在分詞）：改造、轉變"
+    },
+    {
+      "word": "captured",
+      "sentence": "An Se-young ____ her second career world championship title at the BWF World Championships.",
+      "hint_zh": "動詞（過去式）：獲得、贏得"
+    },
+    {
+      "word": "mastery",
+      "sentence": "An Se-young's victory demonstrates her continued ____ of women's singles badminton.",
+      "hint_zh": "名詞：精通、掌握"
+    },
+    {
+      "word": "championship",
+      "sentence": "An Se-young added another major trophy to her resume after winning the world ____ in 2022.",
+      "hint_zh": "名詞：冠軍、錦標賽"
+    },
+    {
+      "word": "defending",
+      "sentence": "She will now shift focus to ____ her Asian Games title at the upcoming continental competition.",
+      "hint_zh": "動詞（現在分詞）：防衛、衛冕"
+    }
+  ]
+}
