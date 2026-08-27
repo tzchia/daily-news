@@ -1,0 +1,96 @@
+{
+  "date": "2026-08-27",
+  "items": [
+    {
+      "category": "世界",
+      "title_en": "US drug agency approves breakthrough treatment for pancreatic cancer",
+      "summary_en": "The US Food and Drug Administration has approved a new treatment for pancreatic cancer, marking a significant breakthrough in cancer therapy. The approval, announced on Wednesday, offers new hope for patients suffering from one of the deadliest forms of cancer.",
+      "title_zh": "美國FDA批准胰腺癌創新療法",
+      "summary_zh": "美國食品藥物管理局(FDA)批准了一項胰腺癌新療法，是癌症治療的重大突破。該批准於週三宣布，為患者帶來治療希望。",
+      "url": "https://www.bbc.com/news/health",
+      "source": "BBC News",
+      "align": {
+        "title": [[0], [1, 2]],
+        "summary": [[0], [1], [2, 3]]
+      }
+    },
+    {
+      "category": "財經",
+      "title_en": "Meta's $18bn settlement may hasten reckoning for social media on child safety",
+      "summary_en": "Meta has agreed to an $18 billion settlement with US authorities regarding child safety violations on its platforms. This landmark settlement represents the largest penalty ever imposed on a social media company for child protection issues.",
+      "title_zh": "Meta同意18億美元和解，加速社媒兒童安全問責",
+      "summary_zh": "Meta與美國當局達成18億美元和解協議，涉及其平臺上的兒童安全違規問題。這項標誌性的和解代表了對社交媒體公司兒童保護問題最大的罰款。",
+      "url": "https://www.bbc.com/news/business",
+      "source": "BBC News",
+      "align": {
+        "title": [[0, 1], [2]],
+        "summary": [[0, 1], [2, 3]]
+      }
+    },
+    {
+      "category": "羽球",
+      "title_en": "An Se-young wins second career badminton world title",
+      "summary_en": "South Korean badminton star An Se-young captured her second World Championships title on Sunday, defeating her opponent in a thrilling final. The victory cements her status as one of the sport's elite players.",
+      "title_zh": "安賽楨獲得第二個羽毛球世界冠軍",
+      "summary_zh": "韓國羽毛球明星安賽楨於週日獲得第二個世界錦標賽冠軍，在決賽中擊敗對手。這場勝利確立了她作為羽毛球運動頂尖選手的地位。",
+      "url": "https://www.bbc.com/news/sport",
+      "source": "BBC News",
+      "align": {
+        "title": [[0, 1]],
+        "summary": [[0], [1], [2]]
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "word": "breakthrough",
+      "sentence": "The US FDA has approved a new ____ treatment for pancreatic cancer.",
+      "hint_zh": "名詞：突破性的；創新的"
+    },
+    {
+      "word": "approved",
+      "sentence": "The agency has ____ a new therapy marking significant progress in cancer care.",
+      "hint_zh": "動詞(過去式)：批准"
+    },
+    {
+      "word": "settlement",
+      "sentence": "Meta agreed to an $18 billion ____ with US authorities over child safety issues.",
+      "hint_zh": "名詞：和解協議"
+    },
+    {
+      "word": "penalty",
+      "sentence": "This represents the largest ____ ever imposed on a social media company.",
+      "hint_zh": "名詞：罰款"
+    },
+    {
+      "word": "reckoning",
+      "sentence": "The settlement may hasten a ____ for social media platforms on child protection.",
+      "hint_zh": "名詞：清算；清點"
+    },
+    {
+      "word": "captured",
+      "sentence": "An Se-young ____ her second World Championships title on Sunday.",
+      "hint_zh": "動詞(過去式)：獲得；贏得"
+    },
+    {
+      "word": "cements",
+      "sentence": "The victory ____ her status as one of the sport's elite players.",
+      "hint_zh": "動詞(第三人稱單數)：鞏固"
+    },
+    {
+      "word": "elite",
+      "sentence": "Her victory establishes her as one of the sport's ____ players.",
+      "hint_zh": "名詞/形容詞：頂尖的；傑出的"
+    },
+    {
+      "word": "violations",
+      "sentence": "Meta faced criticism over child safety ____ on its platforms.",
+      "hint_zh": "名詞：違規；侵犯"
+    },
+    {
+      "word": "hasten",
+      "sentence": "This settlement may ____ the reckoning for social media on child protection.",
+      "hint_zh": "動詞：加速；促進"
+    }
+  ]
+}
